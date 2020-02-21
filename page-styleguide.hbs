@@ -1,0 +1,31 @@
+{{!< blank-layout}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+  <h1>StyleGuide</h1>
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<!-- <script type="text/javascript" src="{{asset "js/classie.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/parallaxative.js"}}"></script> -->
+<!--<script type="text/javascript">
+  scrollyscroll = function() {
+    parallaxController.scrollHandler();
+    window.requestAnimationFrame( scrollyscroll );
+  }
+  scrollyscroll();
+
+  // control the mobile menu real simply
+  // var menubutton = document.getElementById('menubutton');
+  // var mobilemenu = document.getElementById('mobilemenu');
+
+  // menubutton.addEventListener('click', function(){
+  //   classie.toggle( menubutton, 'close' )
+  //   classie.toggle( mobilemenu, 'visible' )
+  // });
+</script>
+-->
+{{/contentFor}}

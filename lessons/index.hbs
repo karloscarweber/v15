@@ -1,0 +1,17 @@
+{{!< ../default}}
+
+{{> "site-nav"}}
+
+{{#each posts visibility="all"}}
+
+    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+    {{> "lesson-card"}}
+
+{{/each}}
+
+{{> site-header}}
+
+
+{{#contentFor "scripts"}}
+
+{{/contentFor}}

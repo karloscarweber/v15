@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/everything.css"}}" />
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-okaidia.css" rel="stylesheet" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+
+    {{{body}}}
+
+    {{!-- The footer at the very bottom of the screen --}}
+    <footer class="site-footer outer">
+      <div class="text-block">
+        <p>About<br>
+        <span class="copyright"><a href="{{@site.url}}" style="color:#00C764;">{{@site.title}}</a> &copy; {{date format="YYYY"}}</span><br>
+        Proudly Powered by <a href="https://ghost.org" style="color:#00C764;" target="_blank" rel="noopener">Ghost</a><br>
+        {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" style="color:#00C764;" target="_blank" rel="noopener">Twitter</a>{{/if}}</p>
+      </div>
+    </footer>
+
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+
+    <!-- Code highlighting scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/components/prism-core.min.js"></script>
+  	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    {{ghost_foot}}
+</body>
+</html>

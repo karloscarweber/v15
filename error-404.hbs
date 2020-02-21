@@ -1,0 +1,11 @@
+{{!< default}}
+{{!--
+This error template is used for all 404 errors, which might occur on your site.
+It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
+--}}
+
+  <section class="error-message text-block">
+      <h1 class="error-code">{{error.statusCode}}</h1>
+      <p class="error-description">{{message}}</p>
+      <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+  </section>
