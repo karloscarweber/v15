@@ -69,5 +69,12 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important; } }
 
+/*
+  Styles required by ghost.
+*/
 .style {
   display: block; }
+
+/*
+  Styles required by ghost.
+*/
