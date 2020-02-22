@@ -1,5 +1,4 @@
 routes:
-  /: home
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
@@ -9,10 +8,10 @@ routes:
     filter: tag:swift_foundations
 
 collections:
-  /posts/:
+  /:
     permalink: /posts/{slug}/
-    template: blog
-    filter: primary_tag:blog
+    template:
+      - home
   /lessons/:
     permalink: /lessons/{slug}/
     template: /lessons/index
