@@ -1,6 +1,7 @@
 /* Always start with a reset and media queries */
 @import "./utils/_reset";
-@import "./koenig";
+@import "./utils/_sizes";
+@import "./utils/_typography";
 
 .style {
   display: block;

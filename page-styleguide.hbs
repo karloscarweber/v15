@@ -4,7 +4,10 @@ into the {body} of the default.hbs template --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-  <h1>StyleGuide</h1>
+  <div class="koenig-zone additive-spacing">
+    <h1>StyleGuide</h1>
+    {{content}}
+  </div>
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

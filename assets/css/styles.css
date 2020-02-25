@@ -69,12 +69,196 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important; } }
 
-/*
-  Styles required by ghost.
-*/
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1500;
+  --fluid-min-size: 16;
+  --fluid-max-size: 24;
+  --fluid-min-ratio: 1.2;
+  --fluid-max-ratio: 1.33;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+      ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+  ); }
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px); } }
+
+:root {
+  --fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+  --fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+  --fluid-min-scale--2: var(--fluid-min-scale--1) * var(--fluid-min-ratio) * var(--fluid-min-negative);
+  --fluid-min-scale--1: var(--fluid-min-ratio) * var(--fluid-min-negative);
+  --fluid-min-scale-0: var(--fluid-min-ratio);
+  --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+  --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+  --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+  --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+  --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+  --fluid-max-scale--2: var(--fluid-max-scale--1) * var(--fluid-max-ratio) * var(--fluid-max-negative);
+  --fluid-max-scale--1: var(--fluid-max-ratio) * var(--fluid-max-negative);
+  --fluid-max-scale-0: var(--fluid-max-ratio);
+  --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+  --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+  --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+  --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+  --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+  --fluid-min-size--2: (var(--fluid-min-size) * var(--fluid-min-scale--2)) / 16;
+  --fluid-min-size--1: (var(--fluid-min-size) * var(--fluid-min-scale--1)) / 16;
+  --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+  --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+  --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+  --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+  --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+  --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+  --fluid-max-size--2: (var(--fluid-max-size) * var(--fluid-max-scale--2)) / 16;
+  --fluid-max-size--1: (var(--fluid-max-size) * var(--fluid-max-scale--1)) / 16;
+  --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+  --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+  --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+  --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+  --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+  --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+  --step--2: calc(((var(--fluid-min-size--2) * 1rem) + (var(--fluid-max-size--2) - var(--fluid-min-size--2)) * var(--fluid-bp)));
+  --step--1: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
+  --step-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+  --step-1: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+  --step-2: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+  --step-3: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+  --step-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+  --step-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp))); }
+
+.step--2 {
+  font-size: var(--step--2);
+  line-height: 1.5em; }
+
+.step--1 {
+  font-size: var(--step--1);
+  line-height: 1.5em; }
+
+.step-0 {
+  font-size: var(--step-0);
+  line-height: 1.5em; }
+
+.step-1 {
+  font-size: var(--step-1);
+  line-height: 1.5em; }
+
+.step-2 {
+  font-size: var(--step-2);
+  line-height: 1.5em; }
+
+.step-3 {
+  font-size: var(--step-3);
+  line-height: 1.5em; }
+
+.step-4 {
+  font-size: var(--step-4);
+  line-height: 1.5em; }
+
+.step-5 {
+  font-size: var(--step-5);
+  line-height: 1.5em; }
+
+.step-6 {
+  font-size: var(--step-6);
+  line-height: 1.5em; }
+
 .style {
   display: block; }
 
 /*
   Styles required by ghost.
 */
+.kg-width-wide {
+  font-family: arial; }
+
+.kg-width-full {
+  font-family: arial; }
+
+.kg-gallery-container {
+  font-family: arial; }
+
+.kg-gallery-row {
+  font-family: arial; }
+
+.kg-gallery-image {
+  font-family: arial; }
+
+.kg-bookmark-card {
+  font-family: arial; }
+
+.kg-bookmark-container {
+  font-family: arial; }
+
+.kg-bookmark-content {
+  font-family: arial; }
+
+.kg-bookmark-title {
+  font-family: arial; }
+
+.kg-bookmark-description {
+  font-family: arial; }
+
+.kg-bookmark-metadata {
+  font-family: arial; }
+
+.kg-bookmark-icon {
+  font-family: arial; }
+
+.kg-bookmark-author {
+  font-family: arial; }
+
+.kg-bookmark-publisher {
+  font-family: arial; }
+
+.kg-bookmark-thumbnail {
+  font-family: arial; }
+
+/* Let's style just the stuff that goes into a post and a page from the koenig editor thingy */
+body {
+  font-size: var(--step-0); }
+
+.koenig-zone {
+  padding-right: var(--step-1);
+  padding-left: var(--step-1);
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  max-width: 780px; }
+
+.koenig-zone > h1 {
+  font-size: var(--step-5); }
+
+.koenig-zone > h2 {
+  font-size: var(--step-4); }
+
+.koenig-zone > h3 {
+  font-size: var(--step-3); }
+
+.koenig-zone > blockquote {
+  font-size: var(--step-2); }
+
+.koenig-zone > p:first-of-type {
+  font-size: var(--step-1); }
+
+.koenig-zone > p {
+  font-size: var(--step-0); }
+
+.additive-spacing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+.insulate {
+  padding-bottom: var(--step-5);
+  padding-top: var(--step-5); }
