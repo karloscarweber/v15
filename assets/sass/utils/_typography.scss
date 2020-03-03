@@ -1,0 +1,140 @@
+/* wysywig type stuff. Default styles that are pushed out through koenig. */
+.page-template h1 {
+  font-family: 'PlayfairDisplay-Black', Arial;
+  font-weight: 900;
+  font-size: var(--step-3);
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+
+.post-template h1 {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 700;
+  font-size: var(--step-5);
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: #00C764;
+  color: color(display-p3 0 0.796 0.4 / 1); /* https://p3colorpicker.cool */
+  letter-spacing: -0.2rem;
+}
+
+.page-template .content, .post-template .content {
+
+  & > h2 {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 700;
+    font-size: var(--step-2);
+    line-height: 1.25em;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+  }
+
+  & > h3 {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 700;
+    font-size: var(--step-1);
+    line-height: 1.33em;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+  }
+
+  & > blockquote {
+    font-family: 'PlayfairDisplay-Black', Arial;
+    font-weight: 400;
+    font-size: var(--step-2);
+    line-height: 1.33em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    font-style: italic;
+    margin-left: -10%;
+    margin-right: -10%;
+    text-align: center;
+  }
+
+  & > h2:first-child + p, & > h3:first-child + p, & > p:first-child {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 600;
+    font-size: var(--step-1);
+    line-height: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  & > p {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 500;
+    font-size: var(--step-0);
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  & > ul, & > ol {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 500;
+    font-size: var(--step-0);
+    line-height: 1.25em;
+    margin-bottom: 1.5em;
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+
+  & > figure.kg-image-card {
+    max-width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+    margin-bottom: var(--size-large);;
+    margin-top: var(--size-large);
+
+    figcaption {
+      font-family: 'GreycliffCF', Arial;
+      font-weight: 400;
+      font-size: var(--step-1);
+      line-height: 1.75em;
+      color: grey;
+      font-size: var(--step--1);
+      text-align: center;
+    }
+  }
+
+}
+
+.page-template a, .post-template a {
+  color: #00C764;
+  color: color(display-p3 0 0.796 0.4 / 1); /* https://p3colorpicker.cool */
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.f-step--2 {
+  font-size: var(--step--2);
+}
+
+.f-step--1 {
+  font-size: var(--step--1);
+}
+
+.f-step-0 {
+  font-size: var(--step-0);
+}
+
+.f-step-1 {
+  font-size: var(--step-1);
+}
+
+.f-step-2 {
+  font-size: var(--step-2);
+}
+
+.f-step-3 {
+  font-size: var(--step-3);
+}
+
+.f-step-4 {
+  font-size: var(--step-4);
+}
+
+.f-step-5 {
+  font-size: var(--step-5);
+}

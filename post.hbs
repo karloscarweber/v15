@@ -5,20 +5,24 @@ into the {body} of the default.hbs template --}}
   {{> "site-nav"}}
 
   {{#post}}
-      <article class="{{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+      <article class="layout-centered post-container {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
         <h1>{{title}}</h1>
 
-          <span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>,
-          <span>Tags: {{#if tags}}
-              {{#foreach tags}}<a href="{{url}}" title={{name}} class="tag tag-{{id}} {{slug}}">{{name}}</a> {{/foreach}}
-            {{/if}}</span>
+        {{#if feature_image}}
+          <img  src="{{feature_image}}" alt="">
+        {{/if}}
 
-          {{#if feature_image}}
-            <img  src="{{feature_image}}" alt="">
-          {{/if}}
+        <p class="f-step--1"><span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>, by {{authors separator=", "}},<br>
+        <span>Tags: {{#if tags}}
+            {{#foreach tags}}<a href="{{url}}" title={{name}} class="tag tag-{{id}} {{slug}}">{{name}}</a> {{/foreach}}
+          {{/if}}</span></p>
 
-        {{content}}
+        <hr>
+
+        <div class="content">
+          {{content}}
+        </div>
 
       </article>
   {{/post}}

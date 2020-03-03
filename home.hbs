@@ -2,19 +2,23 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-  {{#if @blog.navigation}}
-      {{navigation}}
-  {{/if}}
+  <div class="layout-centered post-container page-template">
+    {{#if @blog.navigation}}
+        {{navigation}}
+    {{/if}}
 
-  <p>Hi I’m Karl.</p>
+    <div class="construction-box content">
+      <p>Hi I’m Karl.</p>
 
-  <p>My blog is currently under construction. I just started it, and I’m going to be redoing the whole damn thing in public, like a few other folks. Please follow along with the progress on <a href="/posts/redesign/">this page</a>. Where I will be blogging about it.</p>
+      <p>My blog is currently under construction. I just started it, and I’m going to be redoing the whole damn thing in public, like a few other folks. Please follow along with the progress on <a href="/posts/redesign/">this page</a>. Where I will be blogging about it.</p>
 
-  <p>I design and develop my own apps and websites. I’m an open source developer at a financial tech company. I have a Blog. I also write this book, Swift Foundations that teaches Swift to beginners.</p>
+      <p>I design and develop my own apps and websites. I’m an open source developer at a financial tech company. I have a Blog. I also write this book, Swift Foundations, that teaches Swift to beginners.</p>
+    </div>
 
-  <em><h1 class="header-text large green">Stories</h1></em>
-  {{#foreach posts}}
+    <em><h1 class="header-text large green">Stories</h1></em>
+    {{#foreach posts}}
 
-    {{> "post-card"}}
+      {{> "post-card"}}
 
-  {{/foreach}}
+    {{/foreach}}
+  </div>

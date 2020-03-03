@@ -3,20 +3,20 @@
 into the {body} of the default.hbs template --}}
 
 {{> "site-nav"}}
-    {{#post}}
-    <article class="{{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+  {{#post}}
+  <article class="layout-centered {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-      {{#if feature_image}}
-      <img src="{{feature_image}}" alt="">
-      {{/if}}
+    <h1>{{title}}</h1>
 
-      <h1>{{title}}</h1>
+    {{#if feature_image}}
+      <img src="{{feature_image}}" alt="" class="feature_image">
+    {{/if}}
 
+    <div class="content">
       {{content}}
-
-    </article>
-    {{/post}}
-
+    </div>
+  </article>
+  {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 <!--

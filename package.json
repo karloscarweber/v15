@@ -54,6 +54,7 @@
     "posts_per_page": 20
   },
   "dependencies": {
+    "bulma": "^0.8.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.1"
   }

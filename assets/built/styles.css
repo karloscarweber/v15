@@ -34,7 +34,8 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5; }
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
@@ -69,12 +70,433 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important; } }
 
+/* Bulma imports */
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+/**/
+/* Our utilities */
+/* flexbox columns, for... something I guess? */
+/* Built in layouts */
+/* Column based layouts for kicks and giggles */
+/* Simple Centered layout */
+.layout-centered {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1140px;
+  padding-left: var(--size-plus-huge);
+  padding-right: var(--size-plus-huge);
+  padding-top: var(--size-huge);
+  font-size: inherit;
+  box-sizing: border-box;
+  overflow: hidden; }
+  .layout-centered.narrow {
+    max-width: 960px; }
+  .layout-centered.wide {
+    max-width: 1600px; }
+
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1140;
+  --fluid-min-size: 16;
+  --fluid-max-size: 20;
+  --fluid-min-ratio: 1.25;
+  --fluid-max-ratio: 1.34;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+      ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+  ); }
+
+@media screen and (min-width: 1140px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px); } }
+
+/* This basically interpolates the size of stuff between 2 sizes, and between
+two screen widths. */
+:root {
+  --fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+  --fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+  /* 10.24 - 11.14 */
+  --fluid-min-scale--2: var(--fluid-min-scale--1) * var(--fluid-min-ratio) * var(--fluid-min-negative);
+  --fluid-max-scale--2: var(--fluid-max-scale--1) * var(--fluid-max-ratio) * var(--fluid-max-negative);
+  --fluid-min-size--2: (var(--fluid-min-size) * var(--fluid-min-scale--2)) / 16;
+  --fluid-max-size--2: (var(--fluid-max-size) * var(--fluid-max-scale--2)) / 16;
+  --step--2: calc(((var(--fluid-min-size--2) * 1rem) + (var(--fluid-max-size--2) - var(--fluid-min-size--2)) * var(--fluid-bp)));
+  /* 12.80 - 14.93 */
+  --fluid-min-scale--1: var(--fluid-min-ratio) * var(--fluid-min-negative);
+  --fluid-max-scale--1: var(--fluid-max-ratio) * var(--fluid-max-negative);
+  --fluid-min-size--1: (var(--fluid-min-size) * var(--fluid-min-scale--1)) / 16;
+  --fluid-max-size--1: (var(--fluid-max-size) * var(--fluid-max-scale--1)) / 16;
+  --step--1: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
+  /* 16 - 20 */
+  --fluid-min-scale-0: var(--fluid-min-ratio);
+  --fluid-max-scale-0: var(--fluid-max-ratio);
+  --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+  --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+  --step-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+  /* 20 - 26.8 */
+  --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+  --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+  --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+  --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+  --step-1: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+  /* 25 - 35.91 */
+  --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+  --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+  --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+  --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+  --step-2: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+  /* 31.25 - 48.12 */
+  --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+  --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+  --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+  --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+  --step-3: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+  /* 39.06 - 64.48 */
+  --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+  --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+  --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+  --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+  --step-4: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+  /* 48.83 - 86.41 */
+  --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+  --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+  --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+  --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+  --step-5: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+  --size-micro-min-size: calc(4 / 16);
+  --size-micro-max-size: calc(8 / 16);
+  --size-micro: calc(((var(--size-micro-min-size) * 1rem) + (var(--size-micro-max-size) - var(--size-micro-min-size)) * var(--fluid-bp)));
+  --size-small-min-size: calc(6 / 16);
+  --size-small-max-size: calc(12 / 16);
+  --size-small: calc(((var(--size-small-min-size) * 1rem) + (var(--size-small-max-size) - var(--size-small-min-size)) * var(--fluid-bp)));
+  --size-normal-min-size: calc(8 / 16);
+  --size-normal-max-size: calc(16 / 16);
+  --size-normal: calc(((var(--size-normal-min-size) * 1rem) + (var(--size-normal-max-size) - var(--size-normal-min-size)) * var(--fluid-bp)));
+  --size-plus-min-size: calc(12 / 16);
+  --size-plus-max-size: calc(24 / 16);
+  --size-plus: calc(((var(--size-plus-min-size) * 1rem) + (var(--size-plus-max-size) - var(--size-plus-min-size)) * var(--fluid-bp)));
+  --size-medium-min-size: calc(16 / 16);
+  --size-medium-max-size: calc(32 / 16);
+  --size-medium: calc(((var(--size-medium-min-size) * 1rem) + (var(--size-medium-max-size) - var(--size-medium-min-size)) * var(--fluid-bp)));
+  --size-medium-plus-min-size: calc(24 / 16);
+  --size-medium-plus-max-size: calc(48 / 16);
+  --size-medium-plus: calc(((var(--size-medium-plus-min-size) * 1rem) + (var(--size-medium-plus-max-size) - var(--size-medium-plus-min-size)) * var(--fluid-bp)));
+  --size-large-min-size: calc(32 / 16);
+  --size-large-max-size: calc(64 / 16);
+  --size-large: calc(((var(--size-large-min-size) * 1rem) + (var(--size-large-max-size) - var(--size-large-min-size)) * var(--fluid-bp)));
+  --size-huge-min-size: calc(64 / 16);
+  --size-huge-max-size: calc(128 / 16);
+  --size-huge: calc(((var(--size-huge-min-size) * 1rem) + (var(--size-huge-max-size) - var(--size-huge-min-size)) * var(--fluid-bp)));
+  --size-biggest-min-size: calc(128 / 16);
+  --size-biggest-max-size: calc(256 / 16);
+  --size-biggest: calc(((var(--size-biggest-min-size) * 1rem) + (var(--size-biggest-max-size) - var(--size-biggest-min-size)) * var(--fluid-bp)));
+  /* 24 - 128 */
+  --size-plus-huge-min-size: calc(24 / 16);
+  --size-plus-huge-max-size: calc(128 / 16);
+  --size-plus-huge: calc(((var(--size-plus-huge-min-size) * 1rem) + (var(--size-plus-huge-max-size) - var(--size-plus-huge-min-size)) * var(--fluid-bp))); }
+
+/* TypeFace */
 /*
-  Styles required by ghost.
+  400 regular
+  500 medium
+  600 demi-bold
+  700 bold
+  900 heavy
 */
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-Regular.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-Regular.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-Regular.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-Regular.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-RegularOblique.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-RegularOblique.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-RegularOblique.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-RegularOblique.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-RegularOblique.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-Medium.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-Medium.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-Medium.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-Medium.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-Medium.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-MediumOblique.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-MediumOblique.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-MediumOblique.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-MediumOblique.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-MediumOblique.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-DemiBold.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-DemiBold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-DemiBold.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-DemiBold.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-DemiBold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-DemiBoldOblique.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-DemiBoldOblique.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-DemiBoldOblique.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-DemiBoldOblique.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-DemiBoldOblique.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-Bold.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-Bold.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-Bold.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-Bold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-BoldOblique.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-BoldOblique.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-BoldOblique.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-BoldOblique.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-BoldOblique.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 700;
+  font-style: italic; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-Heavy.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-Heavy.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-Heavy.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-Heavy.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-Heavy.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GreycliffCF";
+  src: url("/assets/fonts/greycliff/GreycliffCF-HeavyOblique.eot");
+  /* IE9 Compat Mode */
+  src: url("/assets/fonts/greycliff/GreycliffCF-HeavyOblique.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/greycliff/GreycliffCF-HeavyOblique.woff2") format("woff2"), url("/assets/fonts/greycliff/GreycliffCF-HeavyOblique.woff") format("woff"), url("/assets/fonts/greycliff/GreycliffCF-HeavyOblique.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 900;
+  font-style: italic; }
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "PlayfairDisplay-Black";
+  src: url("/assets/fonts/playfair/PlayfairDisplay-Black.eot");
+  /* IE9 Compat Modes */
+  src: url("/assets/fonts/playfair/PlayfairDisplay-Black.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/playfair/PlayfairDisplay-Black.otf") format("opentype"), url("/assets/fonts/playfair/PlayfairDisplay-Black.svg") format("svg"), url("/assets/fonts/playfair/PlayfairDisplay-Black.ttf") format("truetype"), url("/assets/fonts/playfair/PlayfairDisplay-Black.woff") format("woff"), url("/assets/fonts/playfair/PlayfairDisplay-Black.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal; }
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "PlayfairDisplay-Black";
+  src: url("/assets/fonts/playfair/PlayfairDisplay-BlackItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("/assets/fonts/playfair/PlayfairDisplay-BlackItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/playfair/PlayfairDisplay-BlackItalic.otf") format("opentype"), url("/assets/fonts/playfair/PlayfairDisplay-BlackItalic.svg") format("svg"), url("/assets/fonts/playfair/PlayfairDisplay-BlackItalic.ttf") format("truetype"), url("/assets/fonts/playfair/PlayfairDisplay-BlackItalic.woff") format("woff"), url("/assets/fonts/playfair/PlayfairDisplay-BlackItalic.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: italic; }
+
+.typeface-greycliffcf {
+  font-family: "GreycliffCF";
+  font-weight: 400;
+  color: #111111; }
+
+/* wysywig type stuff. Default styles that are pushed out through koenig. */
+.page-template h1 {
+  font-family: 'PlayfairDisplay-Black', Arial;
+  font-weight: 900;
+  font-size: var(--step-3);
+  line-height: 1em;
+  margin-bottom: 1em; }
+
+.post-template h1 {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 700;
+  font-size: var(--step-5);
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: #00C764;
+  color: color(display-p3 0 0.796 0.4/1);
+  /* https://p3colorpicker.cool */
+  letter-spacing: -0.2rem; }
+
+.page-template .content > h2, .post-template .content > h2 {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 700;
+  font-size: var(--step-2);
+  line-height: 1.25em;
+  margin-bottom: 0.5em;
+  margin-top: 2em; }
+
+.page-template .content > h3, .post-template .content > h3 {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 700;
+  font-size: var(--step-1);
+  line-height: 1.33em;
+  margin-bottom: 0.5em;
+  margin-top: 2em; }
+
+.page-template .content > blockquote, .post-template .content > blockquote {
+  font-family: 'PlayfairDisplay-Black', Arial;
+  font-weight: 400;
+  font-size: var(--step-2);
+  line-height: 1.33em;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  font-style: italic;
+  margin-left: -10%;
+  margin-right: -10%;
+  text-align: center; }
+
+.page-template .content > h2:first-child + p, .page-template .content > h3:first-child + p, .page-template .content > p:first-child, .post-template .content > h2:first-child + p, .post-template .content > h3:first-child + p, .post-template .content > p:first-child {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 600;
+  font-size: var(--step-1);
+  line-height: 1.5em;
+  margin-bottom: 1em; }
+
+.page-template .content > p, .post-template .content > p {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 500;
+  font-size: var(--step-0);
+  line-height: 1.5em;
+  margin-bottom: 1.5em; }
+
+.page-template .content > ul, .page-template .content > ol, .post-template .content > ul, .post-template .content > ol {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 500;
+  font-size: var(--step-0);
+  line-height: 1.25em;
+  margin-bottom: 1.5em; }
+  .page-template .content > ul li, .page-template .content > ol li, .post-template .content > ul li, .post-template .content > ol li {
+    margin-bottom: 1em; }
+
+.page-template .content > figure.kg-image-card, .post-template .content > figure.kg-image-card {
+  max-width: 120%;
+  margin-left: -10%;
+  margin-right: -10%;
+  margin-bottom: var(--size-large);
+  margin-top: var(--size-large); }
+  .page-template .content > figure.kg-image-card figcaption, .post-template .content > figure.kg-image-card figcaption {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 400;
+    font-size: var(--step-1);
+    line-height: 1.75em;
+    color: grey;
+    font-size: var(--step--1);
+    text-align: center; }
+
+.page-template a, .post-template a {
+  color: #00C764;
+  color: color(display-p3 0 0.796 0.4/1);
+  /* https://p3colorpicker.cool */ }
+  .page-template a:hover, .post-template a:hover {
+    text-decoration: none; }
+
+.f-step--2 {
+  font-size: var(--step--2); }
+
+.f-step--1 {
+  font-size: var(--step--1); }
+
+.f-step-0 {
+  font-size: var(--step-0); }
+
+.f-step-1 {
+  font-size: var(--step-1); }
+
+.f-step-2 {
+  font-size: var(--step-2); }
+
+.f-step-3 {
+  font-size: var(--step-3); }
+
+.f-step-4 {
+  font-size: var(--step-4); }
+
+.f-step-5 {
+  font-size: var(--step-5); }
+
+/* Koenig styles to support */
+/* @import "./koenig"; */
 .style {
   display: block; }
+
+.construction-box {
+  padding: 10px;
+  border: 14px solid orange;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  margin-top: 1em; }
 
 /*
   Styles required by ghost.
 */
+.kg-width-wide {
+  font-family: Arial; }
+
+.kg-width-full {
+  font-family: Arial; }
+
+.kg-gallery-container {
+  font-family: Arial; }
+
+.kg-gallery-row {
+  font-family: Arial; }
+
+.kg-gallery-image {
+  font-family: Arial; }
+
+.kg-bookmark-card {
+  font-family: Arial; }
+
+.kg-bookmark-container {
+  font-family: Arial; }
+
+.kg-bookmark-content {
+  font-family: Arial; }
+
+.kg-bookmark-title {
+  font-family: Arial; }
+
+.kg-bookmark-description {
+  font-family: Arial; }
+
+.kg-bookmark-metadata {
+  font-family: Arial; }
+
+.kg-bookmark-icon {
+  font-family: Arial; }
+
+.kg-bookmark-author {
+  font-family: Arial; }
+
+.kg-bookmark-publisher {
+  font-family: Arial; }
+
+.kg-bookmark-thumbnail {
+  font-family: Arial; }
