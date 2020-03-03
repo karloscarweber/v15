@@ -457,46 +457,92 @@ two screen widths. */
   Styles required by ghost.
 */
 .kg-width-wide {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-width-full {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-gallery-container {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-gallery-row {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-gallery-image {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-card {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-container {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-content {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-title {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-description {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-metadata {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-icon {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-author {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-publisher {
-  font-family: Arial; }
+  font-family: arial; }
 
 .kg-bookmark-thumbnail {
-  font-family: Arial; }
+  font-family: arial; }
+
+/* Let's style just the stuff that goes into a post and a page from the koenig editor thingy */
+body {
+  font-size: var(--step-0); }
+
+.koenig-zone {
+  padding-right: var(--step-1);
+  padding-left: var(--step-1);
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  max-width: 780px; }
+
+.koenig-zone > h1 {
+  font-size: var(--step-5); }
+
+.koenig-zone > h2 {
+  font-size: var(--step-4); }
+
+.koenig-zone > h3 {
+  font-size: var(--step-3); }
+
+.koenig-zone > blockquote {
+  font-size: var(--step-2); }
+
+.koenig-zone > p:first-of-type {
+  font-size: var(--step-1); }
+
+.koenig-zone > p {
+  font-size: var(--step-0); }
+
+.additive-spacing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+.insulate {
+  padding-bottom: var(--step-5);
+  padding-top: var(--step-5); }

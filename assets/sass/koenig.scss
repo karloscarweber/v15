@@ -2,18 +2,78 @@
   Styles required by ghost.
 */
 
-.kg-width-wide { font-family: Arial; }
-.kg-width-full { font-family: Arial; }
-.kg-gallery-container { font-family: Arial; }
-.kg-gallery-row { font-family: Arial; }
-.kg-gallery-image { font-family: Arial; }
-.kg-bookmark-card { font-family: Arial; }
-.kg-bookmark-container { font-family: Arial; }
-.kg-bookmark-content { font-family: Arial; }
-.kg-bookmark-title { font-family: Arial; }
-.kg-bookmark-description { font-family: Arial; }
-.kg-bookmark-metadata { font-family: Arial; }
-.kg-bookmark-icon { font-family: Arial; }
-.kg-bookmark-author { font-family: Arial; }
-.kg-bookmark-publisher { font-family: Arial; }
-.kg-bookmark-thumbnail { font-family: Arial; }
+.kg-width-wide {
+  font-family: arial;
+}
+.kg-width-full {
+  font-family: arial;
+}
+.kg-gallery-container {
+  font-family: arial;
+}
+.kg-gallery-row {
+  font-family: arial;
+}
+.kg-gallery-image {
+  font-family: arial;
+}
+.kg-bookmark-card {
+  font-family: arial;
+}
+.kg-bookmark-container {
+  font-family: arial;
+}
+.kg-bookmark-content {
+  font-family: arial;
+}
+.kg-bookmark-title {
+  font-family: arial;
+}
+.kg-bookmark-description {
+  font-family: arial;
+}
+.kg-bookmark-metadata {
+  font-family: arial;
+}
+.kg-bookmark-icon {
+  font-family: arial;
+}
+.kg-bookmark-author {
+  font-family: arial;
+}
+.kg-bookmark-publisher {
+  font-family: arial;
+}
+.kg-bookmark-thumbnail {
+  font-family: arial;
+}
+
+/* Let's style just the stuff that goes into a post and a page from the koenig editor thingy */
+body {
+  font-size:  var(--step-0);
+}
+
+.koenig-zone {
+  padding-right: var(--step-1);
+  padding-left: var(--step-1);
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  max-width: 780px;
+}
+.koenig-zone > h1 { font-size: var(--step-5); }
+.koenig-zone > h2 { font-size: var(--step-4); }
+.koenig-zone > h3 { font-size: var(--step-3); }
+.koenig-zone > blockquote { font-size: var(--step-2); }
+.koenig-zone > p:first-of-type { font-size: var(--step-1); }
+.koenig-zone > p { font-size: var(--step-0); }
+
+.additive-spacing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.insulate {
+  padding-bottom: var(--step-5);
+  padding-top: var(--step-5);
+}
