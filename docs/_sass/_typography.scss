@@ -1,0 +1,105 @@
+/* This is our sass */
+.current {
+  color: green;
+}
+
+/* content block represents, basically, 90% of the theme. It styles wysywig
+output. But most of our output will be markdown based. */
+.content {
+
+  h1 {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-5);
+    line-height: 1em;
+    margin-bottom: 1em;
+    color: var(--black1);
+    letter-spacing: -0.2rem;
+  }
+
+  & > h2 {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-2);
+    line-height: 1.25em;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+  }
+
+  & > h3 {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-1);
+    line-height: 1.33em;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+  }
+
+  & > blockquote {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    line-height: 1.33em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    font-style: italic;
+    margin-left: -10%;
+    margin-right: -10%;
+    text-align: center;
+  }
+
+  & > h2:first-child + p, & > h3:first-child + p, & > p:first-child {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: var(--step-1);
+    line-height: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  & > p {
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: var(--step-0);
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  & > ul, & > ol {
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: var(--step-0);
+    line-height: 1.25em;
+    margin-bottom: 1.5em;
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+
+  & > figure.kg-image-card {
+    max-width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+    margin-bottom: var(--size-large);;
+    margin-top: var(--size-large);
+
+    figcaption {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      font-size: var(--step-1);
+      line-height: 1.75em;
+      color: grey;
+      font-size: var(--step--1);
+      text-align: center;
+    }
+  }
+
+}
+
+.page-template a, .post-template a {
+  color: #00C764;
+  color: color(display-p3 0 0.781 0.392 / 1); /* https://p3colorpicker.cool */
+  &:hover {
+    text-decoration: none;
+  }
+}

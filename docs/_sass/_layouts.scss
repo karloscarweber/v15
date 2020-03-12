@@ -1,0 +1,25 @@
+/* Layouts */
+
+
+/* Simple Centered layout */
+.layout-centered {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width:100%;
+  max-width: 1140px;
+  padding-left: var(--size-plus-huge);
+  padding-right: var(--size-plus-huge);
+  padding-top: var(--size-huge);
+  font-size: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &.narrow {
+    max-width: 960px;
+  }
+
+  &.wide {
+    max-width: 1600px;
+  }
+}

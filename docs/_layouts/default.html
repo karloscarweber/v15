@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    {% include menu.html %}
+
+    <section class="layout-centered">
+      <div class="content">
+        {{content}}
+      </div>
+    </section>
+
+    <script type="text/javascript" src="assets/js/clipboard.min.js"></script>
+  </body>
+</html>
