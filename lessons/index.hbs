@@ -1,17 +1,19 @@
 {{!< ../default}}
 
-{{> "site-nav"}}
+<div class="layout-centered post-container page-template">
+  {{#if @blog.navigation}}
+      {{navigation}}
+  {{/if}}
 
-{{#each posts visibility="all"}}
+  {{#each posts visibility="all"}}
 
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-    {{> "lesson-card"}}
+      {{!-- The tag below includes the markup for each post - partials/lesson-card.hbs --}}
+      {{> "lesson-card"}}
 
-{{/each}}
+  {{/each}}
 
-{{> site-header}}
+  {{#contentFor "scripts"}}
 
+  {{/contentFor}}
 
-{{#contentFor "scripts"}}
-
-{{/contentFor}}
+</div>

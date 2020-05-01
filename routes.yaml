@@ -8,14 +8,14 @@ routes:
     filter: tag:swift_foundations
 
 collections:
+  /lessons/:
+    permalink: /lessons/{slug}/
+    template: lessons/index
+    filter: primary_tag:lesson
   /:
     permalink: /posts/{slug}/
     template:
       - home
-  /lessons/:
-    permalink: /lessons/{slug}/
-    template: /lessons/index
-    filter: primary_tag:lesson
 
 taxonomies:
   tag: /tag/{slug}/

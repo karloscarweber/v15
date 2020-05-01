@@ -15,8 +15,11 @@
 @import "./utils/_typeface";
 @import "./utils/_typography";
 
+/* Components */
+@import "./components/menus";
+
 /* Koenig styles to support */
-/* @import "./koenig"; */
+@import "./koenig";
 
 .style {
   display: block;

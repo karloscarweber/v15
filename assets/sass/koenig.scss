@@ -1,21 +1,47 @@
 /*
   Styles required by ghost.
 */
-
 .kg-width-wide {
   font-family: arial;
 }
 .kg-width-full {
   font-family: arial;
 }
+.kg-image-card,
+.kg-gallery-card {
+  margin: 0 0 1.5em;
+}
+.kg-image-card figcaption,
+.kg-gallery-card figcaption {
+  margin: -1.0em 0 1.5em;
+}
 .kg-gallery-container {
-  font-family: arial;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em auto;
+  width: 90vw;
+  display: inline-block;
+  margin-left: 50%;
+  margin-right: -20%;
+  transform: translateX(-50%);
+  max-width: 800px;
 }
 .kg-gallery-row {
-  font-family: arial;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.kg-gallery-image {
-  font-family: arial;
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75em;
 }
 .kg-bookmark-card {
   font-family: arial;

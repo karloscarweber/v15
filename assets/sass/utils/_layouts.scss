@@ -139,23 +139,31 @@ gutters on outside
 */
 .gl_lesson {
   display: grid;
-  max-width: 1,184px;
+  max-width: 1184px;
   grid-row:auto auto auto auto;
   grid-column-gap:1em;
   grid-row-gap: 0.5em;
   grid-template-columns: repeat(4, 1fr);
 
   grid-template-areas:
-  ". header header header header ."
-  ". content content content content  ."
-  ". footer footer footer footer ."
+  "header header header header"
+  "sidebar sidebar sidebar sidebar"
+  "content content content content "
+  "footer footer footer footer"
   ;
-
+  padding-left: 1em;
+  padding-right: 1em;
 }
 .gl_lesson__header {
   display: block;
   width: auto;
   grid-area: header;
+}
+
+.gl_lesson__sidebar {
+  display: block;
+  width: auto;
+  grid-area: sidebar;
 }
 
 .gl_lesson__content_wrapper {
@@ -175,9 +183,9 @@ gutters on outside
     grid-template-columns: repeat(10, 1fr);
     grid-column-gap:2em;
     grid-template-areas:
-    ". header header header header header header header header ."
-    ". content content content content content content content content ."
-    ". footer footer footer footer footer footer footer footer ."
+    "header header header header header header header header header header"
+    "sidebar sidebar sidebar content content content content content content content"
+    "footer footer footer footer footer footer footer footer footer footer"
     ;
   }
 }
@@ -187,8 +195,8 @@ gutters on outside
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap:2em;
     grid-template-areas:
-    ". . header header header header header header header header . ."
-    ". . content content content content content content content content . ."
+    "header header header header header header header header header header header header"
+    "sidebar sidebar sidebar content content content content content content content content content"
     "footer footer footer footer footer footer footer footer footer footer footer footer"
     ;
   }
