@@ -8,13 +8,13 @@
   position: relative;
   margin: 0 auto;
   width:100%;
-  max-width: 1140px;
+  max-width: 1152px;
   padding-left: var(--size-plus-huge);
   padding-right: var(--size-plus-huge);
   padding-top: var(--size-huge);
   font-size: inherit;
   box-sizing: border-box;
-  overflow: hidden;
+  // overflow: hidden;
 
   &.narrow {
     max-width: 960px;
@@ -22,5 +22,174 @@
 
   &.wide {
     max-width: 1600px;
+  }
+}
+
+
+/* CSS Grid layouts */
+
+/* sidebar with hanging text */
+.gw_sandwhich_sidebar {
+  display: grid;
+  max-width: 1600px;
+  grid-column: minmax(120px, 240px) auto;
+  grid-row:auto auto auto;
+  grid-column-gap:1em;
+  grid-row-gap: 0.5em;
+
+  grid-template-columns: minmax(180px, auto) auto;
+
+  grid-template-areas:
+  "header header header"
+  "sidebar content content"
+  ". footer footer"
+  ;
+
+}
+.gw_sandwhich_sidebar__header {
+  display: block;
+  width: auto;
+  grid-area: header;
+}
+.gw_sandwhich_sidebar__sidebar {
+  display: block;
+  width: auto;
+  grid-area: sidebar;
+  box-sizing: border-box;
+  padding-left: var(--step-0);
+  padding-right: var(--step-0);
+}
+.gw_sandwhich_sidebar__content_wrapper {
+  display: block;
+  width: auto;
+  grid-area: content;
+}
+
+@media screen and (max-width: 640px) {
+  .gw_sandwhich_sidebar {
+    grid-template-areas:
+    "header"
+    "sidebar"
+    "content"
+    "footer"
+    ;
+  }
+  .gw_sandwhich_sidebar__sidebar {
+    padding-left: var(--size-large);
+    padding-right: var(--size-large);
+  }
+}
+
+
+
+/* Story Layout */
+/*
+12 columns
+64px wide
+32px gutters
+gutters on outside
+
+*/
+.gl_story {
+  display: grid;
+  width:85vw;
+  max-width: 560px;
+  grid-row:auto auto auto auto;
+  grid-column-gap:1em;
+  grid-row-gap: 0.5em;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin: 0 auto;
+
+  padding-top: var(--size-huge);
+
+  grid-template-areas:
+  "header header header header"
+  "content content content content "
+  "footer footer footer footer"
+  ;
+
+}
+.gl_story__header {
+  display: block;
+  width: auto;
+  grid-area: header;
+}
+
+.gl_story__content_wrapper {
+  display: block;
+  width: auto;
+  grid-area: content;
+}
+
+.gl_story__footer {
+  display: block;
+  width: auto;
+  grid-area: footer;
+}
+
+
+/* Course Layout */
+/*
+12 columns
+64px wide
+32px gutters
+gutters on outside
+
+*/
+.gl_lesson {
+  display: grid;
+  max-width: 1,184px;
+  grid-row:auto auto auto auto;
+  grid-column-gap:1em;
+  grid-row-gap: 0.5em;
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-areas:
+  ". header header header header ."
+  ". content content content content  ."
+  ". footer footer footer footer ."
+  ;
+
+}
+.gl_lesson__header {
+  display: block;
+  width: auto;
+  grid-area: header;
+}
+
+.gl_lesson__content_wrapper {
+  display: block;
+  width: auto;
+  grid-area: content;
+}
+
+.gl_lesson__footer {
+  display: block;
+  width: auto;
+  grid-area: footer;
+}
+
+@include break(medium) {
+  .gl_lesson {
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap:2em;
+    grid-template-areas:
+    ". header header header header header header header header ."
+    ". content content content content content content content content ."
+    ". footer footer footer footer footer footer footer footer ."
+    ;
+  }
+}
+
+@include break(large) {
+  .gl_lesson {
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap:2em;
+    grid-template-areas:
+    ". . header header header header header header header header . ."
+    ". . content content content content content content content content . ."
+    "footer footer footer footer footer footer footer footer footer footer footer footer"
+    ;
   }
 }

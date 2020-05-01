@@ -1,8 +1,7 @@
 /* This is our sass */
-.current {
-  color: green;
+body {
+  font-size: var(--step-0);
 }
-
 /* content block represents, basically, 90% of the theme. It styles wysywig
 output. But most of our output will be markdown based. */
 .content {
@@ -13,7 +12,8 @@ output. But most of our output will be markdown based. */
     font-size: var(--step-5);
     line-height: 1em;
     margin-bottom: 1em;
-    color: var(--black1);
+    margin-top: 1em;
+    color: var(--color-black1);
     letter-spacing: -0.2rem;
   }
 
@@ -62,6 +62,13 @@ output. But most of our output will be markdown based. */
     font-size: var(--step-0);
     line-height: 1.5em;
     margin-bottom: 1.5em;
+
+    & > code {
+      padding: 0.1em 0.3em;
+      background: #303030;
+      color: #E4830E;
+      border-radius: 4px;
+    }
   }
 
   & > ul, & > ol {
@@ -76,10 +83,8 @@ output. But most of our output will be markdown based. */
     }
   }
 
-  & > figure.kg-image-card {
-    max-width: 120%;
-    margin-left: -10%;
-    margin-right: -10%;
+  & > figure {
+    max-width: 100%;
     margin-bottom: var(--size-large);;
     margin-top: var(--size-large);
 
@@ -102,4 +107,36 @@ output. But most of our output will be markdown based. */
   &:hover {
     text-decoration: none;
   }
+}
+
+/* Sidebar typography */
+
+.sidebar {
+
+  & > h3 {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-1);
+    line-height: 1.33em;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+  }
+
+  & > p {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: var(--step--1);
+    line-height: 1.25em;
+    margin-top:0.25em;
+    margin-bottom:0.25em;
+
+    & > a {
+      color: var(--color-black3);
+      text-decoration: none;
+      &:hover {
+        color: var(--color-blue1);
+      }
+    }
+  }
+
 }

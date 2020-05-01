@@ -1,0 +1,200 @@
+[{
+    "from": "/a-new-blog",
+    "to": "/posts/a-new-blog",
+    "permananent": true
+},
+{
+    "from": "/git-troubles",
+    "to": "/posts/git-troubles",
+    "permananent": true
+},
+{
+    "from": "/documentation-matters",
+    "to": "/posts/documentation-matters",
+    "permananent": true
+},
+{
+    "from": "/i-love-pixels",
+    "to": "/posts/i-love-pixels",
+    "permananent": true
+},
+{
+    "from": "/getting-fired",
+    "to": "/posts/getting-fired",
+    "permananent": true
+},
+{
+    "from": "/the-fizz-buzz-problem",
+    "to": "/posts/the-fizz-buzz-problem",
+    "permananent": true
+},
+{
+    "from": "/im-still-in-love-with-the-web",
+    "to": "/posts/im-still-in-love-with-the-web",
+    "permananent": true
+},
+{
+    "from": "/another-new-blog",
+    "to": "/posts/another-new-blog",
+    "permananent": true
+},
+{
+    "from": "/writing-two-books",
+    "to": "/posts/writing-two-books",
+    "permananent": true
+},
+{
+    "from": "/sit-at-a-typewriter-and-bleed",
+    "to": "/posts/sit-at-a-typewriter-and-bleed",
+    "permananent": true
+},
+{
+    "from": "/document-ready-for-jquery",
+    "to": "/posts/document-ready-for-jquery",
+    "permananent": true
+},
+{
+    "from": "/organizing-your-time",
+    "to": "/posts/organizing-your-time",
+    "permananent": true
+},
+{
+    "from": "/what-is-a-programmer",
+    "to": "/posts/what-is-a-programmer",
+    "permananent": true
+},
+{
+    "from": "/2014-new-years-resolutions",
+    "to": "/posts/2014-new-years-resolutions",
+    "permananent": true
+},
+{
+    "from": "/saving-time",
+    "to": "/posts/saving-time",
+    "permananent": true
+},
+{
+    "from": "/wwdc-2014",
+    "to": "/posts/wwdc-2014",
+    "permananent": true
+},
+{
+    "from": "/hows-the-book-going",
+    "to": "/posts/hows-the-book-going",
+    "permananent": true
+},
+{
+    "from": "/oblivicons",
+    "to": "/posts/oblivicons",
+    "permananent": true
+},
+{
+    "from": "/interviews-for-the-book",
+    "to": "/posts/interviews-for-the-book",
+    "permananent": true
+},
+{
+    "from": "/how-to-make-a-realm-model-in-swift",
+    "to": "/posts/how-to-make-a-realm-model-in-swift",
+    "permananent": true
+},
+{
+    "from": "/on-writing-things",
+    "to": "/posts/on-writing-things",
+    "permananent": true
+},
+{
+    "from": "/48-hour-book-jam",
+    "to": "/posts/48-hour-book-jam",
+    "permananent": true
+},
+{
+    "from": "/micro-blogs-are-already-here",
+    "to": "/posts/micro-blogs-are-already-here",
+    "permananent": true
+},
+{
+    "from": "/lessons-learned-writing-swift-foundations",
+    "to": "/posts/lessons-learned-writing-swift-foundations",
+    "permananent": true
+},
+{
+    "from": "/hitting-reboot",
+    "to": "/posts/hitting-reboot",
+    "permananent": true
+},
+{
+    "from": "/episode002-joelle-steiniger",
+    "to": "/posts/episode002-joelle-steiniger",
+    "permananent": true
+},
+{
+    "from": "/diminishing-returns-of-working-late",
+    "to": "/posts/diminishing-returns-of-working-late",
+    "permananent": true
+},
+{
+    "from": "/you-need-your-own-space-to-effectively-work-from-home",
+    "to": "/posts/you-need-your-own-space-to-effectively-work-from-home",
+    "permananent": true
+},
+{
+    "from": "/we-need-time-alone-to-think",
+    "to": "/posts/we-need-time-alone-to-think",
+    "permananent": true
+},
+{
+    "from": "/minimum-viable-post",
+    "to": "/posts/minimum-viable-post",
+    "permananent": true
+},
+{
+    "from": "/serving-independent-artists-designers",
+    "to": "/posts/serving-independent-artists-designers",
+    "permananent": true
+},
+{
+    "from": "/protocol-definitions-in-swift",
+    "to": "/posts/protocol-definitions-in-swift",
+    "permananent": true
+},
+{
+    "from": "/the-pulse",
+    "to": "/posts/the-pulse",
+    "permananent": true
+},
+{
+    "from": "/independence-my-plan-for-2018",
+    "to": "/posts/independence-my-plan-for-2018",
+    "permananent": true
+},
+{
+    "from": "/grab-bag-week-1",
+    "to": "/posts/grab-bag-week-1",
+    "permananent": true
+},
+{
+    "from": "/why-everything-i-started-in-the-last-8-years-has-failed",
+    "to": "/posts/why-everything-i-started-in-the-last-8-years-has-failed",
+    "permananent": true
+},
+{
+    "from": "/playbook-marketing-your-freelance-business",
+    "to": "/posts/playbook-marketing-your-freelance-business",
+    "permananent": true
+},
+{
+    "from": "/redesign",
+    "to": "/posts/redesign",
+    "permananent": true
+},
+{
+    "from": "/whats-in-my-head-while-i-redesign",
+    "to": "/posts/whats-in-my-head-while-i-redesign",
+    "permananent": true
+},
+{
+    "from": "/type-scales",
+    "to": "/posts/type-scales",
+    "permananent": true
+}]

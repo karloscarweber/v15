@@ -1,0 +1,27 @@
+/* Media Queries */
+$phone-width: 30rem;/* 30rem = 480px */
+$tablet-width: 48rem;/* 48rem = 768px */
+$laptop-width: 64rem;/* 64rem = 1024px */
+
+@mixin break($point) {
+  @if $point == small {
+    @media screen and (max-width: #{$phone-width}) { /* -s */
+      @content;
+    }
+  }
+  @if $point == not-small {
+    @media screen and (min-width: #{$phone-width}) { /* -ns */
+      @content;
+    }
+  }
+  @else if $point == medium {
+    @media screen and (min-width: #{$phone-width}) and (max-width: #{$laptop-width}) { /* -m */
+      @content;
+    }
+  }
+  @else if $point == large {
+    @media screen and (min-width: #{$laptop-width})  { /* -l */
+      @content;
+    }
+  }
+}

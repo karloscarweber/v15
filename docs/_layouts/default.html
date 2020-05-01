@@ -4,18 +4,32 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-okaidia.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
 
-    {% include menu.html %}
+    <div class="gw_sandwhich_sidebar">
 
-    <section class="layout-centered">
-      <div class="content">
-        {{content}}
+      <div class="header gw_sandwhich_sidebar__header">
+        {% include menu.html %}
       </div>
-    </section>
 
+      <div class="sidebar gw_sandwhich_sidebar__sidebar">
+        {% include sidebar.html %}
+      </div>
+
+      <section class="layout-centered gw_sandwhich_sidebar__content_wrapper">
+        <div class="content">
+          {{content}}
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Code highlighting scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/components/prism-core.min.js"></script>
+  	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
     <script type="text/javascript" src="assets/js/clipboard.min.js"></script>
   </body>
 </html>

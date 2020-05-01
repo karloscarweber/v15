@@ -12,10 +12,29 @@
   font-weight: 700;
   font-size: var(--step-5);
   line-height: 1em;
-  margin-bottom: 1em;
+  margin-bottom: var(--size-medium);
   color: #00C764;
   color: color(display-p3 0 0.781 0.392 / 1); /* https://p3colorpicker.cool */
   letter-spacing: -0.2rem;
+}
+
+/* The text that shows up below the title of the post like the date and tags and stuff. */
+.post_subtext {
+  margin-top: var(--size-normal);
+  margin-bottom: var(--size-normal);
+}
+
+.post-template .date-time, .page-template .date-time {
+  color: #666666;
+}
+
+.feature_image {
+  width: 90vw;
+  display: inline-block;
+  margin-left: 50%;
+  margin-right: -20%;
+  transform: translateX(-50%);
+  max-width: 800px;
 }
 
 .page-template .content, .post-template .content {
@@ -46,17 +65,22 @@
     margin-bottom: 1.5em;
     margin-top: 1.5em;
     font-style: italic;
-    margin-left: -10%;
-    margin-right: -10%;
+    margin-left: -6%;
+    margin-right: -6%;
     text-align: center;
   }
 
-  & > h2:first-child + p, & > h3:first-child + p, & > p:first-child {
+  & > h2:first-child, & > h3:first-child {
     font-family: 'GreycliffCF', Arial;
     font-weight: 600;
     font-size: var(--step-1);
-    line-height: 1.5em;
-    margin-bottom: 1em;
+    line-height: 1.2em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  & > h2:first-child + p, & > h3:first-child + p, & > p:first-child {
+    font-weight: 600;
   }
 
   & > p {
@@ -65,13 +89,14 @@
     font-size: var(--step-0);
     line-height: 1.5em;
     margin-bottom: 1.5em;
+    text-align: justify;
   }
 
   & > ul, & > ol {
     font-family: 'GreycliffCF', Arial;
     font-weight: 500;
     font-size: var(--step-0);
-    line-height: 1.25em;
+    line-height: 1.5em;
     margin-bottom: 1.5em;
 
     li {
@@ -107,34 +132,24 @@
   }
 }
 
-.f-step--2 {
-  font-size: var(--step--2);
-}
+.f-step--2 {font-size: var(--step--2); }
+.f-step--1 {font-size: var(--step--1); }
+.f-step-0 {font-size: var(--step-0); }
+.f-step-1 {font-size: var(--step-1); }
+.f-step-2 {font-size: var(--step-2); }
+.f-step-3 {font-size: var(--step-3); }
+.f-step-4 {font-size: var(--step-4); }
+.f-step-5 {font-size: var(--step-5); }
 
-.f-step--1 {
-  font-size: var(--step--1);
-}
 
-.f-step-0 {
-  font-size: var(--step-0);
-}
 
-.f-step-1 {
-  font-size: var(--step-1);
-}
-
-.f-step-2 {
-  font-size: var(--step-2);
-}
-
-.f-step-3 {
-  font-size: var(--step-3);
-}
-
-.f-step-4 {
-  font-size: var(--step-4);
-}
-
-.f-step-5 {
-  font-size: var(--step-5);
+/* Story layout specific Changes */
+.post-template .gl_story__content_wrapper {
+  h1  {
+    font-size: var(--step-4);
+  }
+  & > img {
+    margin-top: var(--size-medium);
+    margin-bottom: var(--size-medium);
+  }
 }

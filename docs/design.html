@@ -1,0 +1,34 @@
+---
+layout: default
+title: Design
+---
+
+<h1>Design Decisions</h1>
+
+<p>Kow.fm v15 - K is designed with automatic responsitivity in mind. I use a dynamic type scale that I picked up from <a href="https://utopia.fyi" target="_blank">these folks</a>. It's been built out in a continuous development on my blog, <a href="https://kow.fm/posts/redesign/" target="_blank">kow.fm</a>. I really like redesigns. This one gave me the opportunity to smooth out the rough edges of years of half baked redesigns.</p>
+
+<h3>Dynamic type scales</h3>
+
+<p>Kow.fm uses a dynamic type scale. What does that mean? It means that the type scale changes based on the screen size. On a small screen the base typeface is only <code>16px</code>, but on a large screen it's <code>20px</code>. Rather than using mediaqueries to jump between these two values, the theme adjusts the font size relative to the screen width. Small screens get smaller type, large screens get larger type. We stop scaling the steps at a certain cutoff size, in our case <code>1152px</code>. Because the theme interpolates type between two sizes we also interplate margins and padding. Let's not get too far ahead though. A type scale defines the relationship between different type sizes. It's pleasing to see each type size, at each step change in a predictable manner. See figure 1 for clarity.</p>
+
+<figure>
+  <img src="/assets/images/design/figure1.png" alt="figure 1, our type scale." id="figure-1">
+  <figcaption>figure 1, our type scale.</figcaption>
+</figure>
+
+<p>Using the typescale is pretty easy with some utility classes that I've got lying around. </p>
+
+<pre class="language-sass">
+<code class="language-sass">
+  .f-step--2 { font-size: var(--step--2); }
+  .f-step--1 { font-size: var(--step--1); }
+  .f-step-0  { font-size: var(--step-0);  }
+  .f-step-1  { font-size: var(--step-1);  }
+  .f-step-2  { font-size: var(--step-2);  }
+  .f-step-3  { font-size: var(--step-3);  }
+  .f-step-4  { font-size: var(--step-4);  }
+  .f-step-5  { font-size: var(--step-5);  }
+</code>
+</pre>
+<p></p>
+<p>Of course this is a ghost theme, which means that we've got a <code>.content</code> class wrapper for everything that comes out of the wysywig, so all regular content will automatically have good styles. </p>

@@ -7,10 +7,9 @@
   position: relative;
   margin: 0 auto;
   width:100%;
-  max-width: 1140px;
-  padding-left: var(--size-plus-huge);
-  padding-right: var(--size-plus-huge);
-  padding-top: var(--size-huge);
+  max-width: 1152px;
+  padding-left: var(--size-large);
+  padding-right: var(--size-large);
   font-size: inherit;
   box-sizing: border-box;
   overflow: hidden;
@@ -21,5 +20,146 @@
 
   &.wide {
     max-width: 1600px;
+  }
+}
+
+/* CSS Grid layouts */
+
+/* header, footer, and sidebar with hanging content */
+/*
+desktop
+========================
+header   header   header
+sidebar  content  content
+sidebar  footer   footer
+========================
+
+mobile
+========================
+header
+sidebar
+content
+footer
+========================
+*/
+.gw_sandwhich_sidebar {
+  display: grid;
+  max-width: 1600px;
+  grid-column: minmax(120px, 240px) auto;
+  grid-row:auto auto auto;
+  grid-column-gap:1em;
+  grid-row-gap: 0.5em;
+
+  grid-template-columns: minmax(180px, auto) auto;
+
+  grid-template-areas:
+  "header header header"
+  "sidebar content content"
+  ". footer footer"
+  ;
+}
+.gw_sandwhich_sidebar__header {
+  display: block;
+  width: auto;
+  grid-area: header;
+}
+.gw_sandwhich_sidebar__sidebar {
+  display: block;
+  width: auto;
+  grid-area: sidebar;
+  box-sizing: border-box;
+  padding-left: var(--step-0);
+  padding-right: var(--step-0);
+}
+.gw_sandwhich_sidebar__content_wrapper {
+  display: block;
+  width: auto;
+  grid-area: content;
+}
+
+.gw_sandwhich_sidebar__footer {
+  display: block;
+  width: auto;
+  grid-area: footer;
+}
+
+@media screen and (max-width: 640px) {
+  .gw_sandwhich_sidebar {
+    grid-template-areas:
+    "header"
+    "sidebar"
+    "content"
+    "footer"
+    ;
+  }
+  .gw_sandwhich_sidebar__sidebar {
+    padding-left: var(--size-large);
+    padding-right: var(--size-large);
+  }
+}
+
+
+/* header, footer, and sidebar with hanging content */
+/*
+desktop
+========================
+header   header   header
+content  content  content
+footer   footer   footer
+========================
+
+mobile
+========================
+header
+sidebar
+content
+footer
+========================
+*/
+.gw_sandwhich {
+  display: grid;
+  max-width: 1600px;
+  grid-column: minmax(120px, 240px) auto;
+  grid-row:auto auto auto;
+  grid-column-gap:1em;
+  grid-row-gap: 0.5em;
+
+  grid-template-columns: minmax(180px, auto) auto;
+
+  grid-template-areas:
+  "header header header"
+  "content content content"
+  "footer footer footer"
+  ;
+}
+
+.gw_sandwhich__header {
+  display: block;
+  width: auto;
+  grid-area: header;
+}
+.gw_sandwhich__content_wrapper {
+  display: block;
+  width: auto;
+  grid-area: content;
+}
+
+.gw_sandwhich__footer {
+  display: block;
+  width: auto;
+  grid-area: footer;
+}
+
+@media screen and (max-width: 640px) {
+  .gw_sandwhich {
+    grid-template-areas:
+    "header"
+    "content"
+    "footer"
+    ;
+  }
+  .gw_sandwhich__sidebar {
+    padding-left: var(--size-large);
+    padding-right: var(--size-large);
   }
 }
