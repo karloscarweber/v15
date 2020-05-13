@@ -1,0 +1,9 @@
+/* code style adjustments */
+
+code[class*="language-"], pre[class*="language-"] {
+  font-size: var(--step--1) !important;
+}
+
+pre[class*="language-"] {
+  margin-bottom: 1em !important;
+}

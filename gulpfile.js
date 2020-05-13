@@ -8,6 +8,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
 var gulp_concat = require('gulp-concat');
 var gulp_sass = require('gulp-sass');
+var rename = require('gulp-rename');
+var babel = require('gulp-babel');
+var concat = require('gulp-concat');
 
 // postcss & plugins
 var postcss = require('gulp-postcss');
@@ -34,7 +37,7 @@ gulp.task('sass', function () {
       autoprefixer()
     ];
     // return gulp.src('assets/sass/**/*.scss')
-    return gulp.src('assets/sass/**/*.scss')
+    return gulp.src('assets/sass/*.scss')
       .pipe(postcss(processors))
       .pipe(gulp_sass().on('error', gulp_sass.logError))
       .pipe(gulp_concat('styles.css'))
@@ -50,13 +53,24 @@ gulp.task('css', function () {
         .pipe(livereload());
 });
 
+gulp.task('javamascript', function() {
+  return gulp.src(['./assets/js/vendor/*.js', './assets/js/lib/*.js', './assets/js/scripts.js'])
+    .pipe(babel({
+
+    }))
+    .pipe(concat('all.js'))
+    .pipe(rename('application.js'))
+    .pipe(gulp.dest('./assets/built/'));
+});
+
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
     gulp.watch('assets/sass/**', ['sass']);
+    gulp.watch('assets/js/**', ['javamascript']);
 });
 
 // Grabs everything but the node_modules and dist directory and zips it up
-gulp.task('zip', ['sass', 'css'], function() {
+gulp.task('zip', ['sass', 'css', 'javamascript'], function() {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';

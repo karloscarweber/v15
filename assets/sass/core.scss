@@ -6,7 +6,6 @@
 
 /**/
 
-
 /* Our utilities */
 @import "./utils/_columns";
 @import "./utils/_mediaqueries";
@@ -16,6 +15,7 @@
 @import "./utils/_typography";
 
 /* Components */
+@import "./components/code";
 @import "./components/menus";
 
 /* Koenig styles to support */
