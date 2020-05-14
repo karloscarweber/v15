@@ -5,13 +5,13 @@ let app = function(){
   (function(){
     let menubutton = document.querySelector(".expand_menu_button");
     let extendedmenu = document.querySelector(".expanding_menu_container");
-    let menu_backtround = document.querySelector(".expanding_menu_background");
+    let menu_backround = document.querySelector(".expanding_menu_background");
 
     menubutton.onclick = function(){
       if (_.contains(menubutton.classList, "opened") && !(_.contains(menubutton.classList, "transitioning"))) {
         menubutton.classList.remove("opened");
         extendedmenu.classList.remove("opened");
-        menu_backtround.classList.remove("opened");
+        menu_backround.classList.remove("opened");
 
         // keep the menu from being all crazy
         menubutton.classList.add("transitioning");
@@ -24,7 +24,7 @@ let app = function(){
       } else if ( !(_.contains(menubutton.classList, "transitioning"))){
         menubutton.classList.add("opened");
         extendedmenu.classList.add("opened");
-        menu_backtround.classList.add("opened");
+        menu_backround.classList.add("opened");
 
         // keep the menu from being all crazy
         menubutton.classList.add("transitioning");
