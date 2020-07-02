@@ -1,0 +1,35 @@
+.pagination {
+
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .page-number {
+    font-weight: 500;
+  }
+
+  .page-button {
+    background-color: #00C764;
+    background-color: color(display-p3 0 0.781 0.392 / 1);
+    padding: 11px;
+    border-radius: 16px;
+    color: white;
+    text-decoration: none;
+
+    transition: border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &.older-posts { margin-left: 32px; }
+    &.newer-posts { margin-right: 32px; }
+
+    &:hover {
+      border-radius: 32px;
+    }
+
+  }
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+  .pagination .page-button {
+    background-color: #00C764;
+  }
+}

@@ -267,6 +267,8 @@ ul.site_nav {
     height: 450vh;
     width: 250px;
     background-color: #00C764;
+    background-color: hsl(150, 100%, 41%);
+    background-color: color(display-p3 0 0.781 0.392/1);
     -webkit-transform: rotate(3deg);
     transform: rotate(34deg);
     top: -225vh;

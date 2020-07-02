@@ -2,11 +2,15 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-  {{> "site-nav"}}
+  <div class="layout-centered post-container page-template">
+      {{> "site-nav"}}
 
-  {{#foreach posts}}
+    <em><h1 class="header-text large green">Stories</h1></em>
+    {{#foreach posts}}
 
-      {{> "post-card"}}
+      {{> "post-item"}}
 
-  {{/foreach}}
-  {{pagination}}
+    {{/foreach}}
+
+    {{pagination}}
+  </div>

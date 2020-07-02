@@ -1,3 +1,19 @@
-<footer class="site-footer">
-
+{{!-- The footer at the very bottom of the screen --}}
+<footer class="layout-centered-footer site-footer outer">
+  <hr>
+  <div class="footer-columns">
+    <div class="column column1">
+      <p class="copyright">Copyright &copy; {{date format="YYYY"}} Karl Oscar Weber,<br> All rights reserved, except where otherwise noted because there are a ton of open source code all up in here. Proudly Powered by <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></p>
+    </div>
+    <div class="column column2">
+      <ul class="footer-menu">
+        {{navigation type="secondary"}}
+        {{#if @site.twitter}}<li role="presentation"><a href="{{twitter_url @site.twitter}}"  target="_blank" rel="noopener">My Twitter</a></li>{{/if}}
+        <li role="presentation"></li>
+      </ul>
+    </div>
+    <div class="column column3">
+      <img src="{{@site.logo}}" alt="" class="footer-logo">
+    </div>
+  </div>
 </footer>

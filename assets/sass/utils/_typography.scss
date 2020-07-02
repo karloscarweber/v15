@@ -34,10 +34,29 @@
   margin-left: 50%;
   margin-right: -20%;
   transform: translateX(-50%);
-  max-width: 800px;
+  max-width: 1200px;
+}
+
+.post_excerpt {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 600;
+  font-size: var(--step-1);
+  line-height: 1.5em;
+  margin-bottom: 0em;
+  text-align: justify;
 }
 
 .page-template .content, .post-template .content {
+
+  & > h1 {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 700;
+    font-size: var(--step-3);
+    line-height: 1em;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+    color: #111;
+  }
 
   & > h2 {
     font-family: 'GreycliffCF', Arial;
@@ -85,7 +104,7 @@
 
   & > p {
     font-family: 'GreycliffCF', Arial;
-    font-weight: 500;
+    font-weight: 400;
     font-size: var(--step-0);
     line-height: 1.5em;
     margin-bottom: 1.5em;
@@ -94,13 +113,13 @@
 
   & > ul, & > ol {
     font-family: 'GreycliffCF', Arial;
-    font-weight: 500;
+    font-weight: 400;
     font-size: var(--step-0);
     line-height: 1.5em;
     margin-bottom: 1.5em;
 
     li {
-      margin-bottom: 1em;
+      // margin-bottom: 1em;
     }
   }
 
@@ -141,8 +160,6 @@
 .f-step-4 {font-size: var(--step-4); }
 .f-step-5 {font-size: var(--step-5); }
 
-
-
 /* Story layout specific Changes */
 .post-template .gl_story__content_wrapper {
   h1  {
@@ -151,5 +168,83 @@
   & > img {
     margin-top: var(--size-medium);
     margin-bottom: var(--size-medium);
+  }
+  hr {
+    border: none;
+    background-color: #A6A6A6;
+    height: 2px;
+    border-radius: 2px;
+    margin-bottom: 2em;
+  }
+}
+
+/* Code overrides */
+
+.content pre {
+  background-color: #262626;
+  border-radius: 16px;
+  padding: 16px;
+  color: #fdfdfd;
+  font-size: var(--step--0);
+}
+
+pre[class*="language-"] {
+  border-radius: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+.site-introduction {
+  font-family: 'PlayfairDisplay-Black', Arial;
+  font-weight: 900;
+  font-size: var(--step-2);
+  line-height: 1.25em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: #222222;
+
+  a {
+    text-decoration: none;
+    border-bottom: 0.125em solid;
+  }
+}
+
+// multiply rgb values by 3.921 to get the p3 values
+/* https://p3colorpicker.cool */
+.page-template a.pink,
+.post-template a.pink { color: #FF008D; color: color(display-p3 1 0 0.552 / 1); }
+.page-template a.blue,
+.post-template a.blue { color: #3C559C; color: color(display-p3 0.236 0.332 0.611 / 1); }
+.page-template a.green,
+.post-template a.green { color: #00C764; color: color(display-p3 0 0.781 0.392 / 1); }
+.page-template a.red,
+.post-template a.red { color: #FF0058; color: color(display-p3 1 0 0.343 / 1);  }
+
+//
+
+.page-template .green,
+.post-template .green { color: #00C764; color: color(display-p3 0 0.781 0.392 / 1); }
+
+
+@supports not (color: color(display-p3 1 1 1)) {
+  .page-template a.pink,
+  .post-template a.pink { color: #FF008D; }
+  .page-template a.blue,
+  .post-template a.blue { color: #3C559C; }
+  .page-template a.green,
+  .post-template a.green { color: #00C764; }
+  .page-template a.red,
+  .post-template a.red { color: #FF0058; }
+
+  .page-template .green,
+  .post-template .green { color: #00C764; }
+}
+
+article.post-item p {
+  font-weight: 600;
+  font-size: var(--step-1);
+  line-height: 1.5em;
+  a {
+    text-decoration: none;
+    color: #333333;
   }
 }

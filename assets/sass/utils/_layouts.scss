@@ -1,6 +1,10 @@
 /* Built in layouts */
 /* Column based layouts for kicks and giggles */
 
+body {
+  background-color: #F8FAFF;
+}
+
 
 /* Simple Centered layout */
 .layout-centered {
@@ -93,7 +97,8 @@ gutters on outside
 .gl_story {
   display: grid;
   width:85vw;
-  max-width: 560px;
+  // max-width: 560px;
+  max-width: 684px;
   grid-row:auto auto auto auto;
   grid-column-gap:1em;
   grid-row-gap: 0.5em;
@@ -199,5 +204,28 @@ gutters on outside
     "sidebar sidebar sidebar content content content content content content content content content"
     "footer footer footer footer footer footer footer footer footer footer footer footer"
     ;
+  }
+}
+
+/* Simple Centered layout for the footer */
+.layout-centered-footer {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width:100%;
+  max-width: 1152px;
+  padding-left: var(--size-plus-huge);
+  padding-right: var(--size-plus-huge);
+  padding-top: 128px;
+  font-size: inherit;
+  box-sizing: border-box;
+  // overflow: hidden;
+
+  &.narrow {
+    max-width: 960px;
+  }
+
+  &.wide {
+    max-width: 1600px;
   }
 }

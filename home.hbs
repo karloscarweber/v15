@@ -3,9 +3,12 @@
 into the {body} of the default.hbs template --}}
 
   <div class="layout-centered post-container page-template">
-    {{#if @blog.navigation}}
-        {{navigation}}
-    {{/if}}
+      {{> "site-nav"}}
+
+
+      <p class="site-introduction">
+        Hi my name is Karl. I design and develop my own <a href="#" class="pink">apps</a>. I’m an <a href="#" class="blue">open source developer</a>. I have a <a href="#" class="geen">Blog</a>. I also write this book, <a href="#" class="red">Swift Foundations</a> that teaches Swift to beginners.
+      </p>
 
     <div class="construction-box content">
       <p>Hi I’m Karl.</p>
@@ -18,7 +21,9 @@ into the {body} of the default.hbs template --}}
     <em><h1 class="header-text large green">Stories</h1></em>
     {{#foreach posts}}
 
-      {{> "post-card"}}
+      {{> "post-item"}}
 
     {{/foreach}}
+
+    {{pagination}}
   </div>

@@ -23,15 +23,7 @@
 
     {{{body}}}
 
-    {{!-- The footer at the very bottom of the screen --}}
-    <footer class="site-footer outer">
-      <div class="text-block">
-        <p>About<br>
-        <span class="copyright"><a href="{{@site.url}}" >{{@site.title}}</a> &copy; {{date format="YYYY"}}</span><br>
-        Proudly Powered by <a href="https://ghost.org"  target="_blank" rel="noopener">Ghost</a><br>
-        {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}"  target="_blank" rel="noopener">Twitter</a>{{/if}}</p>
-      </div>
-    </footer>
+    {{> "site-footer"}}
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}

@@ -10,12 +10,21 @@ into the {body} of the default.hbs template --}}
         <div class="gl_story__content_wrapper">
           <h1>{{title}}</h1>
 
-          
           {{#if feature_image}}
-            <img class="feature_image" src="{{feature_image}}" alt="">
+            <img class="feature_image"
+              srcset="{{img_url feature_image size="s"}} 300w,
+                      {{img_url feature_image size="m"}} 600w,
+                      {{img_url feature_image size="l"}} 1000w,
+                      {{img_url feature_image size="xl"}} 2000w"
+              sizes="(max-width: 1000px) 400px, 700px"
+              src="{{img_url feature_image size="m"}}"
+              alt="{{title}}"
+            />
           {{/if}}
 
-          <hr>
+          {{#if excerpt}}
+            <p class="post_excerpt">{{excerpt}}</p>
+          {{/if}}
 
           <div class="post_subtext">
           <p class="f-step--1 "><span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>, by {{authors separator=", "}},<br>
@@ -23,6 +32,8 @@ into the {body} of the default.hbs template --}}
               {{#foreach tags}}<a href="{{url}}" title={{name}} class="tag tag-{{id}} {{slug}}">{{name}}</a> {{/foreach}}
             {{/if}}</span>--></p>
           </div>
+
+          <hr>
 
           <div class="content">
             {{content}}
