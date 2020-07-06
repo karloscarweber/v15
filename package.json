@@ -2,9 +2,9 @@
   "name": "kowfm-v15-k",
   "description": "The Fifteenth version of kowfm, K.",
   "demo": "https://kow.fm",
-  "version": "15.0.5",
+  "version": "15.1.0",
   "engines": {
-    "ghost": ">=3.2.0",
+    "ghost": ">=3.22.0",
     "ghost-api": "v3"
   },
   "license": "MIT",
@@ -30,10 +30,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/karloscarweber/v14.git"
+    "url": "https://github.com/karloscarweber/v15.git"
   },
-  "bugs": "https://github.com/karloscarweber/v14/issues",
-  "contributors": "https://github.com/karloscarweber/v14/graphs/contributors",
+  "bugs": "https://github.com/karloscarweber/v15/issues",
+  "contributors": "https://github.com/karloscarweber/v15/graphs/contributors",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",

@@ -197,14 +197,17 @@ pre[class*="language-"] {
   font-family: 'PlayfairDisplay-Black', Arial;
   font-weight: 900;
   font-size: var(--step-2);
-  line-height: 1.25em;
+  line-height: 1.5em;
   margin-top: 2em;
   margin-bottom: 2em;
   color: #222222;
 
   a {
     text-decoration: none;
-    border-bottom: 0.125em solid;
+    border-bottom: none;
+    &:hover {
+      border-bottom: 0.125em solid;
+    }
   }
 }
 
@@ -239,12 +242,18 @@ pre[class*="language-"] {
   .post-template .green { color: #00C764; }
 }
 
+article.post-item {
+  margin-top: 0.75em;
+}
 article.post-item p {
   font-weight: 600;
   font-size: var(--step-1);
-  line-height: 1.5em;
+  line-height: 1.25em;
   a {
     text-decoration: none;
     color: #333333;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
