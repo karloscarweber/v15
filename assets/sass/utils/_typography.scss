@@ -143,9 +143,23 @@
 
 }
 
+.home-template  {
+  & > h1 {
+    font-family: 'PlayfairDisplay-Black', Arial;
+  }
+}
+
 .page-template a, .post-template a {
   color: #00C764;
   color: color(display-p3 0 0.781 0.392 / 1); /* https://p3colorpicker.cool */
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.account-template a {
+  color: #6E39FF;
+  color: color(display-p3 0.431 0.222 1 / 1); /* https://p3colorpicker.cool */
   &:hover {
     text-decoration: none;
   }

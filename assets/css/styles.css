@@ -594,11 +594,21 @@ two screen widths. */
     font-size: var(--step--1);
     text-align: center; }
 
+.home-template > h1 {
+  font-family: 'PlayfairDisplay-Black', Arial; }
+
 .page-template a, .post-template a {
   color: #00C764;
   color: color(display-p3 0 0.781 0.392/1);
   /* https://p3colorpicker.cool */ }
   .page-template a:hover, .post-template a:hover {
+    text-decoration: none; }
+
+.account-template a {
+  color: #6E39FF;
+  color: color(display-p3 0.431 0.222 1/1);
+  /* https://p3colorpicker.cool */ }
+  .account-template a:hover {
     text-decoration: none; }
 
 .f-step--2 {
@@ -1078,8 +1088,23 @@ p.account-styles {
   display: block;
   background-color: #f9fffc;
   padding: 32px 20px;
-  box-shadow: 0 7px 0 5px #00C764;
-  border-radius: 16px; }
+  box-shadow: 0 3px 0 5px #00C764;
+  border-radius: 16px;
+  margin-top: 4em; }
+  .subscribe-form.purple {
+    background-color: #FBFAFF;
+    box-shadow: 0 3px 0 5px #6E39FF;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 640px; }
+    .subscribe-form.purple form input {
+      border: 2px solid #6E39FF; }
+    .subscribe-form.purple form button, .subscribe-form.purple .button.primary {
+      background: #6E39FF; }
+    .subscribe-form.purple a {
+      color: #6E39FF;
+      color: color(display-p3 0.431 0.222 1/1);
+      /* https://p3colorpicker.cool */ }
   .subscribe-form p.subscript {
     font-family: 'GreycliffCF', Arial;
     font-size: var(--step--1);
@@ -1116,6 +1141,10 @@ p.account-styles {
     background-color: #ebebeb;
     border-color: #ebebeb;
     color: #333; }
+  .subscribe-form form .message-success {
+    display: none; }
+  .subscribe-form form.success .message-success {
+    display: block; }
   .subscribe-form form .subscribe-error {
     color: #FF008D; }
   .subscribe-form form .success-message {
@@ -1178,12 +1207,19 @@ p.account-styles {
   overflow: hidden;
   box-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.1); }
 
-.signup-page h1 {
+.signup-page h1, .signup-page h2 {
+  font-family: 'GreycliffCF', Arial;
   font-size: var(--step-5);
   color: #6E39FF;
+  color: color(display-p3 0.431 0.222 1/1);
+  /* https://p3colorpicker.cool */
   text-align: center;
   line-height: 1.1em;
-  margin-top: 2em; }
+  margin-top: 2em;
+  font-weight: 700; }
+
+.signup-page h2 {
+  font-size: var(--step-3); }
 
 .signup-page > p {
   font-size: var(--step-1);
@@ -1221,7 +1257,9 @@ ul.feature-list {
   .pricing-matrix #matrixchecker:checked + .matrix-banner p:first-child {
     color: #333333; }
   .pricing-matrix #matrixchecker:checked + .matrix-banner p:last-child {
-    color: #6E39FF; }
+    color: #6E39FF;
+    color: color(display-p3 0.431 0.222 1/1);
+    /* https://p3colorpicker.cool */ }
   .pricing-matrix #matrixchecker:checked + .matrix-banner label {
     background-color: #6E39FF; }
   .pricing-matrix #matrixchecker:checked + .matrix-banner label::before {
@@ -1343,6 +1381,11 @@ ul.feature-list {
       border-radius: 16px;
       width: 100%;
       height: 44px; }
+      .pricing-matrix .pricing-card .button.primary.fit {
+        width: 100%;
+        display: block;
+        text-align: center;
+        text-decoration: none; }
   .pricing-matrix #matrixchecker:checked ~ .card-holder .pricing-card.red {
     z-index: 100;
     transform: scale(0.8) translateY(40px); }
@@ -1355,6 +1398,21 @@ ul.feature-list {
     .pricing-matrix #matrixchecker:checked ~ .card-holder .pricing-card.purple p + p {
       opacity: 1.0;
       margin: 32px; }
+
+.reparations-pricing-box {
+  width: 100%;
+  max-width: 680px;
+  margin: 3em auto;
+  padding: 30px 32px;
+  font-size: var(--step-1);
+  line-height: 1.25em;
+  color: #333333;
+  background: #F3F3F3;
+  box-shadow: 0 3px 0 6px #000000;
+  border-radius: 16px;
+  font-weight: 600;
+  box-sizing: border-box;
+  margin-top: 8em; }
 
 /* Koenig styles to support */
 /*

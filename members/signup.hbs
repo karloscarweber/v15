@@ -1,4 +1,4 @@
-{{!< ../default}}
+{{!< ../default_account}}
 
 {{> site-header}}
 
@@ -8,48 +8,62 @@
     {{#if @member.paid}}
 
         {{!-- Logged in, paying member: Redirect home --}}
-        <script>window.location = '{{@site.url}}';</script>
+        <script>window.location = '{{@site.url}}/account/';</script>
 
     {{else if @member}}
 
         {{!-- Logged in, not paying: Check out --}}
-        <div class="checkout-form">
-            <h1 class="checkout-title">Choose your subscription</h1>
-            <p>Unlock full access to {{@site.title}} and see the entire library of members-only content & updates</p>
-            <div class="checkout-box">
-                <div class="checkout-plan">
-                    <header class="checkout-plan-header">
-                        <h3>Monthly</h3>
-                        <span>{{@price.currency_symbol}}</span><strong>{{@price.monthly}}</strong> / month
-                    </header>
-                    <div class="checkout-plan-content">
-                        <ul>
-                            <li>Full access to all private posts</li>
-                            <li>Regular updates with new content</li>
-                            <li>Support independent publishing</li>
-                            <li>Simple, secure card payment</li>
-                        </ul>
-                        <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choose this plan</a>
-                    </div>
-                </div>
-                <div class="checkout-plan">
-                    <header class="checkout-plan-header">
-                        <h3>Yearly</h3>
-                        <span>{{@price.currency_symbol}}</span><strong>{{@price.yearly}}</strong> / year
-                    </header>
-                    <div class="checkout-plan-content">
-                        <ul>
-                            <li>Full access to all private posts</li>
-                            <li>Regular updates with new content</li>
-                            <li>Support independent publishing</li>
-                            <li>Simple, secure card payment</li>
-                            <li>One easy payment instead of 12!</li>
-                        </ul>
-                        <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choose this plan</a>
-                    </div>
-                </div>
+        <section class="signup-page">
+          <h1>Learn to build real apps step by step</h1>
+
+          <p>I’m making comprehensive courses that teach you exactly how to make the apps that I have in the App Store. Learn to make, nontrivial, real applications from the bottom to the top.</p>
+
+          <p>To get started learning Swift, read <a class="red" href="/swift_foundations/">Swift Foundations</a>, a free book meant to teach you the fundamentals of Swift, SwiftUI, and building apps across Apple platforms.</p>
+
+          <p>Subscription Includes:</p>
+
+          <ul class="feature-list">
+            <li>Step by step video lessons</li><br />
+            <li>Sample code</li><br />
+            <li>The complete source code of each app</li><br />
+            <li>Design assets and files</li><br />
+            <li>Professional support through twist</li><br />
+          </ul>
+
+          <div class="pricing-matrix">
+            <input id="matrixchecker" type="checkbox" name="matrixchecker" value="">
+            <div class="matrix-banner">
+
+              <p>Monthly Pricing</p>
+                <label for="matrixchecker"></label>
+              <p>Annual Pricing</p>
+
             </div>
-        </div>
+
+            <div class="card-holder">
+              <div class="pricing-card red">
+                <h3>{{@price.currency_symbol}}{{@price.monthly}}<span>/month</span></h3>
+                <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
+                <p>Pro support, and a twist community.</p>
+                <a class="button primary fit white" href="javascript:" data-members-plan="Monthly">Subscribe</a>
+              </div>
+
+              <div class="pricing-card purple">
+                <h3>{{@price.currency_symbol}}{{@price.yearly}}<span>/year</span></h3>
+                <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
+                <p>Pro support, and a twist community.</p>
+                <a class="button primary fit white" href="javascript:" data-members-plan="Yearly">Subscribe</a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="reparations-pricing-box">
+            <p>If you are Black, or from an under-represented group in Tech, premium courses are free, forever. Just send me an email after you signup and I’ll set it up.</p>
+          </div>
+
+        </section>
 
     {{else}}
 
@@ -83,56 +97,39 @@
 
             <div class="card-holder">
               <div class="pricing-card red">
-                <h3>$12<span>/month</span></h3>
+                <h3>{{@price.currency_symbol}}{{@price.monthly}}<span>/month</span></h3>
                 <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
-                <p class="hider-paragraph">Pro support, and a twist community.</p>
-                <button class="button primary white" href="#">Subscribe</button>
+                <p>Pro support, and a twist community.</p>
               </div>
 
               <div class="pricing-card purple">
-                <h3>$99<span>/year</span></h3>
+                <h3>{{@price.currency_symbol}}{{@price.yearly}}<span>/year</span></h3>
                 <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
-                <p class="hider-paragraph">Pro support, and a twist community.</p>
-                <button class="button primary white" href="#">Subscribe</button>
+                <p>Pro support, and a twist community.</p>
               </div>
 
             </div>
 
-
           </div>
 
+          <div class="reparations-pricing-box">
+            <p>If you are Black, or from an under-represented group in Tech, premium courses are free, forever. Just send me an email after you sign up and I’ll set it up.</p>
+          </div>
 
-          <form class="signup-form" data-members-form="signup">
-              <h1 class="signup-title">Learn to build real apps step by step</h1>
-              <p>{{@site.description}}</p>
-              <div class="signup-box">
-                  <input data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false" />
-                  <button class="button primary" type="submit">
-                      <span class="button-content">Continue</span>
-                  </button>
-              </div>
-              <p><small>Already have an account? <a href="{{@site.url}}/signin/">Sign in</a></small></p>
-              <div class="message-success"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription</div>
-              <div class="message-error">Please enter a valid email address!</div>
-          </form>
+          <h2 class="signup-title">But first, you'll need to sign up for a free account.</h2>
+
+          <section class="subscribe-form purple">
+              <form data-members-form="signup">
+                <input data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false"/>
+                <button type="submit" class="button primary">Subscribe</button>
+                <p><small>Already have an account? <a href="{{@site.url}}/signin/">Sign in</a></small></p>
+                <p data-members-error class="subscribe-error account-styles"><!-- error message will appear here --></p>
+                <p class="message-success account-styles"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription.</p>
+              </form>
+              <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
+          </section>
+
         </section>
-
-        <section class="subscribe-form">
-            <h3 class="account-styles">Join the {{@site.title}} Newsletter</h3>
-            <p class="account-styles">An infrequent newsletter of tutorials, code, and writings, of the best stuff about writing creative software, and doing it ethically, that I can find.</p>
-            <form data-members-form="signup">
-              <input data-members-email type="email" required="true"/>
-              <button type="submit" class="button primary">Subscribe</button>
-              <p data-members-error class="subscribe-error account-styles"><!-- error message will appear here --></p>
-              <p class="success-message account-styles">Yay! You've successfully subscribed!</p>
-            </form>
-            <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
-        </section>
-
-
-
-
-
 
 
     {{/if}}

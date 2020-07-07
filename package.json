@@ -2,7 +2,7 @@
   "name": "kowfm-v15-k",
   "description": "The Fifteenth version of kowfm, K.",
   "demo": "https://kow.fm",
-  "version": "15.1.4",
+  "version": "15.2.0",
   "engines": {
     "ghost": ">=3.22.0",
     "ghost-api": "v3"

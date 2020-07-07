@@ -109,6 +109,14 @@ output. But most of our output will be markdown based. */
   }
 }
 
+.account-template a {
+  color: #6E39FF;
+  color: color(display-p3 0.431 0.781 1 / 1); /* https://p3colorpicker.cool */
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 /* Sidebar typography */
 
 .sidebar {
