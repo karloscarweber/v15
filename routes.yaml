@@ -16,6 +16,10 @@ collections:
     permalink: /posts/{slug}/
     template:
       - index
+  /newsletter/:
+    permalink: /{slug}/
+    template: index
+    filter: primary_tag:newsletter
 
 taxonomies:
   tag: /tag/{slug}/

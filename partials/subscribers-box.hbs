@@ -1,10 +1,11 @@
 <section class="subscribe-form">
-    <h3>Join the {{@site.title}} Newsletter</h3>
-    <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about writing creative software, and doing it ethically, that I can find.</p>
+    <h3 class="account-styles">Join the {{@site.title}} Newsletter</h3>
+    <p class="account-styles">An infrequent newsletter of tutorials, code, and writings, of the best stuff about writing creative software, and doing it ethically, that I can find.</p>
     <form data-members-form="subscribe">
       <input data-members-email type="email" required="true"/>
-      <button type="submit">Subscribe</button>
-      <p data-members-error><!-- error message will appear here --></p>
+      <button type="submit" class="button primary">Subscribe</button>
+      <p data-members-error class="subscribe-error account-styles"><!-- error message will appear here --></p>
+      <p class="success-message account-styles">Yay! You've successfully subscribed!</p>
     </form>
     <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
 </section>
