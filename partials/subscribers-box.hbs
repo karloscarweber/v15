@@ -1,11 +1,28 @@
-<section class="subscribe-form">
-    <h3 class="account-styles">Join the {{@site.title}} Newsletter</h3>
-    <p class="account-styles">An infrequent newsletter of tutorials, code, and writings, of the best stuff about writing creative software, and doing it ethically, that I can find.</p>
-    <form data-members-form="subscribe">
-      <input data-members-email type="email" required="true"/>
+<form data-members-form="subscribe" class="success">
+  <section class="subscribe-form postcard">
+    <div class="background-art"></div>
+
+    <div class="postcard-section">
+      <h3 class="subscription-styles">Get the Newsletter</h3>
+      <p class="subscription-styles">An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
+
+      <p class="subscription-styles">Swift code, Announcements, Ethics.</p>
+
+      <p class="subscript subscription-styles" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
+    </div>
+
+    <div class="postcard-section">
+      <span class="postage-stamp"></span>
+      <input data-members-email type="email" required="true" placeholder="eager@beaver.com" />
+
+      <hr>
+      <hr>
+      <hr>
+
       <button type="submit" class="button primary">Subscribe</button>
       <p data-members-error class="subscribe-error account-styles"><!-- error message will appear here --></p>
-      <p class="success-message account-styles">Yay! You've successfully subscribed!</p>
-    </form>
-    <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
-</section>
+      <!-- <p class="success-message account-styles">Yay! You've successfully subscribed!</p> -->
+    </div>
+
+  </section>
+</form>

@@ -2,22 +2,31 @@ routes:
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
-  /swift_foundations/:
-    controller: channel
-    template: swiftfoundations/index
-    filter: tag:swift_foundations
+  /: home
+  # /swift_foundations/:
+  #   controller: channel
+  #   template: swiftfoundations/index
+  #   filter: tag:swift_foundations
 
 collections:
   /lessons/:
     permalink: /lessons/{slug}/
     template: lessons/index
     filter: primary_tag:lesson
-  /:
-    permalink: /posts/{slug}/
+  /swift_foundations/:
+    permalink: /swift_foundations/{slug}/
+    template: swiftfoundations/index
+    filter: primary_tag:swift_foundations
+  # /:
+  #   permalink: /posts/{slug}/
+  #   template:
+  #     - index
+  /blog/:
+    permalink: /blog/{slug}/
     template:
       - index
   /newsletter/:
-    permalink: /{slug}/
+    permalink: /newsletter/{slug}/
     template: index
     filter: primary_tag:newsletter
 
