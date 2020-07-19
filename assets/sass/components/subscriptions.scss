@@ -170,7 +170,7 @@ p.account-styles {
     top: 50%;
     margin-left: -2px;
     margin-top: -140px;
-    transition: opacity 2.3s ease-in-out;
+    transition: opacity 1s ease-in-out;
   }
 
   input {
@@ -214,7 +214,7 @@ p.account-styles {
   width:50%;
   padding: 20px;
   box-sizing: border-box;
-  transition: opacity 2.3s ease-in-out;
+  transition: opacity 1.0s ease-in-out;
 }
 
 .postage-stamp {
@@ -245,9 +245,36 @@ p.account-styles {
   background-repeat: no-repeat;
   background-image: url("/assets/images/line_art.svg");
   background-size: 1137px 855px;
-  transition: opacity 2.3s ease-in-out, transform 2.3s ease-in-out;
+  transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
   opacity: 0.0;
   transform: scale(0.7);
+}
+
+.success-message {
+  display: block;
+  width: 300px;
+  height: 100px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -50px;
+  border-radius: 11px;
+  box-shadow: 0px 0px 20px 0px lightgrey;
+  opacity: 0.0;
+  pointer-events: none;
+  transition: transform 10s ease-in-out;
+  transform: scale(1.3);
+}
+@keyframes successloop {
+  0%  {opacity:0.0; transform: scale(0.3);}
+  10%  {opacity:1.0; transform: scale(1.0);}
+  90% {opacity: 1.0; transform: scale(1.0);}
+  100% {opacity: 0.0; transform: scale(0.3);}
 }
 
 // postcard success
@@ -263,6 +290,112 @@ p.account-styles {
     }
     &:before {
       opacity: 0.0;
+    }
+    .success-message {
+      animation: successloop 10s;
+      animation-iteration-count: 1;
+    }
+  }
+}
+@keyframes loadingloop1 {
+  0% {opacity:0.0}
+  25% {opacity: 1.0}
+  50% {opacity: 0.0}
+  75% {opacity: 0.0}
+  100% {opacity: 0.0}
+
+}
+@keyframes loadingloop2 {
+  0% {opacity:0.0}
+  25% {opacity: 0.0}
+  50% {opacity: 1.0}
+  75% {opacity: 0.0}
+  100% {opacity: 0.0}
+
+}
+@keyframes loadingloop3 {
+  0% {opacity:0.0}
+  25% {opacity: 0.0}
+  50% {opacity: 0.0}
+  75% {opacity: 1.0}
+  100% {opacity: 0.0}
+
+}
+@keyframes loadingloop4 {
+  0% {opacity:0.0}
+  25% {opacity: 0.0}
+  50% {opacity: 0.0}
+  75% {opacity: 0.0}
+  100% {opacity: 1.0}
+}
+.loading_container {
+  display: block;
+  width: 105px;
+  height: 50px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -20px;
+  border-radius: 11px;
+  box-shadow: 0px 0px 20px 0px lightgrey;
+  opacity: 0.0;
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transform: scale(0.3);
+}
+.loading_pip {
+  display: block;
+  height: 40px;
+  width: 20px;
+  position: absolute;
+  border-radius: 8px;
+  &.pip_1 { left: 5px; top: 5px;  animation: loadingloop1 1.5s infinite; background: #00C764; }
+  &.pip_2 { left: 30px; top: 5px; animation: loadingloop2 1.5s infinite; background: #FF0058; }
+  &.pip_3 { left: 55px; top: 5px; animation: loadingloop3 1.5s infinite; background: #FFD039; }
+  &.pip_4 { left: 80px; top: 5px; animation: loadingloop4 1.5s infinite; background: #6E39FF; }
+}
+.loading {
+  .subscribe-form.postcard {
+    .postcard-section {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    &:before {
+      opacity: 0.3;
+    }
+  }
+  .loading_container {
+    opacity: 1.0;
+    transform: scale(1.0);
+  }
+}
+.subscribe-error {
+  display: block;
+  width: 300px;
+  height: 100px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -50px;
+  border-radius: 11px;
+  box-shadow: 0px 0px 20px 0px lightgrey;
+  opacity: 0.0;
+  pointer-events: none;
+  transition: transform 10s ease-in-out;
+  transform: scale(1.3);
+}
+.error {
+  .subscribe-form.postcard {
+    .subscribe-error {
+      animation: successloop 10s;
+      animation-iteration-count: 1;
     }
   }
 }
