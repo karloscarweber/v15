@@ -106,6 +106,9 @@ body {
   .layout-centered.wide {
     max-width: 1600px; }
 
+.post-template .layout-centered {
+  max-width: 896px; }
+
 /* CSS Grid layouts */
 /* sidebar with hanging text */
 .gw_sandwhich_sidebar {
@@ -248,6 +251,7 @@ gutters on outside
   .layout-centered-footer.wide {
     max-width: 1600px; }
 
+/* New standard layout */
 :root {
   --fluid-min-width: 320;
   --fluid-max-width: 1152;
@@ -477,14 +481,14 @@ two screen widths. */
 .page-template h1 {
   font-family: 'PlayfairDisplay-Black', Arial;
   font-weight: 900;
-  font-size: var(--step-3);
+  font-size: var(--step-4);
   line-height: 1em;
   margin-bottom: 1em; }
 
 .post-template h1 {
   font-family: 'GreycliffCF', Arial;
   font-weight: 700;
-  font-size: var(--step-5);
+  font-size: var(--step-4);
   line-height: 1em;
   margin-bottom: var(--size-medium);
   color: #00C764;
@@ -597,6 +601,15 @@ two screen widths. */
 .home-template > h1 {
   font-family: 'PlayfairDisplay-Black', Arial; }
 
+.page-template > p,
+.page-template > section > p {
+  font-family: 'GreycliffCF', Arial;
+  font-weight: 500;
+  font-size: var(--step-0);
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: left; }
+
 .page-template a, .post-template a {
   color: #00C764;
   color: color(display-p3 0 0.781 0.392/1);
@@ -662,7 +675,7 @@ pre[class*="language-"] {
   border-radius: 1em !important;
   margin-bottom: 1em !important; }
 
-.site-introduction {
+p.site-introduction {
   font-family: 'PlayfairDisplay-Black', Arial;
   font-weight: 900;
   font-size: var(--step-2);
@@ -670,10 +683,10 @@ pre[class*="language-"] {
   margin-top: 2em;
   margin-bottom: 2em;
   color: #222222; }
-  .site-introduction a {
+  p.site-introduction a {
     text-decoration: none;
     border-bottom: none; }
-    .site-introduction a:hover {
+    p.site-introduction a:hover {
       border-bottom: 0.125em solid; }
 
 /* https://p3colorpicker.cool */
@@ -969,6 +982,7 @@ ul.site_nav {
     transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1);
     opacity: 1.0; }
 
+/* New Pill like site menu */
 .pagination {
   text-align: center;
   padding-top: 64px;
@@ -1069,6 +1083,25 @@ ul.site_nav {
       padding-left: 0em;
       padding-right: 0em; } }
 
+/*
+  Sections.
+
+  Differences in independent sections of the site. Modifications of layout etc...
+ */
+/* Newsletter sections. Or children of Newsletter pages. */
+/*newsletter variables */
+body.newsletter-template .page-template a,
+body.newsletter-template .post-template a,
+body.newsletter-template .page-template h1,
+body.newsletter-template .post-template h1 {
+  color: #006FFF; }
+
+body.newsletter-template .page-template h1, body.newsletter-template h1.fancy {
+  font-size: var(--step-4);
+  font-style: italic;
+  font-family: 'PlayfairDisplay-Black', Arial;
+  margin-bottom: 1em; }
+
 /* All the junk for subscriptions. Like subscribe boxes, error states, etc.. */
 h3.account-styles {
   font-family: 'GreycliffCF', Arial;
@@ -1168,7 +1201,7 @@ p.account-styles {
   border: 0px solid transparent;
   background: #FFFFFF;
   box-shadow: 0 0 50px 0 rgba(14, 15, 14, 0.19);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 0;
   max-width: 680px;
   margin: 128px auto;
@@ -1691,6 +1724,127 @@ ul.feature-list {
   font-weight: 600;
   box-sizing: border-box;
   margin-top: 8em; }
+
+/*
+  superfrontpage
+*/
+.supertext-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: block;
+  padding: var(--step-5); }
+
+.supertext {
+  font-size: var(--step-5);
+  line-height: var(--step-5);
+  color: black;
+  font-family: -apple-system, sans-serif;
+  font-weight: 800;
+  position: relative; }
+  .supertext .background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1000;
+    background: white;
+    height: 100vh;
+    transform: scale(2);
+    background-position: center center;
+    background-repeat: repeat; }
+  .supertext .app-link {
+    display: inline-block;
+    color: #111;
+    text-decoration: none; }
+    .supertext .app-link::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #FF008D;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100; }
+    .supertext .app-link:hover {
+      text-decoration: underline;
+      color: white; }
+      .supertext .app-link:hover::before {
+        display: none; }
+  .supertext .blog-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white; }
+    .supertext .blog-link::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #00C764;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100; }
+    .supertext .blog-link:hover {
+      text-decoration: underline;
+      color: white; }
+      .supertext .blog-link:hover::before {
+        display: none; }
+  .supertext .book-link {
+    display: inline-block;
+    color: #111;
+    text-decoration: none; }
+    .supertext .book-link::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #FF0058;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100; }
+    .supertext .book-link:hover {
+      text-decoration: underline;
+      color: white; }
+      .supertext .book-link:hover::before {
+        display: none; }
+  .supertext .courses-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white; }
+    .supertext .courses-link::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #6E39FF;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100; }
+    .supertext .courses-link:hover {
+      text-decoration: underline;
+      color: white; }
+      .supertext .courses-link:hover::before {
+        display: none; }
+  .supertext .app-link:hover ~ .background {
+    background-image: url("/assets/images/app-background.svg");
+    background-size: 984px 656px; }
+  .supertext .blog-link:hover ~ .background {
+    background-image: url("/assets/images/blog-background.svg");
+    background-size: 984px 656px; }
+  .supertext .book-link:hover ~ .background {
+    background-image: url("/assets/images/swift-background.png");
+    background-size: 450px 420px; }
+  .supertext .courses-link:hover ~ .background {
+    background-image: url("/assets/images/courses-background.svg");
+    background-size: 1026px 825.5px; }
 
 /* Koenig styles to support */
 /*

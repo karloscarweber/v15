@@ -7,7 +7,8 @@ routes:
   #   controller: channel
   #   template: swiftfoundations/index
   #   filter: tag:swift_foundations
-
+  /newsletter/subscribe/: newsletter/subscribe
+  
 collections:
   /lessons/:
     permalink: /lessons/{slug}/
@@ -17,18 +18,15 @@ collections:
     permalink: /swift_foundations/{slug}/
     template: swiftfoundations/index
     filter: primary_tag:swift_foundations
-  # /:
-  #   permalink: /posts/{slug}/
-  #   template:
-  #     - index
+  /newsletter/:
+    permalink: /newsletter/{slug}/
+    template: newsletter/index
+    filter: primary_tag:newsletter
+    data: tag.newsletter
   /blog/:
     permalink: /blog/{slug}/
     template:
       - index
-  /newsletter/:
-    permalink: /newsletter/{slug}/
-    template: index
-    filter: primary_tag:newsletter
 
 taxonomies:
   tag: /tag/{slug}/

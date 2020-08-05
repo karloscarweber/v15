@@ -1,0 +1,158 @@
+/*
+  superfrontpage
+*/
+
+
+.supertext-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: block;
+  padding: var(--step-5);
+}
+
+.supertext {
+  font-size: var(--step-5);
+  line-height: var(--step-5);
+  color: black;
+  font-family: -apple-system, sans-serif;
+  font-weight: 800;
+  position: relative;
+
+  .background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1000;
+    background: white;
+    height: 100vh;
+    transform: scale(2.0);
+    background-position: center center;
+    background-repeat: repeat;
+  }
+
+  .app-link {
+    display: inline-block;
+    color: #111;
+    text-decoration: none;
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #FF008D;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color:white;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .blog-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #00C764;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color:white;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .book-link {
+    display: inline-block;
+    color: #111;
+    text-decoration: none;
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #FF0058;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color:white;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .courses-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #6E39FF;
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px);
+      z-index: -100;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color:white;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+
+  .app-link:hover ~ .background {
+    background-image: url("/assets/images/app-background.svg");
+    background-size: 984px 656px;
+  }
+  .blog-link:hover ~ .background {
+    background-image: url("/assets/images/blog-background.svg");
+    background-size: 984px 656px;
+  }
+  .book-link:hover ~ .background {
+    background-image: url("/assets/images/swift-background.png");
+    background-size: 450px 420px;
+  }
+  .courses-link:hover ~ .background {
+    background-image: url("/assets/images/courses-background.svg");
+    background-size: 1026px 825.5px;
+  }
+
+
+}

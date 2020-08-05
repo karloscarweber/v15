@@ -2,7 +2,7 @@
 .page-template h1 {
   font-family: 'PlayfairDisplay-Black', Arial;
   font-weight: 900;
-  font-size: var(--step-3);
+  font-size: var(--step-4);
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -10,7 +10,7 @@
 .post-template h1 {
   font-family: 'GreycliffCF', Arial;
   font-weight: 700;
-  font-size: var(--step-5);
+  font-size: var(--step-4);
   line-height: 1em;
   margin-bottom: var(--size-medium);
   color: #00C764;
@@ -149,6 +149,21 @@
   }
 }
 
+// page template, freely placed elements
+.page-template {
+
+  & > p,
+  & > section > p {
+    font-family: 'GreycliffCF', Arial;
+    font-weight: 500;
+    font-size: var(--step-0);
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+    text-align: left;
+  }
+
+}
+
 .page-template a, .post-template a {
   color: #00C764;
   color: color(display-p3 0 0.781 0.392 / 1); /* https://p3colorpicker.cool */
@@ -207,7 +222,7 @@ pre[class*="language-"] {
   margin-bottom: 1em !important;
 }
 
-.site-introduction {
+p.site-introduction {
   font-family: 'PlayfairDisplay-Black', Arial;
   font-weight: 900;
   font-size: var(--step-2);

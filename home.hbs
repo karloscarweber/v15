@@ -1,23 +1,49 @@
-{{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
+<!DOCTYPE html>
+<html>
+<head>
 
-  <div class="layout-centered post-container page-template">
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-      {{> "site-header"}}
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <p class="site-introduction">
-        Hi my name is Karl. I design and develop my own <a href="#" class="pink">apps</a>. I’m an <a href="#" class="blue">open source developer</a>. I have a <a href="/blog/" class="geen">Blog</a>. I also write this book, <a href="#" class="red">Swift Foundations</a> that teaches Swift to beginners.
-      </p>
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/styles.css"}}" />
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-okaidia.css" rel="stylesheet" />
 
-    <div class="construction-box content">
-      <p>Hi I’m Karl.</p>
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
 
-      <p>My blog is currently under construction. I just started it, and I’m going to be redoing the whole damn thing in public, like a few other folks. Please follow along with the progress on <a href="/posts/redesign/">this page</a>. Where I will be blogging about it.</p>
+</head>
+<body class="f-step-0 {{body_class}} typeface-greycliffcf {{{block "template_class"}}}">
 
-      <p>I design and develop my own apps and websites. I have a Blog. I also write this book, Swift Foundations, that teaches Swift to beginners.</p>
+
+    <div class="supertext-container">
+      <p class="supertext">Hi my name is Karl. I design and develop <a href="#" class="app-link">apps</a> and websites. I’m an open source developer. I have a <a href="#" class="blog-link">Blog</a>. I also write this book, <a href="#" class="book-link">Swift</a> <a href="#" class="book-link">Foundations</a>, that teaches Swift to beginners. I’m also writing <a href="#" class="courses-link">App Courses</a>; Learn to make my Apps.<span class="background"></span></p>
     </div>
 
-    {{> "subscribers-box"}}
 
-  </div>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', ()=>{
+
+      // get all link things
+
+    });
+  </script>
+
+
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+
+    <!-- Code highlighting scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/components/prism-core.min.js"></script>
+  	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script type="text/javascript" src="{{asset "built/application.js"}}"></script>
+
+    {{ghost_foot}}
+</body>
+</html>

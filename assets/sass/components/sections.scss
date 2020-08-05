@@ -1,0 +1,26 @@
+/*
+  Sections.
+
+  Differences in independent sections of the site. Modifications of layout etc...
+ */
+
+
+/* Newsletter sections. Or children of Newsletter pages. */
+
+/*newsletter variables */
+$brand-color-newsletter: #006FFF;
+
+body.newsletter-template {
+  .page-template a,
+  .post-template a,
+  .page-template h1,
+  .post-template h1  {
+    color: $brand-color-newsletter;
+  }
+  .page-template h1, h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em;
+  }
+}

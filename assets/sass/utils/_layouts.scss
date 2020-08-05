@@ -27,8 +27,13 @@ body {
   &.wide {
     max-width: 1600px;
   }
+
 }
 
+// so every post type pages, content not indexes, should be more narrow
+.post-template .layout-centered {
+  max-width: 896px;
+}
 
 /* CSS Grid layouts */
 
@@ -229,3 +234,7 @@ gutters on outside
     max-width: 1600px;
   }
 }
+
+
+
+/* New standard layout */
