@@ -8,7 +8,8 @@ routes:
   #   template: swiftfoundations/index
   #   filter: tag:swift_foundations
   /newsletter/subscribe/: newsletter/subscribe
-  
+    template: newsletter/subscribe
+
 collections:
   /lessons/:
     permalink: /lessons/{slug}/

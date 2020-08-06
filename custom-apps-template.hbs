@@ -1,0 +1,21 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+  {{#post}}
+      <article class="layout-centered post-container page-template {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+
+          <h1>{{title}}</h1>
+
+          {{#if feature_image}}
+            <img class="feature_image" src="{{feature_image}}" alt="">
+          {{/if}}
+
+          <div class="content">
+            {{content}}
+          </div>
+
+      </article>
+  {{/post}}
+
+{{#contentFor "template_class"}} apps-template page-template {{/contentFor}}

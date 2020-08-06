@@ -9,6 +9,7 @@
 
 /*newsletter variables */
 $brand-color-newsletter: #006FFF;
+$brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
 
 body.newsletter-template {
   .page-template a,
@@ -16,6 +17,88 @@ body.newsletter-template {
   .page-template h1,
   .post-template h1  {
     color: $brand-color-newsletter;
+    color: $brand-color-newsletter-p3;
+  }
+  .page-template h1, h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em;
+  }
+}
+
+/*Blog variables */
+$brand-color-blog: #00C764;
+$brand-color-blog-p3: color(display-p3 0 0.781 0.394 / 1);
+
+body.blog-template {
+  .page-template a,
+  .post-template a,
+  .page-template h1,
+  .post-template h1  {
+    color: $brand-color-blog;
+    color: $brand-color-blog-p3;
+  }
+  .page-template h1, h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em;
+  }
+}
+
+/*Book variables */
+$brand-color-book: #FF0058;
+$brand-color-book-p3: color(display-p3 1 0 0.345 / 1);
+
+body.book-template {
+  .page-template a,
+  .post-template a,
+  .page-template h1,
+  .post-template h1  {
+    color: $brand-color-book;
+    color: $brand-color-book-p3;
+  }
+  .page-template h1, h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em;
+  }
+}
+
+/*courses variables */
+$brand-color-courses: #6E39FF;
+$brand-color-courses-p3:  color(display-p3 0.429 0.222 1 / 1);
+
+body.courses-template {
+  .page-template a,
+  .post-template a,
+  .page-template h1,
+  .post-template h1  {
+    color: $brand-color-courses;
+    color: $brand-color-courses-p3;
+  }
+  .page-template h1, h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em;
+  }
+}
+
+
+/*apps variables */
+$brand-color-apps: #FF008D;
+$brand-color-apps-p3: color(display-p3 1 0 0.553 / 1);
+
+body.apps-template {
+  .page-template a,
+  .post-template a,
+  .page-template h1,
+  .post-template h1  {
+    color: $brand-color-apps;
+    color: $brand-color-apps-p3;
   }
   .page-template h1, h1.fancy {
     font-size: var(--step-4);

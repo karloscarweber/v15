@@ -1094,9 +1094,66 @@ body.newsletter-template .page-template a,
 body.newsletter-template .post-template a,
 body.newsletter-template .page-template h1,
 body.newsletter-template .post-template h1 {
-  color: #006FFF; }
+  color: #006FFF;
+  color: color(display-p3 0 0.433 1/1); }
 
 body.newsletter-template .page-template h1, body.newsletter-template h1.fancy {
+  font-size: var(--step-4);
+  font-style: italic;
+  font-family: 'PlayfairDisplay-Black', Arial;
+  margin-bottom: 1em; }
+
+/*Blog variables */
+body.blog-template .page-template a,
+body.blog-template .post-template a,
+body.blog-template .page-template h1,
+body.blog-template .post-template h1 {
+  color: #00C764;
+  color: color(display-p3 0 0.781 0.394/1); }
+
+body.blog-template .page-template h1, body.blog-template h1.fancy {
+  font-size: var(--step-4);
+  font-style: italic;
+  font-family: 'PlayfairDisplay-Black', Arial;
+  margin-bottom: 1em; }
+
+/*Book variables */
+body.book-template .page-template a,
+body.book-template .post-template a,
+body.book-template .page-template h1,
+body.book-template .post-template h1 {
+  color: #FF0058;
+  color: color(display-p3 1 0 0.345/1); }
+
+body.book-template .page-template h1, body.book-template h1.fancy {
+  font-size: var(--step-4);
+  font-style: italic;
+  font-family: 'PlayfairDisplay-Black', Arial;
+  margin-bottom: 1em; }
+
+/*courses variables */
+body.courses-template .page-template a,
+body.courses-template .post-template a,
+body.courses-template .page-template h1,
+body.courses-template .post-template h1 {
+  color: #6E39FF;
+  color: color(display-p3 0.429 0.222 1/1); }
+
+body.courses-template .page-template h1, body.courses-template h1.fancy {
+  font-size: var(--step-4);
+  font-style: italic;
+  font-family: 'PlayfairDisplay-Black', Arial;
+  margin-bottom: 1em; }
+
+/*apps variables */
+body.apps-template .page-template a,
+body.apps-template .post-template a,
+body.apps-template .page-template h1,
+body.apps-template .post-template h1 {
+  color: #FF008D;
+  color: color(display-p3 1 0 0.553/1); }
+
+body.apps-template .page-template h1, body.apps-template h1.fancy {
   font-size: var(--step-4);
   font-style: italic;
   font-family: 'PlayfairDisplay-Black', Arial;
@@ -1743,7 +1800,11 @@ ul.feature-list {
   color: black;
   font-family: -apple-system, sans-serif;
   font-weight: 800;
-  position: relative; }
+  position: relative;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20rem; }
   .supertext .background {
     display: block;
     position: fixed;
@@ -1752,7 +1813,8 @@ ul.feature-list {
     right: 0;
     bottom: 0;
     z-index: -1000;
-    background: white;
+    background: whitesmoke;
+    background: #DFDFDF;
     height: 100vh;
     transform: scale(2);
     background-position: center center;
@@ -1766,10 +1828,11 @@ ul.feature-list {
       display: block;
       position: relative;
       background: #FF008D;
+      background: color(display-p3 1 0 0.553/1);
       width: 100%;
       height: var(--step-5);
       margin-bottom: calc(-1 * var(--step-5));
-      transform: translateZ(0px);
+      transform: translateZ(0px) scaleX(1.1) scaleY(1.3);
       z-index: -100; }
     .supertext .app-link:hover {
       text-decoration: underline;
@@ -1785,10 +1848,11 @@ ul.feature-list {
       display: block;
       position: relative;
       background: #00C764;
+      background: color(display-p3 0 0.781 0.394/1);
       width: 100%;
       height: var(--step-5);
       margin-bottom: calc(-1 * var(--step-5));
-      transform: translateZ(0px);
+      transform: translateZ(0px) scaleX(1.1) scaleY(1.3);
       z-index: -100; }
     .supertext .blog-link:hover {
       text-decoration: underline;
@@ -1804,10 +1868,11 @@ ul.feature-list {
       display: block;
       position: relative;
       background: #FF0058;
+      background: color(display-p3 1 0 0.345/1);
       width: 100%;
       height: var(--step-5);
       margin-bottom: calc(-1 * var(--step-5));
-      transform: translateZ(0px);
+      transform: translateZ(0px) scaleX(1.1) scaleY(1.3);
       z-index: -100; }
     .supertext .book-link:hover {
       text-decoration: underline;
@@ -1823,15 +1888,37 @@ ul.feature-list {
       display: block;
       position: relative;
       background: #6E39FF;
+      background: color(display-p3 0.429 0.222 1/1);
       width: 100%;
       height: var(--step-5);
       margin-bottom: calc(-1 * var(--step-5));
-      transform: translateZ(0px);
+      transform: translateZ(0px) scaleX(1.1) scaleY(1.3);
       z-index: -100; }
     .supertext .courses-link:hover {
       text-decoration: underline;
       color: white; }
       .supertext .courses-link:hover::before {
+        display: none; }
+  .supertext .newsletter-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white; }
+    .supertext .newsletter-link::before {
+      content: "";
+      display: block;
+      position: relative;
+      background: #006FFF;
+      background: color(display-p3 0 0.433 1/1);
+      width: 100%;
+      height: var(--step-5);
+      margin-bottom: calc(-1 * var(--step-5));
+      transform: translateZ(0px) scaleX(1.1) scaleY(1.3);
+      z-index: -100; }
+    .supertext .newsletter-link:hover {
+      text-decoration: underline;
+      color: #006FFF;
+      color: color(display-p3 0 0.433 1/1); }
+      .supertext .newsletter-link:hover::before {
         display: none; }
   .supertext .app-link:hover ~ .background {
     background-image: url("/assets/images/app-background.svg");
@@ -1845,6 +1932,14 @@ ul.feature-list {
   .supertext .courses-link:hover ~ .background {
     background-image: url("/assets/images/courses-background.svg");
     background-size: 1026px 825.5px; }
+
+@media screen and (max-width: 768px) {
+  .supertext {
+    font-size: var(--step-4);
+    line-height: var(--step-4); }
+    .supertext .app-link::before, .supertext .blog-link::before, .supertext .book-link::before, .supertext .courses-link::before, .supertext .newsletter-link::before {
+      height: var(--step-4);
+      margin-bottom: calc(-1 * var(--step-4)); } }
 
 /* Koenig styles to support */
 /*
