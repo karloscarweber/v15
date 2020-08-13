@@ -1,18 +1,14 @@
-<a href="/" class="logo-text"><h2>index</h2></a>
-<div class="expanding_menu_background"></div>
-<div class="expanding_menu_container">
-  <p class="expand_menu_button"><span>Close  </span>Menu</p>
-  <div class="little_bar"></div> <div class="big_bar"></div>
-  <div class="expanding_menu_view_window">
-    <div class="expanding_menu_view_substrate">
-      <ul class="site_nav">
-        {{#if @blog.navigation}}
-          {{navigation}}
-        {{/if}}
-        <li><span>my emails is </span><a href="mailto:me@kow.fm">me@kow.fm</a></li>
-      </ul>
+<nav class="pill-menu">
 
-    </div>
-    <img class="menu_logo" src="/assets/built/prologue_logo_colors.svg" alt="Prologue Logo">
-  </div>
-</div>
+  <a href="/" class="logo-element">kow.fm</a>
+
+  <ul class="pill-menu-list">
+    {{#if @blog.navigation}}
+      {{navigation}}
+    {{/if}}
+    <!-- <li><span>my emails is </span><a href="mailto:me@kow.fm">me@kow.fm</a></li> -->
+  </ul>
+
+  <button class="login-button" type="button" name="button">Login</button>
+
+</nav>

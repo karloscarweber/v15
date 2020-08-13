@@ -2,24 +2,21 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<h1 class="sgmt-32 sgmb-00">Swift Foundations</h1>
-<h4 class="sgmt-00 sgmb-64 tf-subheading measure">All the basics of Swift.</h4>
+<div class="layout-centered post-container page-template">
 
-{{!-- The main content area --}}
-{{#foreach posts visibility="all" limit="2"}}
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-    {{> "lesson-card"}}
-{{/foreach}}
+    {{> "site-header"}}
 
-{{!-- The main content area --}}
-<h4>Yeah. Swift is the best. When you’re familiar with swift don’t forget to checkout the Swift Product Course.</h4>
+  <h1>Swift Foundations</h1>
 
-{{#foreach posts visibility="all"}}
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-    {{> "lesson-card"}}
-{{/foreach}}
+  <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
+  <p>Swift code, Announcements, Ethics.. Click here to subscribe.</p>
 
-{{> site-header}}
+  {{#get "posts" limit="all" filter="tag:swift_foundations" order="title asc"}}
+    {{#foreach posts}}
+      {{> "lesson-card"}}
+    {{/foreach}}
+  {{/get}}
 
-{{#contentFor "scripts"}}
-{{/contentFor}}
+</div>
+
+{{#contentFor "template_class"}} book-template {{/contentFor}}
