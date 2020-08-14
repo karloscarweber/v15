@@ -2,10 +2,14 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-  {{> "site-header"}}
+
+
+  <div class="layout-centered post-container page-template">
+    {{> "site-header"}}
+  </div>
 
   {{#post}}
-      <article class="gl_story post-container {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+      <article class="layout-centered post-container post-template {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
         <div class="gl_story__content_wrapper">
           <h1>{{title}}</h1>
@@ -41,15 +45,3 @@ into the {body} of the default.hbs template --}}
         </div>
       </article>
   {{/post}}
-
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-<!--
-{{#contentFor "scripts"}}
-<script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-{{/contentFor}}
--->

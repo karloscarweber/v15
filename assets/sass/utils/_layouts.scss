@@ -31,8 +31,10 @@ body {
 }
 
 // so every post type pages, content not indexes, should be more narrow
-.post-template .layout-centered {
-  max-width: 896px;
+.post-template .layout-centered .gl_story__content_wrapper {
+  max-width: 684px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* CSS Grid layouts */

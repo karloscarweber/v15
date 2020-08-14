@@ -1,8 +1,9 @@
 {{!< ../default_account}}
 
-{{> site-header}}
-
 <section class="layout-centered page-template">
+
+  {{> site-header}}
+
   <div class="content">
 
     {{#if @member.paid}}
@@ -136,3 +137,5 @@
 
   </div>
 </section>
+
+{{#contentFor "template_class"}} courses-template page-template {{/contentFor}}

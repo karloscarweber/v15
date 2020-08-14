@@ -25,13 +25,3 @@
       {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
       {{> "post-card"}}
   {{/foreach}}
-
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-<!--<script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>-->
-{{/contentFor}}
