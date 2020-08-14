@@ -1155,74 +1155,79 @@ nav.pill-menu {
  */
 /* Newsletter sections. Or children of Newsletter pages. */
 /*newsletter variables */
-body.newsletter-template .page-template a,
-body.newsletter-template .post-template a,
-body.newsletter-template .page-template h1,
-body.newsletter-template .post-template h1 {
-  color: #006FFF;
-  color: color(display-p3 0 0.433 1/1); }
-
-body.newsletter-template .page-template h1, body.newsletter-template h1.fancy {
-  font-size: var(--step-4);
-  font-style: italic;
-  font-family: 'PlayfairDisplay-Black', Arial;
-  margin-bottom: 1em; }
+body.newsletter-template {
+  background: whitesmoke; }
+  body.newsletter-template .page-template a,
+  body.newsletter-template .post-template a,
+  body.newsletter-template .page-template h1,
+  body.newsletter-template .post-template h1 {
+    color: #006FFF;
+    color: color(display-p3 0 0.433 1/1); }
+  body.newsletter-template .page-template h1, body.newsletter-template h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em; }
 
 /*Blog variables */
-body.blog-template .page-template a,
-body.blog-template .post-template a,
-body.blog-template .page-template h1,
-body.blog-template .post-template h1 {
-  color: #00C764;
-  color: color(display-p3 0 0.781 0.394/1); }
-
-body.blog-template .page-template h1, body.blog-template h1.fancy {
-  font-size: var(--step-4);
-  font-style: italic;
-  font-family: 'PlayfairDisplay-Black', Arial;
-  margin-bottom: 1em; }
+body.blog-template {
+  background: whitesmoke; }
+  body.blog-template .page-template a,
+  body.blog-template .post-template a,
+  body.blog-template .page-template h1,
+  body.blog-template .post-template h1 {
+    color: #00C764;
+    color: color(display-p3 0 0.781 0.394/1); }
+  body.blog-template .page-template h1, body.blog-template h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em; }
 
 /*Book variables */
-body.book-template .page-template a,
-body.book-template .post-template a,
-body.book-template .page-template h1,
-body.book-template .post-template h1 {
-  color: #FF0058;
-  color: color(display-p3 1 0 0.345/1); }
-
-body.book-template .page-template h1, body.book-template h1.fancy {
-  font-size: var(--step-4);
-  font-style: italic;
-  font-family: 'PlayfairDisplay-Black', Arial;
-  margin-bottom: 1em; }
+body.book-template {
+  background: whitesmoke; }
+  body.book-template .page-template a,
+  body.book-template .post-template a,
+  body.book-template .page-template h1,
+  body.book-template .post-template h1 {
+    color: #FF0058;
+    color: color(display-p3 1 0 0.345/1); }
+  body.book-template .page-template h1, body.book-template h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em; }
 
 /*courses variables */
-body.courses-template .page-template a,
-body.courses-template .post-template a,
-body.courses-template .page-template h1,
-body.courses-template .post-template h1 {
-  color: #6E39FF;
-  color: color(display-p3 0.429 0.222 1/1); }
-
-body.courses-template .page-template h1, body.courses-template h1.fancy {
-  font-size: var(--step-4);
-  font-style: italic;
-  font-family: 'PlayfairDisplay-Black', Arial;
-  margin-bottom: 1em; }
+body.courses-template {
+  background: whitesmoke; }
+  body.courses-template .page-template a,
+  body.courses-template .post-template a,
+  body.courses-template .page-template h1,
+  body.courses-template .post-template h1 {
+    color: #6E39FF;
+    color: color(display-p3 0.429 0.222 1/1); }
+  body.courses-template .page-template h1, body.courses-template h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em; }
 
 /*apps variables */
-body.apps-template .page-template a,
-body.apps-template .post-template a,
-body.apps-template .page-template h1,
-body.apps-template .post-template h1 {
-  color: #FF008D;
-  color: color(display-p3 1 0 0.553/1); }
-
-body.apps-template .page-template h1, body.apps-template h1.fancy {
-  font-size: var(--step-4);
-  font-style: italic;
-  font-family: 'PlayfairDisplay-Black', Arial;
-  margin-bottom: 1em; }
+body.apps-template {
+  background: whitesmoke; }
+  body.apps-template .page-template a,
+  body.apps-template .post-template a,
+  body.apps-template .page-template h1,
+  body.apps-template .post-template h1 {
+    color: #FF008D;
+    color: color(display-p3 1 0 0.553/1); }
+  body.apps-template .page-template h1, body.apps-template h1.fancy {
+    font-size: var(--step-4);
+    font-style: italic;
+    font-family: 'PlayfairDisplay-Black', Arial;
+    margin-bottom: 1em; }
 
 /* All the junk for subscriptions. Like subscribe boxes, error states, etc.. */
 h3.account-styles {

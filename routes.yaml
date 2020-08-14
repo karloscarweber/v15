@@ -2,6 +2,7 @@ routes:
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
+  /pricing/: members/pricing
   /: home
   # /swift_foundations/:
   #   controller: channel
