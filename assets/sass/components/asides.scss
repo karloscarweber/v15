@@ -1,0 +1,76 @@
+/* Asides */
+
+.reparations-pricing-box {
+  width: 100%;
+  max-width: 680px;
+  margin: 3em auto;
+  padding: 30px 32px;
+  font-size: var(--step-1);
+  line-height: 1.25em;
+  color: #333333;
+  background: #F3F3F3;
+  box-shadow: 0 3px 0 6px #000000;
+  border-radius: 16px;
+  font-weight: 600;
+  box-sizing: border-box;
+  margin-top: 8em;
+}
+
+
+.aside {
+  display: inline-block;
+  width: 100%;
+  max-width: 429px;
+  background: #F0F0F0;
+  border-radius: 14px;
+  padding: 16px;
+
+  p {
+    font-family: 'GreycliffCF', Arial;
+    font-size: var(--step--1);
+    line-height: var(--step--1);
+    color: #3D3D3D;
+
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: justify;
+    margin-bottom: 1em;
+
+    &:first-child {
+      font-size: var(--step-0);
+      line-height: 1.5em;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 0em;
+    }
+  }
+
+  &.bigger-box {
+    max-width: 620px;
+    border-radius: 16px;
+    padding: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    p, p:first-child {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: justify;
+    }
+
+    &.bg-black {
+      p, p:first-child { color:white; }
+      background: black;
+    }
+
+    &.bg-purple {
+      p, p:first-child { color:white; }
+      background: #6E39FF;
+      background: color(display-p3 0.431 0.222 1 / 1); /* https://p3colorpicker.cool */
+    }
+
+  }
+
+}

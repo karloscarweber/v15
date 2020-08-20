@@ -37,6 +37,9 @@ p.account-styles {
     margin-right: auto;
     max-width: 504px;
 
+    margin-top: 10em;
+    margin-bottom: 7em;
+
     h3 {
       color: #6E39FF;
       color: color(display-p3 0.431 0.222 1 / 1); /* https://p3colorpicker.cool */
@@ -536,6 +539,7 @@ ul.feature-list {
 /* Fancy Card thing */
 .pricing-matrix {
   margin-top: 10em;
+  margin-bottom: 10em;
 
   #matrixchecker {
     display: none;
@@ -720,21 +724,4 @@ ul.feature-list {
     }
   }
 
-}
-
-
-.reparations-pricing-box {
-  width: 100%;
-  max-width: 680px;
-  margin: 3em auto;
-  padding: 30px 32px;
-  font-size: var(--step-1);
-  line-height: 1.25em;
-  color: #333333;
-  background: #F3F3F3;
-  box-shadow: 0 3px 0 6px #000000;
-  border-radius: 16px;
-  font-weight: 600;
-  box-sizing: border-box;
-  margin-top: 8em;
 }

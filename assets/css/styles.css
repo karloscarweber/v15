@@ -827,6 +827,67 @@ article.post-item p {
       text-decoration: underline; }
 
 /* Components */
+/* Asides */
+.reparations-pricing-box {
+  width: 100%;
+  max-width: 680px;
+  margin: 3em auto;
+  padding: 30px 32px;
+  font-size: var(--step-1);
+  line-height: 1.25em;
+  color: #333333;
+  background: #F3F3F3;
+  box-shadow: 0 3px 0 6px #000000;
+  border-radius: 16px;
+  font-weight: 600;
+  box-sizing: border-box;
+  margin-top: 8em; }
+
+.aside {
+  display: inline-block;
+  width: 100%;
+  max-width: 429px;
+  background: #F0F0F0;
+  border-radius: 14px;
+  padding: 16px; }
+  .aside p {
+    font-family: 'GreycliffCF', Arial;
+    font-size: var(--step--1);
+    line-height: var(--step--1);
+    color: #3D3D3D;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: justify;
+    margin-bottom: 1em; }
+    .aside p:first-child {
+      font-size: var(--step-0);
+      line-height: 1.5em;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 0em; }
+  .aside.bigger-box {
+    max-width: 620px;
+    border-radius: 16px;
+    padding: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
+    .aside.bigger-box p, .aside.bigger-box p:first-child {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: justify; }
+    .aside.bigger-box.bg-black {
+      background: black; }
+      .aside.bigger-box.bg-black p, .aside.bigger-box.bg-black p:first-child {
+        color: white; }
+    .aside.bigger-box.bg-purple {
+      background: #6E39FF;
+      background: color(display-p3 0.431 0.222 1/1);
+      /* https://p3colorpicker.cool */ }
+      .aside.bigger-box.bg-purple p, .aside.bigger-box.bg-purple p:first-child {
+        color: white; }
+
 /* code style adjustments */
 code[class*="language-"], pre[class*="language-"] {
   font-size: var(--step--1) !important; }
@@ -1356,7 +1417,9 @@ p.account-styles {
     box-shadow: 0 0px 0 5px #6E39FF, 0 0px 50px 0px rgba(110, 57, 255, 0.37);
     margin-left: auto;
     margin-right: auto;
-    max-width: 504px; }
+    max-width: 504px;
+    margin-top: 10em;
+    margin-bottom: 7em; }
     .subscribe-form.purple h3 {
       color: #6E39FF;
       color: color(display-p3 0.431 0.222 1/1);
@@ -1797,7 +1860,8 @@ ul.feature-list {
 
 /* Fancy Card thing */
 .pricing-matrix {
-  margin-top: 10em; }
+  margin-top: 10em;
+  margin-bottom: 10em; }
   .pricing-matrix #matrixchecker {
     display: none; }
   .pricing-matrix #matrixchecker:checked + .matrix-banner {
@@ -1946,21 +2010,6 @@ ul.feature-list {
     .pricing-matrix #matrixchecker:checked ~ .card-holder .pricing-card.purple p + p {
       opacity: 1.0;
       margin: 32px; }
-
-.reparations-pricing-box {
-  width: 100%;
-  max-width: 680px;
-  margin: 3em auto;
-  padding: 30px 32px;
-  font-size: var(--step-1);
-  line-height: 1.25em;
-  color: #333333;
-  background: #F3F3F3;
-  box-shadow: 0 3px 0 6px #000000;
-  border-radius: 16px;
-  font-weight: 600;
-  box-sizing: border-box;
-  margin-top: 8em; }
 
 /*
   superfrontpage
