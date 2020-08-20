@@ -6,15 +6,17 @@ h3.account-styles {
   font-weight: 600;
   font-size: var(--step-1);
   line-height: 1.33em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
-p.account-styles {
+.subscribe-form p.account-styles {
   font-family: 'GreycliffCF', Arial;
   font-weight: 500;
   font-size: var(--step-0);
   line-height: 1.33em;
   margin-bottom: 1em;
+  margin-top: 0em;
+  text-align: left;
 }
 
 .subscribe-form {
@@ -24,6 +26,8 @@ p.account-styles {
   box-shadow: 0 3px 0 5px #00C764;
   border-radius: 16px;
   margin-top: 4em;
+
+
 
   & > *:first-child {
     margin-top: 0em;
@@ -40,6 +44,10 @@ p.account-styles {
     margin-top: 10em;
     margin-bottom: 7em;
 
+    &.wide {
+      max-width: 680px;
+    }
+
     h3 {
       color: #6E39FF;
       color: color(display-p3 0.431 0.222 1 / 1); /* https://p3colorpicker.cool */
@@ -52,6 +60,14 @@ p.account-styles {
     form button, .button.primary {
       background: #6E39FF;
       margin-top: 1em;
+      color:white;
+
+      &.subscribe-button {
+        text-align: center;
+        margin-left: 0em;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
     }
 
     a {
@@ -724,4 +740,18 @@ ul.feature-list {
     }
   }
 
+}
+
+.pay-matrix {
+  display: flex;
+  width: 100%;
+  a:first-child.button.primary.subscribe-button {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #ff0058;
+  }
+  a:last-child.button.primary.subscribe-button {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
 }

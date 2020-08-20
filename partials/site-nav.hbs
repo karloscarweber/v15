@@ -8,7 +8,11 @@
     {{/if}}
     <!-- <li><span>my emails is </span><a href="mailto:me@kow.fm">me@kow.fm</a></li> -->
   </ul>
-
+{{#if @member}}
+  <a href="/account" class="login-button" type="button" name="button">Account</a>
+{{else}}
   <a href="/signin" class="login-button" type="button" name="button">Login</a>
+{{/if}}
+
 
 </nav>

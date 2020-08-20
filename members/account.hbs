@@ -77,8 +77,12 @@
 
     {{else if @member}}
 
+
+
+
+
       {{!-- Logged in, not paying: Link to checkout --}}
-      <div class="account-box">
+      <div class="subscribe-form purple wide">
         <div class="subscriber-avatar">
           {{#if @member.avatar_image}}
             <img src="{{@member.avatar_image}}" />
@@ -86,7 +90,21 @@
         </div>
 
         <h3 class="account-styles">Hi Friend</h3>
-        <p class="account-styles">Currently you haven’t subscribed to premium content on my little blog. You ARE subscribed to receive newsletters from {{@site.title}} though, at <strong>{{@member.email}}</strong>. Thank you.</p>
+        <p class="account-styles">Your Email: <strong>{{@member.email}}</strong>.</p>
+
+
+        <p class="account-styles" style="clear:both; font-weight: 600;">Currently you haven’t subscribed to premium content on my little blog. You ARE subscribed to receive newsletters though. Thank you.</p>
+
+
+        <div class="pay-matrix">
+          <a class="button primary button-centered subscribe-button" href="javascript:" data-members-plan="Monthly">
+            {{@price.currency_symbol}}{{@price.monthly}} / month
+          </a>
+
+          <a class="button primary button-centered subscribe-button" href="javascript:" data-members-plan="Yearly">
+            {{@price.currency_symbol}}{{@price.yearly}} / year
+          </a>
+        </div>
 
         <div class="authbox-signup">
           <a class="button primary button-centered" href="{{@site.url}}/signup/">
@@ -95,7 +113,7 @@
         </div>
 
         <h3>Adding and removing labels from a user</h3>
-        <form data-members-form="subscribe">
+        <form data-members-form="subscribe" class="narrow">
           <p>Subscribe to the newsletter</p>
           <input data-members-label type="hidden" value="Early Adopters" />
           <input data-members-email type="email" required="true"/>

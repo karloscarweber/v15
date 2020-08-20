@@ -1394,14 +1394,16 @@ h3.account-styles {
   font-weight: 600;
   font-size: var(--step-1);
   line-height: 1.33em;
-  margin-bottom: 1em; }
+  margin-bottom: 0.5em; }
 
-p.account-styles {
+.subscribe-form p.account-styles {
   font-family: 'GreycliffCF', Arial;
   font-weight: 500;
   font-size: var(--step-0);
   line-height: 1.33em;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  margin-top: 0em;
+  text-align: left; }
 
 .subscribe-form {
   display: block;
@@ -1420,13 +1422,21 @@ p.account-styles {
     max-width: 504px;
     margin-top: 10em;
     margin-bottom: 7em; }
+    .subscribe-form.purple.wide {
+      max-width: 680px; }
     .subscribe-form.purple h3 {
       color: #6E39FF;
       color: color(display-p3 0.431 0.222 1/1);
       /* https://p3colorpicker.cool */ }
     .subscribe-form.purple form button, .subscribe-form.purple .button.primary {
       background: #6E39FF;
-      margin-top: 1em; }
+      margin-top: 1em;
+      color: white; }
+      .subscribe-form.purple form button.subscribe-button, .subscribe-form.purple .button.primary.subscribe-button {
+        text-align: center;
+        margin-left: 0em;
+        margin-top: 32px;
+        margin-bottom: 32px; }
     .subscribe-form.purple a {
       color: #6E39FF;
       color: color(display-p3 0.431 0.222 1/1);
@@ -2010,6 +2020,17 @@ ul.feature-list {
     .pricing-matrix #matrixchecker:checked ~ .card-holder .pricing-card.purple p + p {
       opacity: 1.0;
       margin: 32px; }
+
+.pay-matrix {
+  display: flex;
+  width: 100%; }
+  .pay-matrix a:first-child.button.primary.subscribe-button {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #ff0058; }
+  .pay-matrix a:last-child.button.primary.subscribe-button {
+    margin-left: 0.5em;
+    margin-right: 0.5em; }
 
 /*
   superfrontpage
