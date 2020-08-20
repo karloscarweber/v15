@@ -1,0 +1,26 @@
+// forms
+
+
+form {
+
+  &.narrow {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    .button.primary {
+      width: 100%;
+    }
+  }
+
+  label {
+    font-size: var(--step--1);
+    line-height: 1em;
+    font-family: 'GreycliffCF', Arial;
+    padding-left: 0.5em;
+    color: #333;
+    margin-top: 2em;
+    display: inline-block
+  }
+}

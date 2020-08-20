@@ -101,12 +101,14 @@
                 <h3>{{@price.currency_symbol}}{{@price.monthly}}<span>/month</span></h3>
                 <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
                 <p>Pro support, and a twist community.</p>
+                <a href="/subscribe" class="button primary white fit">Subscribe</a>
               </div>
 
               <div class="pricing-card purple">
                 <h3>{{@price.currency_symbol}}{{@price.yearly}}<span>/year</span></h3>
                 <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
                 <p>Pro support, and a twist community.</p>
+                <a href="/subscribe" class="button primary white fit">Subscribe</a>
               </div>
 
             </div>
@@ -120,14 +122,19 @@
           <h2 class="signup-title">But first, you'll need to sign up for a free account.</h2>
 
           <section class="subscribe-form purple">
-              <form data-members-form="signup">
-                <input data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false"/>
-                <button type="submit" class="button primary">Subscribe</button>
+              <form data-members-form="signup" class="narrow">
+
+                <h3 class="section-header-h3-text">Sign Up</h3>
+
+                <label for="email">Email Address</label>
+                <input name="email" data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false"/>
+                <button tabindex="1" type="submit" class="button primary">Subscribe</button>
                 <p><small>Already have an account? <a href="{{@site.url}}/signin/">Sign in</a></small></p>
                 <p data-members-error class="subscribe-error account-styles"><!-- error message will appear here --></p>
                 <p class="message-success account-styles"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription.</p>
+                <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
               </form>
-              <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
+
           </section>
 
         </section>

@@ -1,3 +1,99 @@
+/* Generic Typography rewrites */
+.mega-text {
+  font-family: -apple-system, sans-serif;
+  font-size: var(--step-5);
+  line-height: var(--step-5);
+  color: black;
+  font-weight: 800;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+// for pages
+.title-text {
+  font-family: 'PlayfairDisplay-Black', Georgia;
+  font-size: var(--step-4);
+  line-height: var(--step-4);
+  // color: black; // inherit color
+  letter-spacing: -0.1em;
+  font-weight: 800;
+  line-height: 1em;
+  margin-top: 2em;
+}
+
+.section-header-text {
+  font-family: 'GreycliffCF', Arial;
+  font-size: var(--step-4);
+  line-height: var(--step-4);
+  // color: black; // inherit color
+  letter-spacing: -0.1em;
+  font-weight: 800;
+  line-height: 1em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.section-header-h3-text {
+  font-family: 'GreycliffCF', Arial;
+  font-size: var(--step-1);
+  font-weight: 700;
+  line-height: 1.5em;
+  margin-top: 1.25em;
+  text-align: center;
+}
+
+// for posts
+.post-title-text {
+  font-family: 'PlayfairDisplay-Black', Georgia;
+  font-size: var(--step-4);
+  line-height: var(--step-4);
+  // color: black; // inherit color
+  letter-spacing: -0.1em;
+  font-weight: 800;
+  line-height: 1em;
+  margin-top: 2em;
+}
+
+.header-h2-text {
+  font-family: 'GreycliffCF', Arial;
+  font-size: var(--step-2);
+  font-weight: 700;
+  line-height: 1.5em;
+  margin-top: 1.25em;
+  text-align: justify;
+}
+
+
+
+.subheader-text {
+  font-family: 'GreycliffCF', Arial;
+  font-size: var(--step-1);
+  font-weight: 700;
+  line-height: 1.5em;
+  margin-top: 1.25em;
+  text-align: justify;
+}
+
+.leading-paragraph-text {
+  font-family: 'GreycliffCF', Arial;
+  font-size: var(--step-0);
+  font-weight: 500;
+  line-height: 1.5em;
+  margin-top: 1.25em;
+  text-align: justify;
+}
+
+.paragraph-text {
+  font-family: 'GreycliffCF', Arial;
+  font-size: var(--step-0);
+  font-weight: 400;
+  line-height: 1.5em;
+  margin-top: 1.25em;
+  text-align: justify;
+}
+
+
 /* wysywig type stuff. Default styles that are pushed out through koenig. */
 .page-template h1 {
   font-family: 'PlayfairDisplay-Black', Arial;
