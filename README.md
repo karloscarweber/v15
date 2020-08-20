@@ -7,9 +7,12 @@ This is the fifteenth version of kowfm. Based, very very loosely, off of Casper.
 # To Do
 
 - [x] Build Utopian typescale
-- [ ] Add bombastic front page
-- [ ] Build new Menu.
-- [ ] Formalize Brand Colors for different sections of the site. (Blog, Newlsetter, Book, Courses, Freelance)
+- [x] Add bombastic front page
+- [x] Build new Menu.
+- [x] Formalize Brand Colors for different sections of the site. (Blog, Newlsetter, Book, Courses, Freelance)
+- [ ] Redo the signup/signin/accountpages
+- [ ] Get subscriptions working with stripe.
+- [ ] Make a better 404 page
 
 ## Building the CSS
 
