@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="781px" height="458px" viewBox="0 0 781 458" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SwiftBackground</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="781" height="458"></rect>
+        <filter x="-3.7%" y="-5.5%" width="107.4%" height="112.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="2.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="SwiftBackground" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" fill-rule="nonzero">
+            <g id="Swift-Foundations-Card">
+                <g id="Rectangle-9-Copy-2">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FF0058" xlink:href="#path-1"></use>
+                </g>
+                <path d="M710.177736,416.175345 C691.566309,426.958346 665.976096,428.066243 640.230355,416.999269 C619.38452,408.104094 602.087896,392.533537 591,374.743187 C596.322222,379.190774 602.531348,382.750444 609.183926,385.862156 C635.771907,398.360997 662.354305,397.505076 681.061441,385.894153 C681.049477,385.882154 681.041502,385.874155 681.033526,385.862156 C654.422415,365.400053 631.803171,338.710528 614.950398,316.916548 C611.400788,313.357678 608.739677,308.909291 606.078566,304.906062 C626.480151,323.58833 658.858132,347.162144 670.387088,353.837525 C645.997225,328.035917 624.26329,296.010886 625.148599,296.898804 C663.735307,336.043175 699.662101,358.285113 699.662101,358.285113 C700.850488,358.95705 701.7677,359.516998 702.505458,360.016952 C703.283094,358.033136 703.965021,355.973327 704.539276,353.837525 C710.748402,331.151628 703.653967,305.350021 688.129157,284 C724.051963,305.795979 745.343244,346.718185 736.470215,380.971009 C736.238919,381.894924 735.987682,382.806839 735.716507,383.702756 C735.820191,383.826745 735.923876,383.954733 736.027561,384.086721 C753.765643,406.328658 748.888468,429.902473 746.671208,425.454885 C737.048458,406.568636 719.234606,412.344101 710.178135,416.175745 L710.177736,416.175345 Z" id="Path" fill="#FFD039"></path>
+            </g>
+        </g>
+    </g>
+</svg>

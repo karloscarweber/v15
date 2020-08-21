@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="458px" height="458px" viewBox="0 0 458 458" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>DubbbleBackground</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="458" height="458"></rect>
+        <filter x="-6.3%" y="-5.5%" width="112.7%" height="112.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="2.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M161.473684,0 C202.633432,0 236,33.4685499 236,74.7540984 C236,116.039647 202.633432,149.508197 161.473684,149.508197 C154.750563,149.508197 148.23537,148.615234 142.039554,146.9411 C130.152163,172.380404 104.390608,190 74.5263158,190 C33.3665681,190 0,156.53145 0,115.245902 C0,73.9603531 33.3665681,40.4918033 74.5263158,40.4918033 C81.2494366,40.4918033 87.7646303,41.384766 93.9604461,43.0589 C105.847837,17.6195958 131.609392,0 161.473684,0 Z" id="path-4"></path>
+    </defs>
+    <g id="DubbbleBackground" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dubbble">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Rectangle-9-Copy-2" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use fill="#FF39BD" xlink:href="#path-1"></use>
+            </g>
+            <g id="dubbble-logo" mask="url(#mask-2)">
+                <g transform="translate(270.000000, 296.000000)">
+                    <mask id="mask-5" fill="white">
+                        <use xlink:href="#path-4"></use>
+                    </mask>
+                    <use id="Combined-Shape" stroke="none" fill="#000000" fill-rule="nonzero" xlink:href="#path-4"></use>
+                    <ellipse id="Oval-2" stroke="none" fill="#32DB2F" fill-rule="nonzero" style="mix-blend-mode: lighten;" mask="url(#mask-5)" cx="161.5" cy="75" rx="74.5" ry="75"></ellipse>
+                    <ellipse id="Oval-2-Copy" stroke="none" fill="#F62C55" fill-rule="nonzero" style="mix-blend-mode: lighten;" mask="url(#mask-5)" cx="74.5" cy="115" rx="74.5" ry="75"></ellipse>
+                </g>
+            </g>
+            <g id="Swift_logo" mask="url(#mask-2)">
+                <g transform="translate(404.000000, 408.000000)"></g>
+            </g>
+        </g>
+    </g>
+</svg>
