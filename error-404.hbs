@@ -1,11 +1,187 @@
-{{!< default}}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ERROR - 404</title>
+  </head>
+  <body>
+
+
+
 {{!--
 This error template is used for all 404 errors, which might occur on your site.
 It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
 --}}
 
-  <section class="error-message text-block">
-      <h1 class="error-code">{{error.statusCode}}</h1>
-      <p class="error-description">{{message}}</p>
-      <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
-  </section>
+<style media="screen">
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  display: block;
+  width: 100%;
+  max-width: 420px;
+
+  /* mix-blend-mode: difference; */
+}
+
+h1.error-text{
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  font-family: Arial;
+  font-size: 7vw;
+  color: black;
+
+}
+
+p {
+  /* position: absolute; */
+  text-align: center;
+  padding: 20px;
+  font-weight: 500;
+  font-size:1em;
+}
+
+.original {
+  display: inline;
+  position: absolute;
+  padding: 12px;
+  color: white;
+  background: black;
+  font-size: 16px;
+  font-weight: 500;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+a.original_link {
+  color: white !important;
+  text-decoration: underline;
+}
+a.original_link:hover {
+  text-decoration: none;
+}
+
+</style>
+
+
+  <!--参考   http://glslsandbox.com/e#59447.1 -->
+    <div id="container">
+      <div class="message">
+        <h1 class="error-text">Error 404</h1>
+        <p>Sorry, but the resource you were looking for cannot be found.<br><a class="error-link" href="{{@site.url}}">Go to the front page</a></p>
+      </div>
+
+      <span class="original">Original pen by: <a class="original_link" href="https://codepen.io/ma_suwa/pen/qBEBwPv">@ma_suwa</a></span>
+    </div>
+    <body>
+        <div id="container"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+
+        <script id="vertexShader" type="x-shader/x-vertex">
+            void main() {
+                gl_Position = vec4( position, 1.0 );
+            }
+        </script>
+
+        <script id="fragmentShader" type="x-shader/x-fragment">
+         // Modified so it doesn't really move. Very childish and easy fix.
+        #ifdef GL_ES
+        precision mediump float;
+        #endif
+
+        uniform float time;
+
+        const int   complexity      = 4; // 4 looks good    // More points of color.
+        const float fluid_speed     = 3.2; // 3.2  // スピード
+        const float color_intensity = 1.0;  //明度
+
+
+        void main()
+        {
+          vec2 p = (1.*gl_FragCoord.xy)/300.;
+
+          for(int i=1;i<complexity;i++)
+          {
+            vec2 newp = p + time*0.01;
+            newp.x+=2.1/float(i)*sin(float(i)*p.y+time/fluid_speed+0.3*float(i+40)) + .04;
+            newp.y+=1.4/float(i)*cos(float(i)*p.x+time/fluid_speed+0.3*float(i+10)) - 0.9;
+            p=newp;
+          }
+          vec3 col=vec3(color_intensity*sin(p.x)+color_intensity,color_intensity*cos(p.y)+color_intensity,color_intensity*sin(p.x+p.y)+color_intensity);
+          gl_FragColor=vec4(col, 1.0);
+        }
+        </script>
+    </body>
+
+
+<script type="text/javascript">
+  var container;
+  var camera, scene, renderer;
+  var uniforms;
+
+  init();
+  animate();
+
+  function init() {
+      container = document.getElementById( 'container' );
+
+      camera = new THREE.Camera();
+      camera.position.z = 1;
+
+      scene = new THREE.Scene();
+
+      var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+
+      uniforms = {
+          time: { type: "f", value: 1.0 },
+          resolution: { type: "v2", value: new THREE.Vector2() }
+      };
+
+      var material = new THREE.ShaderMaterial( {
+          uniforms: uniforms,
+          vertexShader: document.getElementById( 'vertexShader' ).textContent,
+          fragmentShader: document.getElementById( 'fragmentShader' ).textContent
+      } );
+
+      var mesh = new THREE.Mesh( geometry, material );
+      scene.add( mesh );
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio( window.devicePixelRatio );
+
+      container.appendChild( renderer.domElement );
+
+      onWindowResize();
+      window.addEventListener( 'resize', onWindowResize, false );
+
+  }
+
+  function onWindowResize( event ) {
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      uniforms.resolution.value.x = renderer.domElement.width;
+      uniforms.resolution.value.y = renderer.domElement.height;
+  }
+
+  function animate() {
+      requestAnimationFrame( animate );
+      render();
+  }
+
+  function render() {
+      uniforms.time.value += 0.05;
+      renderer.render( scene, camera );
+  }
+</script>
+
+</body>
+</html>

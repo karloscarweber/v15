@@ -10,9 +10,9 @@ This is the fifteenth version of kowfm. Based, very very loosely, off of Casper.
 - [x] Add bombastic front page
 - [x] Build new Menu.
 - [x] Formalize Brand Colors for different sections of the site. (Blog, Newlsetter, Book, Courses, Freelance)
-- [ ] Redo the signup/signin/accountpages
-- [ ] Get subscriptions working with stripe.
-- [ ] Make a better 404 page
+- [x] Redo the signup/signin/accountpages
+- [x] Get subscriptions working with stripe.
+- [x] Make a better 404 page
 
 ## Building the CSS
 
