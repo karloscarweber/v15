@@ -1,0 +1,77 @@
+// Apps
+
+.app-matrix {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 620px;
+  background-color: #1C006B;
+  color:white;
+  font-size: 24px;
+  line-height: 64px;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .app-row {
+    display: block;
+    width: calc(50% - 60px);
+    margin:15px 30px;
+    font-weight: 600;
+    color: white !important;
+    cursor: pointer;
+
+    transition: transform 0.1s ease-in-out;
+
+    &:hover {
+      .app-icon {
+        transform: scale(1.2);
+      }
+    }
+
+    .app-icon {
+      display: inline-block;
+      position: relative;
+      width: 64px;
+      height: 64px;
+      background-position: center center;
+      background-size: 64px 64px;
+      float: left;
+      margin-right: 16px;
+      transition: transform 0.12s ease-in-out;
+
+      &.mathematical {
+        background-image: url("/assets/images/apps/appicon-mathematical.svg");
+      }
+      &.gouda {
+        background-image: url("/assets/images/apps/appicon-gouda.svg");
+      }
+      &.blaster {
+        background-image: url("/assets/images/apps/appicon-blaster.svg");
+      }
+      &.dubbble {
+        // background-image: url("/assets/images/apps/appicon-dubbble.svg");
+        background-image: url("/assets/images/apps/appicon-dubbble@3x.png");
+      }
+      &.cheddar {
+        background-image: url("/assets/images/apps/appicon-cheddar.svg");
+      }
+      &.milkjar {
+        background-image: url("/assets/images/apps/appicon-milkjar.svg");
+      }
+
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-matrix {
+    max-width: 300px;
+    width: 100%;
+    .app-row {
+      width: calc(100% - 60px);
+    }
+  }
+}

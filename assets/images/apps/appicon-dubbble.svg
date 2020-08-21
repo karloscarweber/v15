@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>appicon-dubbble</title>
+    <defs>
+        <path d="M19.229139,-7.76880231e-16 L44.770861,7.76880231e-16 C51.4572515,-4.51389787e-16 53.8818983,0.696192084 56.3263428,2.00349528 C58.7707872,3.31079847 60.6892015,5.22921278 61.9965047,7.67365722 C63.3038079,10.1181017 64,12.5427485 64,19.229139 L64,44.770861 C64,51.4572515 63.3038079,53.8818983 61.9965047,56.3263428 C60.6892015,58.7707872 58.7707872,60.6892015 56.3263428,61.9965047 C53.8818983,63.3038079 51.4572515,64 44.770861,64 L19.229139,64 C12.5427485,64 10.1181017,63.3038079 7.67365722,61.9965047 C5.22921278,60.6892015 3.31079847,58.7707872 2.00349528,56.3263428 C0.696192084,53.8818983 3.00926524e-16,51.4572515 -5.17920154e-16,44.770861 L5.17920154e-16,19.229139 C-3.00926524e-16,12.5427485 0.696192084,10.1181017 2.00349528,7.67365722 C3.31079847,5.22921278 5.22921278,3.31079847 7.67365722,2.00349528 C10.1181017,0.696192084 12.5427485,4.51389787e-16 19.229139,-7.76880231e-16 Z" id="path-1"></path>
+        <path d="M52,0 C65.254834,0 76,10.745166 76,24 C76,37.254834 65.254834,48 52,48 C49.8350438,48 47.7370399,47.7133428 45.7418736,47.1759137 C41.9132205,55.3433105 33.6172056,61 24,61 C10.745166,61 0,50.254834 0,37 C0,23.745166 10.745166,13 24,13 C26.1649562,13 28.2629601,13.2866572 30.2581264,13.8240863 C34.0867795,5.65668954 42.3827944,0 52,0 Z" id="path-3"></path>
+    </defs>
+    <g id="appicon-dubbble" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dubbble-logo-copy-2">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape-Copy" fill="#FF39BD" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="Group-2" mask="url(#mask-2)">
+                <g transform="translate(-6.000000, 3.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Combined-Shape" stroke="none" fill="#000000" fill-rule="nonzero" xlink:href="#path-3"></use>
+                    <circle id="Oval-2" stroke="none" fill="#32DB2F" fill-rule="nonzero" style="mix-blend-mode: lighten;" mask="url(#mask-4)" cx="52" cy="24" r="24"></circle>
+                    <circle id="Oval-2-Copy" stroke="none" fill="#F62C55" fill-rule="nonzero" style="mix-blend-mode: lighten;" mask="url(#mask-4)" cx="24" cy="37" r="24"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
