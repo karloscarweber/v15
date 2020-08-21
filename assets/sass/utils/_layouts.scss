@@ -147,7 +147,6 @@ gutters on outside
 64px wide
 32px gutters
 gutters on outside
-
 */
 .gl_lesson {
   display: grid;
@@ -165,6 +164,8 @@ gutters on outside
   ;
   padding-left: 1em;
   padding-right: 1em;
+
+  margin: 0 auto;
 }
 .gl_lesson__header {
   display: block;
@@ -240,3 +241,28 @@ gutters on outside
 
 
 /* New standard layout */
+
+
+
+/* for the book pages */
+.layout-left {
+  display: block;
+  position: relative;
+  width:100%;
+  max-width: 1172px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: var(--size-large);
+  font-size: inherit;
+  box-sizing: border-box;
+  // overflow: hidden;
+
+  &.narrow {
+    max-width: 960px;
+  }
+
+  &.wide {
+    max-width: 1600px;
+  }
+
+}

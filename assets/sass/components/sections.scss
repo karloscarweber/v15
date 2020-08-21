@@ -53,12 +53,14 @@ body.blog-template {
 $brand-color-book: #FF0058;
 $brand-color-book-p3: color(display-p3 1 0 0.345 / 1);
 
-body.book-template {
+body.book-template.post-template, body.book-template.page-template, body.book-template {
   background: whitesmoke;
+  a,
+  h1,
   .page-template a,
   .post-template a,
   .page-template h1,
-  .post-template h1  {
+  .post-template h1 {
     color: $brand-color-book;
     color: $brand-color-book-p3;
   }

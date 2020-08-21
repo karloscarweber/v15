@@ -189,7 +189,6 @@ gutters on outside
 64px wide
 32px gutters
 gutters on outside
-
 */
 .gl_lesson {
   display: grid;
@@ -200,7 +199,8 @@ gutters on outside
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "header header header header" "sidebar sidebar sidebar sidebar" "content content content content " "footer footer footer footer";
   padding-left: 1em;
-  padding-right: 1em; }
+  padding-right: 1em;
+  margin: 0 auto; }
 
 .gl_lesson__header {
   display: block;
@@ -254,6 +254,22 @@ gutters on outside
     max-width: 1600px; }
 
 /* New standard layout */
+/* for the book pages */
+.layout-left {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1172px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: var(--size-large);
+  font-size: inherit;
+  box-sizing: border-box; }
+  .layout-left.narrow {
+    max-width: 960px; }
+  .layout-left.wide {
+    max-width: 1600px; }
+
 :root {
   --fluid-min-width: 320;
   --fluid-max-width: 1152;
@@ -888,6 +904,44 @@ article.post-item p {
       .aside.bigger-box.bg-purple p, .aside.bigger-box.bg-purple p:first-child {
         color: white; }
 
+.gl_lesson__sidebar {
+  margin-top: 1em;
+  background: white;
+  border-radius: 19px;
+  padding: 16px; }
+  .gl_lesson__sidebar h2 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    margin: 0; }
+  .gl_lesson__sidebar hr {
+    margin-bottom: 14px;
+    margin-top: 17px;
+    background-color: #FF0058;
+    background-color: color(display-p3 1 0 0.345/1);
+    border: none;
+    height: 2px;
+    border-radius: 2px; }
+  .gl_lesson__sidebar ul {
+    margin: 0; }
+  .gl_lesson__sidebar li {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0; }
+  .gl_lesson__sidebar a {
+    color: #444444 !important;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0; }
+    .gl_lesson__sidebar a:hover {
+      text-decoration: underline;
+      color: #FF0058 !important;
+      color: color(display-p3 1 0 0.345/1) !important; }
+    .gl_lesson__sidebar a.current-page {
+      font-weight: 800;
+      font-size: 16px; }
+
 /* code style adjustments */
 code[class*="language-"], pre[class*="language-"] {
   font-size: var(--step--1) !important; }
@@ -1127,7 +1181,6 @@ form label {
 /* Menus and stufff */
 /*  */
 .gl_lesson__sidebar hr {
-  background-color: #5B83F6;
   border: none;
   height: 2px;
   width: auto;
@@ -1482,15 +1535,27 @@ body.blog-template {
     margin-bottom: 1em; }
 
 /*Book variables */
-body.book-template {
+body.book-template.post-template, body.book-template.page-template, body.book-template {
   background: whitesmoke; }
+  body.book-template.post-template a,
+  body.book-template.post-template h1,
+  body.book-template.post-template .page-template a,
+  body.book-template.post-template .post-template a,
+  body.book-template.post-template .page-template h1,
+  body.book-template.post-template .post-template h1, body.book-template.page-template a,
+  body.book-template.page-template h1,
+  body.book-template.page-template .page-template a,
+  body.book-template.page-template .post-template a,
+  body.book-template.page-template .page-template h1,
+  body.book-template.page-template .post-template h1, body.book-template a,
+  body.book-template h1,
   body.book-template .page-template a,
   body.book-template .post-template a,
   body.book-template .page-template h1,
   body.book-template .post-template h1 {
     color: #FF0058;
     color: color(display-p3 1 0 0.345/1); }
-  body.book-template .page-template h1, body.book-template h1.fancy {
+  body.book-template.post-template .page-template h1, body.book-template.post-template h1.fancy, body.book-template.page-template .page-template h1, body.book-template.page-template h1.fancy, body.book-template .page-template h1, body.book-template h1.fancy {
     font-size: var(--step-4);
     font-style: italic;
     font-family: 'PlayfairDisplay-Black', Arial;
