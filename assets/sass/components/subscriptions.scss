@@ -456,6 +456,17 @@ h3.account-styles {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.19);
 
+  transition: transform 0.12s ease-in-out;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
   &.button-centered {
     margin-top: 2em;
     margin-bottom: 2em;
