@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>MenuBurger Copy</title>
+    <g id="MenuBurger-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-Copy-23" fill="#000000" fill-rule="nonzero" transform="translate(30.000000, 30.000000) rotate(-45.000000) translate(-30.000000, -30.000000) " x="14" y="28" width="32" height="4"></rect>
+        <g id="Rectangle-Copy-24" transform="translate(17.000000, 17.000000)" fill="#000000" fill-rule="nonzero">
+            <rect id="Rectangle-Copy-2" transform="translate(13.000000, 13.000000) rotate(-315.000000) translate(-13.000000, -13.000000) " x="-3" y="11" width="32" height="4"></rect>
+        </g>
+    </g>
+</svg>

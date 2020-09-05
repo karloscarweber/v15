@@ -1,0 +1,57 @@
+// _colors.scss
+$text-color: #111;
+$text-color-p3:color(display-p3 0.066 0.066 0.066 / 1);
+$soft-text-color: #535353;
+$soft-text-color-p3:color(display-p3 0.325 0.325 0.325 / 1);
+$aide-color: #7E7E7E;
+$aide-color-p3:color(display-p3 0.494 0.494 0.494 / 1);
+$page-color: #D2D2D2;
+$page-color-p3:color(display-p3 0.823 0.823 0.823 / 1);
+$swift-color: #FF0054;
+$swift-color-p3:color(display-p3 1.000 0.000 0.329 / 1);
+$blog-color: #00C764;
+$blog-color-p3:color(display-p3 0 0.781 0.392 / 1);
+$apps-color: #FF008D;
+$apps-color-p3:color(display-p3 1 0 0.552 / 1);
+$courses-color: #6E39FF;
+$courses-color-p3:color(display-p3 0.431 0.223 1.000 / 1);
+$newsletter-color: #006FFF;
+$newsletter-color-p3:color(display-p3 0.000 0.435 1.000 / 1);
+$tutorial-color: #FFD039;
+$tutorial-color-p3:color(display-p3 1.000 0.815 0.223 / 1);
+$cheddar-color: #FF723A;
+$cheddar-color-p3:color(display-p3 1.000 0.447 0.227 / 1);
+
+
+
+
+// multiply rgb values by 3.921 to get the p3 values
+/* https://p3colorpicker.cool */
+.page-template a.pink,
+.post-template a.pink { color: #FF008D; color: color(display-p3 1 0 0.552 / 1); }
+.page-template a.blue,
+.post-template a.blue { color: #3C559C; color: color(display-p3 0.236 0.332 0.611 / 1); }
+.page-template a.green,
+.post-template a.green { color: #00C764; color: color(display-p3 0 0.781 0.392 / 1); }
+.page-template a.red,
+.post-template a.red { color: #FF0058; color: color(display-p3 1 0 0.343 / 1);  }
+
+//
+
+.page-template .green,
+.post-template .green { color: #00C764; color: color(display-p3 0 0.781 0.392 / 1); }
+
+
+@supports not (color: color(display-p3 1 1 1)) {
+  .page-template a.pink,
+  .post-template a.pink { color: #FF008D; }
+  .page-template a.blue,
+  .post-template a.blue { color: #3C559C; }
+  .page-template a.green,
+  .post-template a.green { color: #00C764; }
+  .page-template a.red,
+  .post-template a.red { color: #FF0058; }
+
+  .page-template .green,
+  .post-template .green { color: #00C764; }
+}

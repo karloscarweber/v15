@@ -9,7 +9,12 @@ $laptop-width: 64rem;/* 64rem = 1024px */
       @content;
     }
   }
-  @if $point == not-small {
+  @else if $point == mobile {
+    @media screen and (max-width: #{$tablet-width}) { /* -ns */
+      @content;
+    }
+  }
+  @else if $point == not-small {
     @media screen and (min-width: #{$phone-width}) { /* -ns */
       @content;
     }

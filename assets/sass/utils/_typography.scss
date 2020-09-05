@@ -1,299 +1,163 @@
-/* Generic Typography rewrites */
-.mega-text {
-  font-family: -apple-system, sans-serif;
+/*  */
+@mixin type-megatext {
+  @include typeface-system-ui;
   font-size: var(--step-5);
-  line-height: var(--step-5);
-  color: black;
-  font-weight: 800;
   line-height: 1em;
+  font-weight: 800;
+  letter-spacing: -0.035em;
   margin-top: 1em;
-  margin-bottom: 1em;
 }
+.type-megatext { @include type-megatext; }
 
-// for pages
-.title-text {
-  font-family: 'PlayfairDisplay-Black', Georgia;
+@mixin type-blockquote {
+  @include typeface-playfair;
   font-size: var(--step-4);
-  line-height: var(--step-4);
-  // color: black; // inherit color
-  letter-spacing: -0.1em;
-  font-weight: 800;
   line-height: 1em;
-  margin-top: 2em;
-}
-
-.section-header-text {
-  font-family: 'GreycliffCF', Arial;
-  font-size: var(--step-4);
-  line-height: var(--step-4);
-  // color: black; // inherit color
-  letter-spacing: -0.1em;
   font-weight: 800;
-  line-height: 1em;
+  letter-spacing: -0.035em;
   margin-top: 2em;
+  margin-bottom: 2em;
   text-align: center;
 }
+.type-blockquote { @include type-blockquote; }
 
-.section-header-h3-text {
-  font-family: 'GreycliffCF', Arial;
-  font-size: var(--step-1);
+@mixin type-title-2 {
+  @include typeface-greycliffcf;
+  font-size: var(--step-4);
+  line-height: 1em;
   font-weight: 700;
-  line-height: 1.5em;
-  margin-top: 1.25em;
-  text-align: center;
+  letter-spacing: -0.035em;
+  margin-top: 1em;
 }
+.type-title-2 { @include type-title-2; }
 
-// for posts
-.post-title-text {
-  font-family: 'PlayfairDisplay-Black', Georgia;
-  font-size: var(--step-4);
-  line-height: var(--step-4);
-  // color: black; // inherit color
-  letter-spacing: -0.1em;
-  font-weight: 800;
+@mixin type-title-3 {
+  @include typeface-greycliffcf;
+  font-size: var(--step-3);
   line-height: 1em;
-  margin-top: 2em;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  margin-top: 1em;
 }
+.type-title-3 { @include type-title-3; }
 
-.header-h2-text {
-  font-family: 'GreycliffCF', Arial;
+@mixin type-title-4 {
+  @include typeface-greycliffcf;
   font-size: var(--step-2);
-  font-weight: 700;
-  line-height: 1.5em;
-  margin-top: 1.25em;
-  text-align: justify;
+  line-height: 1em;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  margin-top: 1em;
 }
+.type-title-4 { @include type-title-4; }
 
-
-
-.subheader-text {
-  font-family: 'GreycliffCF', Arial;
-  font-size: var(--step-1);
-  font-weight: 700;
-  line-height: 1.5em;
-  margin-top: 1.25em;
-  text-align: justify;
+@mixin type-excerpt {
+  @include typeface-greycliffcf;
+  font-size: var(--step-1) !important;
+  font-weight: 600 !important;
+  line-height: 1.25em !important;
+  margin-top: 2em !important;
 }
+.type-excerpt { @include type-excerpt; }
 
-.leading-paragraph-text {
-  font-family: 'GreycliffCF', Arial;
+@mixin type-subtext {
+  @include typeface-greycliffcf;
+  font-size: var(--step--1) !important;
+  font-weight: 500 !important;
+  line-height: 1.25em !important;
+  letter-spacing: -0.035em;
+  margin-top: 2em !important;
+  max-width: 100% !important;
+}
+.type-subtext { @include type-subtext; }
+
+@mixin type-first-paragraph {
+  @include typeface-greycliffcf;
   font-size: var(--step-0);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5em;
-  margin-top: 1.25em;
-  text-align: justify;
+  margin-top: 1em;
 }
+.type-first-paragraph { @include type-first-paragraph; }
 
-.paragraph-text {
-  font-family: 'GreycliffCF', Arial;
+@mixin type-paragraph {
+  @include typeface-greycliffcf;
   font-size: var(--step-0);
   font-weight: 400;
   line-height: 1.5em;
-  margin-top: 1.25em;
-  text-align: justify;
+  margin-top: 1em;
 }
+.type-paragraph { @include type-paragraph; }
 
+/* content typeface defaults */
+.content {
+  & > h1 { @include type-megatext; }
+  & > h2 { @include type-title-2; }
+  & > h3 { @include type-title-3; }
+  & > h4 { @include type-title-4; }
+  & > blockquote { @include type-blockquote; }
+  & > p { @include type-paragraph; }
+  & > p.excerpt { @include type-excerpt; }
+  & > p.subtext { @include type-subtext; }
+  & > p.type-first-paragraph, & > p:first-child { @include type-first-paragraph; }
 
-/* wysywig type stuff. Default styles that are pushed out through koenig. */
-.page-template h1 {
-  font-family: 'PlayfairDisplay-Black', Arial;
-  font-weight: 900;
-  font-size: var(--step-4);
-  line-height: 1em;
-  margin-bottom: 1em;
-}
-
-.post-template h1 {
-  font-family: 'GreycliffCF', Arial;
-  font-weight: 700;
-  font-size: var(--step-4);
-  line-height: 1em;
-  margin-bottom: var(--size-medium);
-  color: #00C764;
-  color: color(display-p3 0 0.781 0.392 / 1); /* https://p3colorpicker.cool */
-  letter-spacing: -0.2rem;
-}
-
-/* The text that shows up below the title of the post like the date and tags and stuff. */
-.post_subtext {
-  margin-top: var(--size-normal);
-  margin-bottom: var(--size-normal);
-}
-
-.post-template .date-time, .page-template .date-time {
-  color: #666666;
-}
-
-.feature_image {
-  width: 90vw;
-  display: inline-block;
-  margin-left: 50%;
-  margin-right: -100%;
-  transform: translateX(-50%);
-  max-width: 1200px;
-}
-
-.post_excerpt {
-  font-family: 'GreycliffCF', Arial;
-  font-weight: 600;
-  font-size: var(--step-1);
-  line-height: 1.5em;
-  margin-bottom: 0em;
-  text-align: justify;
-}
-
-.page-template .content, .post-template .content {
-
-  & > h1 {
-    font-family: 'GreycliffCF', Arial;
-    font-weight: 700;
-    font-size: var(--step-3);
-    line-height: 1em;
-    margin-bottom: 0.5em;
-    margin-top: 2em;
-    color: #111;
-  }
-
-  & > h2 {
-    font-family: 'GreycliffCF', Arial;
-    font-weight: 700;
-    font-size: var(--step-2);
-    line-height: 1.25em;
-    margin-bottom: 0.5em;
-    margin-top: 2em;
-  }
-
-  & > h3 {
-    font-family: 'GreycliffCF', Arial;
-    font-weight: 700;
-    font-size: var(--step-1);
-    line-height: 1.33em;
-    margin-bottom: 0.5em;
-    margin-top: 2em;
-  }
-
-  & > blockquote {
-    font-family: 'PlayfairDisplay-Black', Arial;
-    font-weight: 400;
-    font-size: var(--step-2);
-    line-height: 1.33em;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
-    font-style: italic;
-    margin-left: -6%;
-    margin-right: -6%;
-    text-align: center;
-  }
-
-  & > h2:first-child, & > h3:first-child {
-    font-family: 'GreycliffCF', Arial;
+  // links
+  & > p a, & > blockquote a, & > ul li a, & > ol li a {
+    background-color: $swift-color;
+    background-color: $swift-color-p3;
+    color: white;
+    text-decoration: none;
     font-weight: 600;
-    font-size: var(--step-1);
-    line-height: 1.2em;
-    margin-top: 1.25em;
-    margin-bottom: 1.25em;
-  }
-
-  & > h2:first-child + p, & > h3:first-child + p, & > p:first-child {
-    font-weight: 600;
-  }
-
-  & > p {
-    font-family: 'GreycliffCF', Arial;
-    font-weight: 400;
-    font-size: var(--step-0);
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-    text-align: justify;
-  }
-
-  & > ul, & > ol {
-    font-family: 'GreycliffCF', Arial;
-    font-weight: 400;
-    font-size: var(--step-0);
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-
-    li {
-      // margin-bottom: 1em;
+    &:hover {
+      text-decoration: underline;
     }
   }
 
+  // lists
+  & > ul, & > ol {
+    @include type-paragraph;
+    font-weight: 500;
+  }
+
+  // special list menus
+  & > ul.menu {
+    padding: 0;
+    li {
+      display: inline;
+      margin-right: 12px;
+      padding: 0;
+      margin: 0;
+      a {
+        font-weight: 600;
+        color: #232323;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // koenig image cards
   & > figure.kg-image-card {
-    max-width: 120%;
-    margin-left: -10%;
-    margin-right: -10%;
-    margin-bottom: var(--size-large);;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--size-large);
     margin-top: var(--size-large);
 
     figcaption {
-      font-family: 'GreycliffCF', Arial;
-      font-weight: 400;
-      font-size: var(--step-1);
-      line-height: 1.75em;
+      @include type-paragraph;
       color: grey;
       font-size: var(--step--1);
       text-align: center;
     }
   }
 
-}
-
-.home-template  {
-  & > h1 {
-    font-family: 'PlayfairDisplay-Black', Arial;
-  }
-}
-
-// page template, freely placed elements
-.page-template {
-
-  & > p,
-  & > section > p {
-    font-family: 'GreycliffCF', Arial;
-    font-weight: 500;
-    font-size: var(--step-0);
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-    text-align: left;
+  // all text elements
+  & > h1, & > h2, & > h3, & > h4, & > p.excerpt, & > p.type-first-paragraph, & > p:first-child , & > p, & > ul, & > ol {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 45rem;
   }
 
-}
-
-.page-template a, .post-template a {
-  color: #00C764;
-  color: color(display-p3 0 0.781 0.392 / 1); /* https://p3colorpicker.cool */
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.account-template a {
-  color: #6E39FF;
-  color: color(display-p3 0.431 0.222 1 / 1); /* https://p3colorpicker.cool */
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.f-step--2 {font-size: var(--step--2); }
-.f-step--1 {font-size: var(--step--1); }
-.f-step-0 {font-size: var(--step-0); }
-.f-step-1 {font-size: var(--step-1); }
-.f-step-2 {font-size: var(--step-2); }
-.f-step-3 {font-size: var(--step-3); }
-.f-step-4 {font-size: var(--step-4); }
-.f-step-5 {font-size: var(--step-5); }
-
-/* Story layout specific Changes */
-.post-template .gl_story__content_wrapper {
-  h1  {
-    font-size: var(--step-4);
-  }
-  & > img {
-    margin-top: var(--size-medium);
-    margin-bottom: var(--size-medium);
-  }
   hr {
     border: none;
     background-color: #A6A6A6;
@@ -301,7 +165,22 @@
     border-radius: 2px;
     margin-bottom: 2em;
   }
+
 }
+
+/* Generic Typography rewrites */
+.f-step--2 {font-size: var(--step--2); }
+.f-step--1 {font-size: var(--step--1); }
+.f-step-0  {font-size: var(--step-0);  }
+.f-step-1  {font-size: var(--step-1);  }
+.f-step-2  {font-size: var(--step-2);  }
+.f-step-3  {font-size: var(--step-3);  }
+.f-step-4  {font-size: var(--step-4);  }
+.f-step-5  {font-size: var(--step-5);  }
+
+
+/* Story layout specific Changes */
+
 
 /* Code overrides */
 
@@ -318,23 +197,7 @@ pre[class*="language-"] {
   margin-bottom: 1em !important;
 }
 
-p.site-introduction {
-  font-family: 'PlayfairDisplay-Black', Arial;
-  font-weight: 900;
-  font-size: var(--step-2);
-  line-height: 1.5em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  color: #222222;
-
-  a {
-    text-decoration: none;
-    border-bottom: none;
-    &:hover {
-      border-bottom: 0.125em solid;
-    }
-  }
-}
+// probably delete what's below
 
 // multiply rgb values by 3.921 to get the p3 values
 /* https://p3colorpicker.cool */
@@ -365,20 +228,4 @@ p.site-introduction {
 
   .page-template .green,
   .post-template .green { color: #00C764; }
-}
-
-article.post-item {
-  margin-top: 0.75em;
-}
-article.post-item p {
-  font-weight: 600;
-  font-size: var(--step-1);
-  line-height: 1.25em;
-  a {
-    text-decoration: none;
-    color: #333333;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }

@@ -266,3 +266,38 @@ gutters on outside
   }
 
 }
+
+
+
+/*
+  complete redesign layouts.
+*/
+.layout__standard {
+  display: block;
+  width: 100%;
+  max-width: 1200px; // 1080 usable space
+  padding: 0px 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.layout__book_sidebar {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  float: left;
+}
+
+.layout__book_content {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  float: right;
+}
+
+// small on mobile
+@include break(mobile) {
+  .layout__book_sidebar, .layout__book_content {
+    float: none;
+  }
+}

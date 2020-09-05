@@ -152,9 +152,23 @@
   font-style: italic;
 }
 
+@mixin typeface-playfair {
+  font-family: "PlayfairDisplay-Black";
+  font-weight: 800;
+  color: #111111;
+}
+.typeface-playfair { @include typeface-playfair; }
+
 @mixin typeface-greycliffcf {
   font-family: "GreycliffCF";
   font-weight: 400;
   color: #111111;
 }
 .typeface-greycliffcf { @include typeface-greycliffcf; }
+
+@mixin typeface-system-ui {
+  font-family: -apple-system, Helvetica, sans-serif;
+  font-weight: 700; // always bold
+  color: #111;
+}
+.typeface-system-ui { @include typeface-system-ui; }

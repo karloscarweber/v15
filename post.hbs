@@ -10,38 +10,38 @@ into the {body} of the default.hbs template --}}
 
   {{#post}}
       <article class="layout-centered post-container post-template {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
-        <div class="gl_story__content_wrapper">
-          <h1>{{title}}</h1>
-
-          {{#if feature_image}}
-            <img class="feature_image"
-              srcset="{{img_url feature_image size="s"}} 300w,
-                      {{img_url feature_image size="m"}} 600w,
-                      {{img_url feature_image size="l"}} 1000w,
-                      {{img_url feature_image size="xl"}} 2000w"
-              sizes="(max-width: 1000px) 400px, 700px"
-              src="{{img_url feature_image size="m"}}"
-              alt="{{title}}"
-            />
-          {{/if}}
-
-          {{#if excerpt}}
-            <p class="post_excerpt">{{excerpt}}</p>
-          {{/if}}
-
-          <div class="post_subtext">
-          <p class="f-step--1 "><span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>, by {{authors separator=", "}},<br>
-          <!--<span>Tags: {{#if tags}}
-              {{#foreach tags}}<a href="{{url}}" title={{name}} class="tag tag-{{id}} {{slug}}">{{name}}</a> {{/foreach}}
-            {{/if}}</span>--></p>
-          </div>
-
-          <hr>
-
           <div class="content">
-            {{content}}
+
+
+            {{#if feature_image}}
+              <div class="article__image">
+                <img class="feature_image"
+                  srcset="{{img_url feature_image size="s"}} 300w,
+                          {{img_url feature_image size="m"}} 600w,
+                          {{img_url feature_image size="l"}} 1000w,
+                          {{img_url feature_image size="xl"}} 2000w"
+                  sizes="(max-width: 1000px) 400px, 700px"
+                  src="{{img_url feature_image size="m"}}"
+                  alt="{{title}}"
+                />
+
+                <h1>{{title}}</h1>
+              </div>
+            {{else}}
+              <h1>{{title}}</h1>
+            {{/if}}
+
+            {{#if excerpt}}
+              <p class="type-excerpt">{{excerpt}}</p>
+            {{/if}}
+
+            <p class="subtext"><span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>, by {{authors separator=", "}},<br></p>
+
+            <hr>
+
+            <div class="content">
+              {{content}}
+            </div>
           </div>
-        </div>
       </article>
   {{/post}}

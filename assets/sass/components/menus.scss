@@ -1,4 +1,288 @@
 /* Menus and stufff */
+.header_menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: white;
+  z-index: 2000;
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      text-align: left;
+      height: 60px;
+      padding: 0;
+      margin-top: 0px !important;
+      @include type-title-4;
+      font-size: 26px !important;
+      line-height: 60px !important;
+      letter-spacing: -1px !important;
+
+      a {
+        padding-left:20px;
+        padding-right:20px;
+        height: 60px;
+        color: $text-color !important;
+        color: $text-color-p3 !important;
+        line-height: 60px !important;
+        height: 60px !important;
+        display: block;
+        text-decoration: none;
+        &:hover {
+          // background: blue !important;
+          // color: white !important;
+        }
+      }
+
+      &.nav-blog a:hover {
+        background-color: $blog-color !important;
+        background-color: $blog-color-p3 !important;
+      }
+
+      &.nav-swift-foundations { min-width: 245px; }
+      &.nav-swift-foundations a:hover {
+        color: white !important;
+        background-color: $swift-color !important;
+        background-color: $swift-color-p3 !important;
+      }
+
+      &.nav-apps a:hover {
+        color: white !important;
+        background-color: $apps-color !important;
+        background-color: $apps-color-p3 !important;
+      }
+
+      &.nav-tutorials a:hover {
+        background-color: $tutorial-color !important;
+        background-color: $tutorial-color-p3 !important;
+      }
+
+      &.nav-courses a:hover {
+        color: white !important;
+        background-color: $courses-color !important;
+        background-color: $courses-color-p3 !important;
+      }
+
+      &.nav-newsletter a:hover {
+        color: white !important;
+        background-color: $newsletter-color !important;
+        background-color: $newsletter-color-p3 !important;
+      }
+
+      &.login-list-link-thing {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 3000;
+        background: white;
+      }
+      a.login-button:hover {
+        color: white !important;
+        background-color: $soft-text-color !important;
+        background-color: $soft-text-color-p3 !important;
+      }
+
+
+
+
+    }
+  }
+
+}
+
+.mobile-site-title {
+  display: none;
+}
+
+
+@media (max-width: 960px) {
+  // make everything mobile in this menu thing.
+
+  body.rigid {
+    overflow: hidden;
+  }
+
+  .mobile-site-title {
+    display: block;
+    width: 100%;
+    height: 60px;
+    @include type-title-4;
+    font-size: 26px !important;
+    line-height: 60px !important;
+    letter-spacing: -1px !important;
+    text-align: center;
+    margin-top: 0em;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: $text-color !important;
+      color: $text-color-p3 !important;
+      text-align: center;
+    }
+  }
+
+  .scene {
+    position: relative;
+    display: block;
+    z-index: 4000;
+    position: absolute;
+top: 0;
+right: 0;
+  }
+
+  .header_menu {
+    display: block;
+    height: 60px;
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: hidden;
+
+    &.opened {
+      height: 100vh;
+      ul {
+        overflow: scroll;
+        height: calc(100vh - 60px);
+      }
+    }
+  }
+
+  .header_menu ul {
+    display: block;
+    overflow: scroll;
+    height: auto;
+    padding-bottom: 20px;
+    padding: 20px;
+
+    li {
+
+      float: left;
+      clear: both;
+      margin-left: 20px;
+      margin-bottom: 20px;
+
+      &.login-list-link-thing {
+        position: relative;
+        background: transparent;
+      }
+
+      &.nav-blog a {
+        background-color: $blog-color !important;
+        background-color: $blog-color-p3 !important;
+      }
+
+      &.nav-swift-foundations { min-width: 245px; }
+      &.nav-swift-foundations a {
+        color: white !important;
+        background-color: $swift-color !important;
+        background-color: $swift-color-p3 !important;
+      }
+
+      &.nav-apps a {
+        color: white !important;
+        background-color: $apps-color !important;
+        background-color: $apps-color-p3 !important;
+      }
+
+      &.nav-tutorials a {
+        background-color: $tutorial-color !important;
+        background-color: $tutorial-color-p3 !important;
+      }
+
+      &.nav-courses a {
+        color: white !important;
+        background-color: $courses-color !important;
+        background-color: $courses-color-p3 !important;
+      }
+
+      &.nav-newsletter a {
+        color: white !important;
+        background-color: $newsletter-color !important;
+        background-color: $newsletter-color-p3 !important;
+      }
+
+      &.login-list-link-thing {
+        background: white;
+      }
+      a.login-button {
+        color: white !important;
+        background-color: $soft-text-color !important;
+        background-color: $soft-text-color-p3 !important;
+      }
+
+    }
+  }
+
+
+}
+
+// make a 3d cube from this fancy tutorial: https://3dtransforms.desandro.com/cube
+.scene {
+  width: 60px;
+  height: 60px;
+  perspective: 180px;
+  transform-style: preserve-3d;
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-30px);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+.cube__face {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+.cube__face--front { background-color:white;}
+.cube__face--back { background-color:white;}
+.cube__face--right { background-color:$blog-color; background-color:$blog-color-p3;}
+.cube__face--left { background-color:$swift-color; background-color:$swift-color-p3;}
+.cube__face--top { background-color:$newsletter-color; background-color:$newsletter-color-p3;}
+.cube__face--bottom { background-color:$tutorial-color; background-color: $tutorial-color-p3;}
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(30px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(30px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(30px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(30px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(30px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+.scene:hover {
+  // transform: rotateY(360deg);
+  .cube {
+    // transform: translateZ(-60px) rotateY(181deg) rotateX(23deg);
+    transform: translateZ(-60px) rotateY(41deg) rotateX(23deg); // chin up
+  }
+}
+
+.scene.opened {
+  .cube {
+    transform: translateZ(-60px) rotateY(180deg); // chin down
+  }
+}
+
+.scene.opened:hover {
+  .cube {
+    transform: translateZ(-60px) rotateY(-152deg) rotateX(21deg); // chin down
+  }
+}
+
+
+
+
+
 
 /*  */
 .gl_lesson__sidebar {
