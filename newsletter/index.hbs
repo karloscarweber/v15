@@ -1,23 +1,26 @@
 {{!< ../default}}
 
 <div class="layout-centered post-container page-template">
-
   {{> "site-header"}}
 
-  <h1>Newsletters Past</h1>
+  <div class="article__text-box">
+    <h1>Newsletters Past</h1>
+  </div>
+  <div class="content">
+    
+    <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
 
-  <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
+    <p>Swift code, Announcements, Ethics. <a href="/newsletter/subscribe">Click here</a> to subscribe.</p>
 
-  <p>Swift code, Announcements, Ethics. <a href="/newsletter/subscribe">Click here</a> to subscribe.</p>
+    <ul class="index-list">
+    {{#foreach posts}}
+        <li  class="{{post_class}}">
+          <a href="{{url}}">{{title}}</a>
+        </li>
+    {{/foreach}}
+    </ul>
 
-  {{#foreach posts}}
-
-      {{!-- The tag below includes the markup for each post - partials/lesson-card.hbs --}}
-      <article class="{{post_class}}">
-        <h2><a href="{{url}}">{{title}}</a></h2>
-      </article>
-
-  {{/foreach}}
+  </div>
 
 </div>
 

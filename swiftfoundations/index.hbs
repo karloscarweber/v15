@@ -1,21 +1,24 @@
 {{!< ../default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
 
 <div class="layout-centered post-container page-template">
 
     {{> "site-header"}}
 
-  <h1>Swift Foundations</h1>
+  <div class="article__text-box">
+    <h1>Swift Foundations</h1>
+  </div>
 
-  <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
-  <p>Swift code, Announcements, Ethics.. Click here to subscribe.</p>
+<div class="content">
 
-  {{#get "posts" limit="all" filter="tag:swift_foundations" order="title asc"}}
-    {{#foreach posts}}
-      {{> "lesson-card"}}
-    {{/foreach}}
-  {{/get}}
+    <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
+    <p>Swift code, Announcements, Ethics.. <a href="#">Click here</a> to subscribe.</p>
+
+    {{#get "posts" limit="all" filter="tag:swift_foundations" order="title asc"}}
+      {{#foreach posts}}
+        {{> "lesson-card"}}
+      {{/foreach}}
+    {{/get}}
+  </div>
 
 </div>
 

@@ -160,12 +160,21 @@
 
   hr {
     border: none;
-    background-color: #A6A6A6;
-    height: 2px;
-    border-radius: 2px;
+    background-color: #111;
+    height: 4px;
     margin-bottom: 2em;
   }
 
+}
+
+// exception for pages
+// all text elements
+.page-template .content {
+  & > h1, & > h2, & > h3, & > h4, & > p.excerpt, & > p.type-first-paragraph, & > p:first-child , & > p, & > ul, & > ol {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1080px;
+  }
 }
 
 /* Generic Typography rewrites */

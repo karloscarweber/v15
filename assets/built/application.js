@@ -1129,47 +1129,43 @@
 });
 let app = function () {
 
-  // console.log("run app") // Monitor open or close the menu.
-
   (function () {
-    let menubutton = document.querySelector(".scene"); // let extendedmenu = document.querySelector(".expanding_menu_container");
-    // let menu_backround = document.querySelector(".expanding_menu_background");
+    let menubutton = document.querySelector(".scene");
     let menu = document.querySelector(".header_menu");
-
     let body = document.querySelector("body");
 
     menubutton.onclick = function () {
       if (_.contains(menubutton.classList, "opened")) {
-        menubutton.classList.remove("opened"); // extendedmenu.classList.remove("opened");
+        menubutton.classList.remove("opened");
         menu.classList.remove("opened");
         body.classList.remove("rigid");
-        // menu_backround.classList.remove("opened");
-        //
-        // // keep the menu from being all crazy
-        // menubutton.classList.add("transitioning");
-        // extendedmenu.classList.add("transitioning");
-        //
-        // setTimeout(function(){
-        //   menubutton.classList.remove("transitioning");
-        //   extendedmenu.classList.remove("transitioning");
-        // }, 1550);
       } else {
-        menubutton.classList.add("opened"); // extendedmenu.classList.add("opened");
+        menubutton.classList.add("opened");
         menu.classList.add("opened");
         body.classList.add("rigid");
-        // menu_backround.classList.add("opened");
-        //
-        // // keep the menu from being all crazy
-        // menubutton.classList.add("transitioning");
-        // extendedmenu.classList.add("transitioning");
-        //
-        // setTimeout(function(){
-        //   menubutton.classList.remove("transitioning");
-        //   extendedmenu.classList.remove("transitioning");
-        // }, 1550);
       }
     };
   })();
+
+  // the book menubutton
+  (function () {
+    let burgerbutton = document.querySelector(".burger");
+    let bookmenu = document.querySelector(".gl_lesson__sidebar");
+    let body = document.querySelector("body");
+
+    burgerbutton.onclick = function () {
+      if (_.contains(burgerbutton.classList, "opened")) {
+        burgerbutton.classList.remove("opened");
+        bookmenu.classList.remove("opened");
+        body.classList.remove("rigid");
+      } else {
+        burgerbutton.classList.add("opened");
+        bookmenu.classList.add("opened");
+        body.classList.add("rigid");
+      }
+    };
+  })();
+
 };
 
 window.onload = app;

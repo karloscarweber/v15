@@ -28,3 +28,25 @@
     color: white;
   }
 }
+
+// now without the image
+.article__text-box {
+  display: block;
+  position: relative;
+  margin-left: calc(-1 * var(--size-plus-huge));
+  margin-right: calc(-1 * var(--size-plus-huge));
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    @include type-megatext;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    // position: absolute;
+    // top: 50%;
+    // left: 0%;
+    z-index: 1000;
+    mix-blend-mode: difference;
+    color: white;
+  }
+}

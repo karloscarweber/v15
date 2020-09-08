@@ -13,18 +13,16 @@ $brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
 
 body.newsletter-template {
   background: whitesmoke;
-  .page-template a,
-  .post-template a,
-  .page-template h1,
-  .post-template h1  {
+  .page-template .content a,
+  .post-template .content a,
+  ul.index-list a  {
+    background-color: $brand-color-newsletter;
+    background-color: $brand-color-newsletter-p3;
+  }
+  .article__text-box h1 {
     color: $brand-color-newsletter;
     color: $brand-color-newsletter-p3;
-  }
-  .page-template h1, h1.fancy {
-    font-size: var(--step-4);
-    font-style: italic;
-    font-family: 'PlayfairDisplay-Black', Arial;
-    margin-bottom: 1em;
+    mix-blend-mode: normal;
   }
 }
 
@@ -34,18 +32,15 @@ $brand-color-blog-p3: color(display-p3 0 0.781 0.394 / 1);
 
 body.blog-template {
   background: whitesmoke;
-  .page-template a,
-  .post-template a,
-  .page-template h1,
-  .post-template h1  {
+  .page-template .content a,
+  .post-template .content a  {
     color: $brand-color-blog;
     color: $brand-color-blog-p3;
   }
-  .page-template h1, h1.fancy {
-    font-size: var(--step-4);
-    font-style: italic;
-    font-family: 'PlayfairDisplay-Black', Arial;
-    margin-bottom: 1em;
+  .article__text-box h1 {
+    color: $brand-color-blog;
+    color: $brand-color-blog-p3;
+    mix-blend-mode: normal;
   }
 }
 
@@ -55,20 +50,19 @@ $brand-color-book-p3: color(display-p3 1 0 0.345 / 1);
 
 body.book-template.post-template, body.book-template.page-template, body.book-template {
   background: whitesmoke;
-  a,
-  h1,
-  .page-template a,
-  .post-template a,
-  .page-template h1,
-  .post-template h1 {
+  .page-template .content a,
+  .post-template .content a,
+  ul.index-list a ,
+  article.post a {
+    color:white;
+    text-decoration: none;
+    background-color: $brand-color-book;
+    background-color: $brand-color-book-p3;
+  }
+  .article__text-box h1 {
     color: $brand-color-book;
     color: $brand-color-book-p3;
-  }
-  .page-template h1, h1.fancy {
-    font-size: var(--step-4);
-    font-style: italic;
-    font-family: 'PlayfairDisplay-Black', Arial;
-    margin-bottom: 1em;
+    mix-blend-mode: normal;
   }
 }
 
@@ -85,11 +79,10 @@ body.courses-template {
     color: $brand-color-courses;
     color: $brand-color-courses-p3;
   }
-  .page-template h1, h1.fancy {
-    font-size: var(--step-4);
-    font-style: italic;
-    font-family: 'PlayfairDisplay-Black', Arial;
-    margin-bottom: 1em;
+  .article__text-box h1 {
+    color: $brand-color-book;
+    color: $brand-color-book-p3;
+    mix-blend-mode: normal;
   }
 }
 
@@ -107,10 +100,9 @@ body.apps-template {
     color: $brand-color-apps;
     color: $brand-color-apps-p3;
   }
-  .page-template h1, h1.fancy {
-    font-size: var(--step-4);
-    font-style: italic;
-    font-family: 'PlayfairDisplay-Black', Arial;
-    margin-bottom: 1em;
+  .article__text-box h1 {
+    color: $brand-color-book;
+    color: $brand-color-book-p3;
+    mix-blend-mode: normal;
   }
 }
