@@ -2,18 +2,24 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-  <div class="layout__standard">
+  <div class="layout-centered post-container page-template">
 
-      {{> "site-header"}}
+    {{> "site-header"}}
 
-    <em><h1 class="header-text large green">Stories</h1></em>
-    {{#foreach posts}}
+    <div class="article__text-box">
+      <h1>Stories</h1>
+    </div>
 
-      {{> "post-item"}}
+    <div class="content">
+      {{#foreach posts}}
 
-    {{/foreach}}
+        {{> "post-item"}}
 
-    {{pagination}}
+      {{/foreach}}
+
+      {{pagination}}
+    </div>
+
   </div>
 
 

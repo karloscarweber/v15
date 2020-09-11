@@ -33,9 +33,12 @@ $brand-color-blog-p3: color(display-p3 0 0.781 0.394 / 1);
 body.blog-template {
   background: whitesmoke;
   .page-template .content a,
-  .post-template .content a  {
-    color: $brand-color-blog;
-    color: $brand-color-blog-p3;
+  .post-template .content a,
+  ul.index-list a  {
+    color: white;
+    text-decoration: none;
+    background-color: $brand-color-blog;
+    background-color: $brand-color-blog-p3;
   }
   .article__text-box h1 {
     color: $brand-color-blog;
@@ -52,8 +55,7 @@ body.book-template.post-template, body.book-template.page-template, body.book-te
   background: whitesmoke;
   .page-template .content a,
   .post-template .content a,
-  ul.index-list a ,
-  article.post a {
+  ul.index-list a,{
     color:white;
     text-decoration: none;
     background-color: $brand-color-book;
@@ -72,16 +74,18 @@ $brand-color-courses-p3:  color(display-p3 0.429 0.222 1 / 1);
 
 body.courses-template {
   background: whitesmoke;
-  .page-template a,
-  .post-template a,
-  .page-template h1,
-  .post-template h1  {
-    color: $brand-color-courses;
-    color: $brand-color-courses-p3;
+  .page-template .content a,
+  .post-template .content a,
+  ul.index-list a,
+  article.post a {
+    color:white;
+    text-decoration: none;
+    background-color: $brand-color-courses;
+    background-color: $brand-color-courses-p3;
   }
   .article__text-box h1 {
-    color: $brand-color-book;
-    color: $brand-color-book-p3;
+    color: $brand-color-courses;
+    color: $brand-color-courses-p3;
     mix-blend-mode: normal;
   }
 }
@@ -93,16 +97,18 @@ $brand-color-apps-p3: color(display-p3 1 0 0.553 / 1);
 
 body.apps-template {
   background: whitesmoke;
-  .page-template a,
-  .post-template a,
-  .page-template h1,
-  .post-template h1  {
-    color: $brand-color-apps;
-    color: $brand-color-apps-p3;
+  .page-template .content a,
+  .post-template .content a,
+  ul.index-list a,
+  article.post a {
+    color:white;
+    text-decoration: none;
+    background-color: $brand-color-apps;
+    background-color: $brand-color-apps-p3;
   }
   .article__text-box h1 {
-    color: $brand-color-book;
-    color: $brand-color-book-p3;
+    color: $brand-color-apps;
+    color: $brand-color-apps-p3;
     mix-blend-mode: normal;
   }
 }

@@ -8,10 +8,15 @@ into the {body} of the default.hbs template --}}
     {{#post}}
         <article class="content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-            <h1>{{title}}</h1>
-
             {{#if feature_image}}
+            <div class="article__text-box">
               <img class="feature_image" src="{{feature_image}}" alt="">
+              <h1>{{title}}</h1>
+            </div>
+            {{else}}
+              <div class="article__text-box">
+                <h1>{{title}}</h1>
+              </div>
             {{/if}}
 
             <div class="content">

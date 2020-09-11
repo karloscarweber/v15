@@ -949,6 +949,7 @@ pre[class*="language-"] {
     font-weight: 600;
     color: white !important;
     cursor: pointer;
+    background-color: transparent !important;
     transition: transform 0.1s ease-in-out; }
     .app-matrix .app-row:hover .app-icon {
       transform: scale(1.2); }
@@ -1726,9 +1727,12 @@ body.newsletter-template {
 body.blog-template {
   background: whitesmoke; }
   body.blog-template .page-template .content a,
-  body.blog-template .post-template .content a {
-    color: #00C764;
-    color: color(display-p3 0 0.781 0.394/1); }
+  body.blog-template .post-template .content a,
+  body.blog-template ul.index-list a {
+    color: white;
+    text-decoration: none;
+    background-color: #00C764;
+    background-color: color(display-p3 0 0.781 0.394/1); }
   body.blog-template .article__text-box h1 {
     color: #00C764;
     color: color(display-p3 0 0.781 0.394/1);
@@ -1739,14 +1743,11 @@ body.book-template.post-template, body.book-template.page-template, body.book-te
   background: whitesmoke; }
   body.book-template.post-template .page-template .content a,
   body.book-template.post-template .post-template .content a,
-  body.book-template.post-template ul.index-list a,
-  body.book-template.post-template article.post a, body.book-template.page-template .page-template .content a,
+  body.book-template.post-template ul.index-list a, body.book-template.page-template .page-template .content a,
   body.book-template.page-template .post-template .content a,
-  body.book-template.page-template ul.index-list a,
-  body.book-template.page-template article.post a, body.book-template .page-template .content a,
+  body.book-template.page-template ul.index-list a, body.book-template .page-template .content a,
   body.book-template .post-template .content a,
-  body.book-template ul.index-list a,
-  body.book-template article.post a {
+  body.book-template ul.index-list a {
     color: white;
     text-decoration: none;
     background-color: #FF0058;
@@ -1759,29 +1760,33 @@ body.book-template.post-template, body.book-template.page-template, body.book-te
 /*courses variables */
 body.courses-template {
   background: whitesmoke; }
-  body.courses-template .page-template a,
-  body.courses-template .post-template a,
-  body.courses-template .page-template h1,
-  body.courses-template .post-template h1 {
-    color: #6E39FF;
-    color: color(display-p3 0.429 0.222 1/1); }
+  body.courses-template .page-template .content a,
+  body.courses-template .post-template .content a,
+  body.courses-template ul.index-list a,
+  body.courses-template article.post a {
+    color: white;
+    text-decoration: none;
+    background-color: #6E39FF;
+    background-color: color(display-p3 0.429 0.222 1/1); }
   body.courses-template .article__text-box h1 {
-    color: #FF0058;
-    color: color(display-p3 1 0 0.345/1);
+    color: #6E39FF;
+    color: color(display-p3 0.429 0.222 1/1);
     mix-blend-mode: normal; }
 
 /*apps variables */
 body.apps-template {
   background: whitesmoke; }
-  body.apps-template .page-template a,
-  body.apps-template .post-template a,
-  body.apps-template .page-template h1,
-  body.apps-template .post-template h1 {
-    color: #FF008D;
-    color: color(display-p3 1 0 0.553/1); }
+  body.apps-template .page-template .content a,
+  body.apps-template .post-template .content a,
+  body.apps-template ul.index-list a,
+  body.apps-template article.post a {
+    color: white;
+    text-decoration: none;
+    background-color: #FF008D;
+    background-color: color(display-p3 1 0 0.553/1); }
   body.apps-template .article__text-box h1 {
-    color: #FF0058;
-    color: color(display-p3 1 0 0.345/1);
+    color: #FF008D;
+    color: color(display-p3 1 0 0.553/1);
     mix-blend-mode: normal; }
 
 /* All the junk for subscriptions. Like subscribe boxes, error states, etc.. */
@@ -2176,7 +2181,7 @@ h3.account-styles {
   animation-iteration-count: 1; }
 
 /* Button styles */
-.button.primary {
+.button.primary, .content .button.primary {
   background: #00C764;
   border: none;
   border-radius: 19px;
@@ -2191,12 +2196,12 @@ h3.account-styles {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.19);
   transition: transform 0.12s ease-in-out; }
-  .button.primary.disabled {
+  .button.primary.disabled, .content .button.primary.disabled {
     pointer-events: none;
     opacity: 0.5; }
-  .button.primary:hover {
+  .button.primary:hover, .content .button.primary:hover {
     transform: scale(1.1); }
-  .button.primary.button-centered {
+  .button.primary.button-centered, .content .button.primary.button-centered {
     margin-top: 2em;
     margin-bottom: 2em;
     margin-right: auto;
@@ -2206,7 +2211,7 @@ h3.account-styles {
     max-width: 300px;
     text-align: center;
     text-decoration: none; }
-  .button.primary.white {
+  .button.primary.white, .content .button.primary.white {
     color: #111111;
     background-color: white; }
 

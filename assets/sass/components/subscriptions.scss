@@ -441,7 +441,7 @@ h3.account-styles {
 }
 
 /* Button styles */
-.button.primary {
+.button.primary, .content .button.primary {
   background: #00C764;
   border: none;
   border-radius: 19px;
