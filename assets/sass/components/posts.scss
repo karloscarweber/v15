@@ -4,8 +4,6 @@
 .article__image {
   display: flex;
   position: relative;
-  margin-left: calc(-1 * var(--size-plus-huge));
-  margin-right: calc(-1 * var(--size-plus-huge));
   align-items: center;
   justify-content: center;
 
@@ -26,27 +24,60 @@
     transform: translateY(-50%);
     mix-blend-mode: difference;
     color: white;
+    font-weight: 700;
   }
 }
 
 // now without the image
 .article__text-box {
-  display: block;
+  display: inline-block;
   position: relative;
-  margin-left: calc(-1 * var(--size-plus-huge));
-  margin-right: calc(-1 * var(--size-plus-huge));
   align-items: center;
   justify-content: center;
 
   h1 {
     @include type-megatext;
     margin-top: 1em;
-    margin-bottom: 1em;
-    // position: absolute;
-    // top: 50%;
-    // left: 0%;
+    margin-bottom: 0em;
     z-index: 1000;
     mix-blend-mode: difference;
     color: white;
+    font-weight: 700;
+  }
+}
+
+.title-preamble,
+.title-preamble + hr,
+.title-preamble + .type-excerpt + hr,
+.title-preamble + .type-excerpt + .subtext + hr,
+.page-template .content .title-preamble + p.type-excerpt,
+.post-template .content .title-preamble + p.type-excerpt,
+.content > p.subtext {
+  max-width: initial;
+  margin-left: calc(-1 * var(--size-plus-huge));
+  margin-right: calc(-1 * var(--size-plus-huge));
+}
+
+.content .title-preamble + p.type-excerpt,
+.content + p.type-excerpt + p.subtext {
+  margin-top: 4em !important;
+  margin-bottom: 4em !important;
+}
+
+.content > p.subtext  {
+  margin-top: 6em !important;
+}
+
+.title-preamble + hr,
+.title-preamble + .type-excerpt + hr,
+.title-preamble + .type-excerpt + .subtext + hr, {
+  margin-bottom: 6em;
+}
+
+
+@media (max-width: 1152px) {
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

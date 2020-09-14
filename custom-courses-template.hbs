@@ -5,15 +5,10 @@ into the {body} of the default.hbs template --}}
   <div class="layout-centered post-container page-template">
     {{> "site-header"}}
 
-
   {{#post}}
       <article class="{{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-          <h1>{{title}}</h1>
-
-          {{#if feature_image}}
-            <img class="feature_image" src="{{feature_image}}" alt="">
-          {{/if}}
+          {{> "post-title"}}
 
           <div class="content">
             {{content}}

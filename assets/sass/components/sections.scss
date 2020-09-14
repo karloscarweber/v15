@@ -12,7 +12,7 @@ $brand-color-newsletter: #006FFF;
 $brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
 
 body.newsletter-template {
-  background: whitesmoke;
+  background: #D2D2D2;
   .page-template .content a,
   .post-template .content a,
   ul.index-list a  {
@@ -31,18 +31,19 @@ $brand-color-blog: #00C764;
 $brand-color-blog-p3: color(display-p3 0 0.781 0.394 / 1);
 
 body.blog-template {
-  background: whitesmoke;
+  background: #D2D2D2;
   .page-template .content a,
   .post-template .content a,
   ul.index-list a  {
-    color: white;
+    color: #111;
     text-decoration: none;
     background-color: $brand-color-blog;
     background-color: $brand-color-blog-p3;
   }
   .article__text-box h1 {
-    color: $brand-color-blog;
-    color: $brand-color-blog-p3;
+    color: #111;
+    background-color: $brand-color-blog;
+    background-color: $brand-color-blog-p3;
     mix-blend-mode: normal;
   }
 }
@@ -52,7 +53,7 @@ $brand-color-book: #FF0058;
 $brand-color-book-p3: color(display-p3 1 0 0.345 / 1);
 
 body.book-template.post-template, body.book-template.page-template, body.book-template {
-  background: whitesmoke;
+  background: #D2D2D2;
   .page-template .content a,
   .post-template .content a,
   ul.index-list a,{
@@ -73,7 +74,7 @@ $brand-color-courses: #6E39FF;
 $brand-color-courses-p3:  color(display-p3 0.429 0.222 1 / 1);
 
 body.courses-template {
-  background: whitesmoke;
+  background: #D2D2D2;
   .page-template .content a,
   .post-template .content a,
   ul.index-list a,
@@ -96,7 +97,7 @@ $brand-color-apps: #FF008D;
 $brand-color-apps-p3: color(display-p3 1 0 0.553 / 1);
 
 body.apps-template {
-  background: whitesmoke;
+  background: #D2D2D2;
   .page-template .content a,
   .post-template .content a,
   ul.index-list a,
@@ -109,6 +110,29 @@ body.apps-template {
   .article__text-box h1 {
     color: $brand-color-apps;
     color: $brand-color-apps-p3;
+    mix-blend-mode: normal;
+  }
+}
+
+/*apps variables */
+$brand-color-tags: #FFD039;
+$brand-color-tags-p3: color(display-p3 1 0.815 0.223 / 1);
+
+body.tag-template {
+  background: #D2D2D2;
+  .page-template .content a,
+  .post-template .content a,
+  ul.index-list a,
+  article.post a {
+    color:#111;
+    text-decoration: none;
+    background-color: $brand-color-tags;
+    background-color: $brand-color-tags-p3;
+  }
+  .article__text-box h1 {
+    color: #111;
+    background-color: $brand-color-tags;
+    background-color: $brand-color-tags-p3;
     mix-blend-mode: normal;
   }
 }

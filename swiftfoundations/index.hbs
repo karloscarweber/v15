@@ -4,14 +4,15 @@
 
     {{> "site-header"}}
 
-  <div class="article__text-box">
-    <h1>Swift Foundations</h1>
-  </div>
+  <div class="content">
 
-<div class="content">
+    <div class="article__text-box title-preamble">
+      <h1>Swift Foundations</h1>
+    </div>
 
-    <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
-    <p>Swift code, Announcements, Ethics.. <a href="#">Click here</a> to subscribe.</p>
+    <p class="type-excerpt">An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
+
+    <hr>
 
     {{#get "posts" limit="all" filter="tag:swift_foundations" order="title asc"}}
       {{#foreach posts}}

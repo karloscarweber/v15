@@ -1,27 +1,43 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template --}}
+  <div class="layout-centered post-container page-template">
 
-  {{> "site-header"}}
+    {{> "site-header"}}
 
-  {{#tag}}
-    <article class="{{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-      {{#if feature_image}}
-      <img src="{{feature_image}}" alt="">
-      {{/if}}
-      <h1 class="f1 lh-title f1-m lh-title-m f1-l lh-title-l fw9">#{{name}}</h1>
+    <div class="content">
 
-      <p>
-        {{#if description}}
-            {{description}}
+      {{#tag}}
+
+        {{#if feature_image}}
+          <div class="title-preamble article__image">
+            <img class="feature_image" src="{{feature_image}}" alt="">
+            <h1>#{{name}}</h1>
+          </div>
         {{else}}
-            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+          <div class="title-preamble article__text-box">
+            <h1>#{{name}}</h1>
+          </div>
         {{/if}}
-      </p>
 
-    </article>
-  {{/tag}}
+        <p class="type-excerpt">
+          {{#if description}}
+              {{description}}
+          {{else}}
+              A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+          {{/if}}
+        </p>
+      {{/tag}}
 
-  {{#foreach posts}}
-      {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-      {{> "post-card"}}
-  {{/foreach}}
+      <hr>
+
+      {{#foreach posts}}
+
+        {{> "post-item"}}
+
+      {{/foreach}}
+
+      {{pagination}}
+    </div>
+
+  </div>
+
+  {{#contentFor "template_class"}} tag-template page-template {{/contentFor}}

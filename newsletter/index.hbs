@@ -3,14 +3,19 @@
 <div class="layout-centered post-container page-template">
   {{> "site-header"}}
 
-  <div class="article__text-box">
-    <h1>Newsletters Past</h1>
-  </div>
   <div class="content">
-    
-    <p>An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
 
-    <p>Swift code, Announcements, Ethics. <a href="/newsletter/subscribe">Click here</a> to subscribe.</p>
+    <div class="article__text-box title-preamble">
+      <h1>Newsletters Past</h1>
+    </div>
+
+    <p class="type-excerpt">Swift code, Announcements, Ethics. <a href="/newsletter/subscribe">Click here</a> to subscribe.</p>
+
+    <p class="subtext"><span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>, by {{authors separator=", "}},<br></p>
+
+    <hr>
+
+    <!-- <p>Swift code, Announcements, Ethics. <a href="/newsletter/subscribe">Click here</a> to subscribe.</p> -->
 
     <ul class="index-list">
     {{#foreach posts}}

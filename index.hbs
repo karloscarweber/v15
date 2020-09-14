@@ -1,16 +1,19 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
 
   <div class="layout-centered post-container page-template">
 
     {{> "site-header"}}
 
-    <div class="article__text-box">
-      <h1>Stories</h1>
-    </div>
-
     <div class="content">
+
+      <div class="article__text-box title-preamble">
+        <h1>Stories</h1>
+      </div>
+
+      <p class="type-excerpt">We really want you to like this webpage and in order to do that we will do all sorts of things.</p>
+
+      <hr>
+
       {{#foreach posts}}
 
         {{> "post-item"}}
@@ -21,6 +24,5 @@ into the {body} of the default.hbs template --}}
     </div>
 
   </div>
-
 
   {{#contentFor "template_class"}} blog-template page-template {{/contentFor}}

@@ -172,63 +172,72 @@ h3.account-styles {
 
 }
 
-/* Post card styles */
+$brand-color-newsletter: #006FFF;
+$brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
 
-.subscribe-form.postcard {
-  display: flex;
+/* newsletter-box styles */
+.subscribe-form.newsletter-box {
+  display: block;
   position: relative;
   flex-direction: row;
   width: 100%;
   border: 0px solid transparent;
   background: #FFFFFF;
-  box-shadow: 0 0 50px 0 rgba(14,15,14,0.19);
-  border-radius: 20px;
+  // box-shadow: 0 0 50px 0 rgba(14,15,14,0.19);
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
   padding: 0;
-  max-width: 680px;
+  max-width: 100%;
   margin: 128px auto;
   overflow:hidden;
+  color: white;
+  background-color: $brand-color-newsletter;
+  background-color: $brand-color-newsletter-p3;
 
-  h3.subscription-styles {
-    font-family: "GreycliffCF";
-    margin-top: 12px;
+  .article__text-box h1 {
+    mix-blend-mode: normal;
+  }
+  p {
+    text-align: left;
+    color: white;
   }
 
-  p.subscription-styles {
-    font-family: "GreycliffCF";
-    margin-top: 12px;
-  }
 
-  &:before {
-    content: "";
-    display: block;
-    height: 280px;
-    width: 4px;
-    background: #525252;
-    border-radius: 2px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -2px;
-    margin-top: -140px;
-    transition: opacity 1s ease-in-out;
-  }
-
-  input {
-    width: calc(100% - 40px);
-    margin-top: 143px;
+  label {
+    width: 100%;
+    max-width: 300px;
     border: none;
-    margin: 0px auto;
-    margin-top: 143px;
     display: block;
+    margin-left: calc(-1 * var(--size-plus-huge));
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  input {
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    display: block;
+    margin-left: calc(-1 * var(--size-plus-huge));
+    background: #FFFFFF;
+    box-shadow: 0 2px 13px 0 rgba(255,255,255,0.50), inset 0 1px 3px 0 rgba(0,0,0,0.50), inset 0 -1px 3px 0 rgba(0,0,0,0.50);
+    border-radius: 16px;
+    height: 44px;
+    padding-left: 12px;
   }
   hr {
     display: block;
     border:none;
-    background: #525252;
-    border-radius: 2px;
+    border-radius: 0px;
     height: 4px;
-    width: calc(100% - 20px);
-    margin: 17px auto 46px;
+    // width: calc(100% - 20px);
+    // margin: 17px auto 46px;
+    background-color: white;
+    max-width: initial;
+    margin-left: calc(-1 * var(--size-plus-huge));
+    margin-right: calc(-1 * var(--size-plus-huge));
   }
   button {
     border: 3px solid #525252;
@@ -245,50 +254,14 @@ h3.account-styles {
     line-height: 38px;
     padding: 0px;
     display:block;
+    &.primary {
+      background: #111;
+      color: white;
+      width: 300px;
+    }
   }
 }
 // postcard-section
-.postcard-section {
-  display: block;
-  position: relative;
-  width:50%;
-  padding: 20px;
-  box-sizing: border-box;
-  transition: opacity 1.0s ease-in-out;
-}
-
-.postage-stamp {
-  display: block;
-  position: absolute;
-  width: 81px;
-  height: 97px;
-  top: 20px;
-  right: 20px;
-
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url("/assets/images/postage_shape_colorful.svg");
-  background-size: 81px 97px;
-}
-
-.background-art {
-  display: block;
-  position: absolute;
-  width: 1137px;
-  height: 855px;
-  top: 50%;
-  right: 50%;
-  margin-right: -568.5px;
-  margin-top: -427.5px;
-
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url("/assets/images/line_art.svg");
-  background-size: 1137px 855px;
-  transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
-  opacity: 0.0;
-  transform: scale(0.7);
-}
 
 .success-message {
   display: block;
@@ -320,17 +293,6 @@ h3.account-styles {
 // postcard success
 .success {
   .subscribe-form.postcard {
-    .background-art {
-      opacity: 1.0;
-      transform: scale(1.0);
-    }
-    .postcard-section {
-      opacity: 0.0;
-      pointer-events: none;
-    }
-    &:before {
-      opacity: 0.0;
-    }
     .success-message {
       animation: successloop 10s;
       animation-iteration-count: 1;
@@ -397,15 +359,6 @@ h3.account-styles {
   &.pip_4 { left: 80px; top: 5px; animation: loadingloop4 1.5s infinite; background: #6E39FF; }
 }
 .loading {
-  .subscribe-form.postcard {
-    .postcard-section {
-      opacity: 0.3;
-      pointer-events: none;
-    }
-    &:before {
-      opacity: 0.3;
-    }
-  }
   .loading_container {
     opacity: 1.0;
     transform: scale(1.0);

@@ -1,20 +1,22 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
 
-{{> "site-header"}}
+<div class="layout-centered post-container page-template {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-  {{#post}}
-  <article class="layout-centered {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+  {{> "site-header"}}
 
-    <h1>{{title}}</h1>
+  <div class="content">
 
-    {{#if feature_image}}
-      <img src="{{feature_image}}" alt="" class="feature_image">
+    {{> "post-title"}}
+
+    {{#if excerpt}}
+      <p class="type-excerpt">{{excerpt}}</p>
     {{/if}}
 
-    <div class="content">
-      {{content}}
-    </div>
-  </article>
-  {{/post}}
+    <hr>
+
+    {{content}}
+  </div>
+
+</div><!-- End -->
+
+{{#contentFor "template_class"}} book-template {{/contentFor}}

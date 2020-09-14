@@ -1,39 +1,32 @@
 <form data-members-form="subscribe">
-  <section class="subscribe-form postcard">
-    <div class="background-art"></div>
+  <section class="subscribe-form newsletter-box">
+    <div class="layout-centered">
+      <div class=" content">
+          <div class="article__text-box title-preamble">
+            <h1>Signup for the Newsletter</h1>
+          </div>
 
-    <div class="postcard-section">
-      <h3 class="subscription-styles">Get the Newsletter</h3>
-      <p class="subscription-styles">An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
+          <p class="type-excerpt">An infrequent newsletter of tutorials, code, and writings, of the best stuff about making creative software, and doing it ethically, that I can find.</p>
 
-      <p class="subscription-styles">Swift code, Announcements, Ethics.</p>
+          <hr>
 
-      <p class="subscript subscription-styles" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
+          <label for="email">Email Address</label>
+          <input data-members-email type="email" required="true" placeholder="eager@beaver.com" name="email" />
+          <button type="submit" class="button primary">Subscribe</button>
+
+          <div class="loading_container">
+            <div class="loading_pip pip_1"></div>
+            <div class="loading_pip pip_2"></div>
+            <div class="loading_pip pip_3"></div>
+            <div class="loading_pip pip_4"></div>
+          </div>
+
+          <div class="success-message">
+            <p>Success! You're now subscribed. Good Job.</p>
+          </div>
+
+          <p data-members-error class="subscribe-error"><!-- error message will appear here --></p>
+      </div>
     </div>
-
-    <div class="postcard-section">
-      <span class="postage-stamp"></span>
-      <input data-members-email type="email" required="true" placeholder="eager@beaver.com" />
-
-      <hr>
-      <hr>
-      <hr>
-
-      <button type="submit" class="button primary">Subscribe</button>
-    </div>
-
-    <div class="loading_container">
-      <div class="loading_pip pip_1"></div>
-      <div class="loading_pip pip_2"></div>
-      <div class="loading_pip pip_3"></div>
-      <div class="loading_pip pip_4"></div>
-    </div>
-
-    <div class="success-message">
-      <p>Success! You're now subscribed. Good Job.</p>
-    </div>
-
-    <p data-members-error class="subscribe-error"><!-- error message will appear here --></p>
-
   </section>
 </form>

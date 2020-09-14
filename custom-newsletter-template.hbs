@@ -2,33 +2,34 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-  <section class="layout-centered post-container post-template">
+  <!-- <section class="layout-centered post-container post-template">
 
     <h1 class="fancy">Newsletter</h1>
     <p>Wanna See past issues? <a href="/newsletter">Go Back to the index</a>. <a href="/newsletter/subscribe">Click here</a> to subscribe.</p>
 
-  </section>
+  </section> -->
 
 
   {{#post}}
       <article class="layout-centered post-container post-template {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-          <h1>{{title}}</h1>
+        {{> "site-header"}}
 
-          {{#if feature_image}}
-            <img class="feature_image" src="{{feature_image}}" alt="">
-          {{/if}}
-
-          <hr>
-
-          <div class="post_subtext">
-          <p class="f-step--1 "><span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>, by {{authors separator=", "}},<br>
-          <!--<span>Tags: {{#if tags}}
-              {{#foreach tags}}<a href="{{url}}" title={{name}} class="tag tag-{{id}} {{slug}}">{{name}}</a> {{/foreach}}
-            {{/if}}</span>--></p>
-          </div>
 
           <div class="content">
+
+            <div class="article__text-box title-preamble">
+              <h1>{{title}}</h1>
+            </div>
+
+            {{#if excerpt}}
+              <p class="type-excerpt">{{excerpt}}</p>
+            {{/if}}
+
+            <p class="subtext"><span class="date-time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D YYYY"}}</span>, by {{authors separator=", "}},<br></p>
+
+            <hr>
+
             {{content}}
           </div>
 
