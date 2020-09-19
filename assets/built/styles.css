@@ -2004,7 +2004,8 @@ h3.account-styles {
     background-color: white;
     max-width: initial;
     margin-left: calc(-1 * var(--size-plus-huge));
-    margin-right: calc(-1 * var(--size-plus-huge)); }
+    margin-right: calc(-1 * var(--size-plus-huge));
+    margin-bottom: 4em; }
   .subscribe-form.newsletter-box button {
     border: 3px solid #525252;
     background: white;
