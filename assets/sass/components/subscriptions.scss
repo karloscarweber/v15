@@ -189,7 +189,8 @@ $brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
   box-shadow: none;
   padding: 0;
   max-width: 100%;
-  margin: 128px auto;
+  margin: 0px auto;
+  padding: 0px 0px 128px 0px;
   overflow:hidden;
   color: white;
   background-color: $brand-color-newsletter;
@@ -202,25 +203,28 @@ $brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
     text-align: left;
     color: white;
   }
-
+  
+  .left-side {
+    margin-right: 32px;
+  }
 
   label {
     width: 100%;
     max-width: 300px;
     border: none;
     display: block;
-    margin-left: calc(-1 * var(--size-plus-huge));
+    // margin-left: calc(-1 * var(--size-plus-huge));
     color: #111;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 8px;
   }
   input {
-    width: 100%;
-    max-width: 300px;
+    // width: 100%;
+    width: 300px;
     border: none;
     display: block;
-    margin-left: calc(-1 * var(--size-plus-huge));
+    // margin-left: calc(-1 * var(--size-plus-huge));
     background: #FFFFFF;
     box-shadow: 0 2px 13px 0 rgba(255,255,255,0.50), inset 0 1px 3px 0 rgba(0,0,0,0.50), inset 0 -1px 3px 0 rgba(0,0,0,0.50);
     border-radius: 16px;
@@ -250,7 +254,7 @@ $brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
     height: 44px;
     border-radius:16px;
     width: calc(100% - 20px);
-    margin: 36px auto 0px;
+    // margin: 36px auto 0px;
     line-height: 38px;
     padding: 0px;
     display:block;
@@ -261,7 +265,14 @@ $brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
     }
   }
 }
-// postcard-section
+
+
+.subscriber-row {
+  display: flex; 
+  margin-left: calc(-1 * var(--size-plus-huge));
+  margin-right: calc(-1 * var(--size-plus-huge));
+}
+
 
 .success-message {
   display: block;

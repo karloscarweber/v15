@@ -1750,6 +1750,10 @@ body.newsletter-template {
     color: color(display-p3 0 0.433 1/1);
     mix-blend-mode: normal; }
 
+body.newsletter-subscribe-page {
+  background: #006FFF;
+  background: color(display-p3 0 0.433 1/1); }
+
 /*Blog variables */
 body.blog-template {
   background: #D2D2D2; }
@@ -1961,7 +1965,8 @@ h3.account-styles {
   box-shadow: none;
   padding: 0;
   max-width: 100%;
-  margin: 128px auto;
+  margin: 0px auto;
+  padding: 0px 0px 128px 0px;
   overflow: hidden;
   color: white;
   background-color: #006FFF;
@@ -1971,22 +1976,21 @@ h3.account-styles {
   .subscribe-form.newsletter-box p {
     text-align: left;
     color: white; }
+  .subscribe-form.newsletter-box .left-side {
+    margin-right: 32px; }
   .subscribe-form.newsletter-box label {
     width: 100%;
     max-width: 300px;
     border: none;
     display: block;
-    margin-left: calc(-1 * var(--size-plus-huge));
     color: #111;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 8px; }
   .subscribe-form.newsletter-box input {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     border: none;
     display: block;
-    margin-left: calc(-1 * var(--size-plus-huge));
     background: #FFFFFF;
     box-shadow: 0 2px 13px 0 rgba(255, 255, 255, 0.5), inset 0 1px 3px 0 rgba(0, 0, 0, 0.5), inset 0 -1px 3px 0 rgba(0, 0, 0, 0.5);
     border-radius: 16px;
@@ -2012,7 +2016,6 @@ h3.account-styles {
     height: 44px;
     border-radius: 16px;
     width: calc(100% - 20px);
-    margin: 36px auto 0px;
     line-height: 38px;
     padding: 0px;
     display: block; }
@@ -2020,6 +2023,11 @@ h3.account-styles {
       background: #111;
       color: white;
       width: 300px; }
+
+.subscriber-row {
+  display: flex;
+  margin-left: calc(-1 * var(--size-plus-huge));
+  margin-right: calc(-1 * var(--size-plus-huge)); }
 
 .success-message {
   display: block;

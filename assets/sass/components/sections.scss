@@ -26,6 +26,11 @@ body.newsletter-template {
   }
 }
 
+body.newsletter-subscribe-page {
+  background: $brand-color-newsletter;
+  background: $brand-color-newsletter-p3;
+}
+
 /*Blog variables */
 $brand-color-blog: #00C764;
 $brand-color-blog-p3: color(display-p3 0 0.781 0.394 / 1);

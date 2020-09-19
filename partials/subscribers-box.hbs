@@ -10,20 +10,29 @@
 
           <hr>
 
-          <label for="email">Email Address</label>
-          <input data-members-email type="email" required="true" placeholder="eager@beaver.com" name="email" />
-          <button type="submit" class="button primary">Subscribe</button>
-
-          <div class="loading_container">
-            <div class="loading_pip pip_1"></div>
-            <div class="loading_pip pip_2"></div>
-            <div class="loading_pip pip_3"></div>
-            <div class="loading_pip pip_4"></div>
+          <div class="subscriber-row">
+            <div class="left-side">
+              <label for="email">Email Address</label>
+              <input data-members-email type="email" required="true" placeholder="eager@beaver.com" name="email" />
+            </div>
+            <div class="right-side">
+              <label>&nbsp;</label>
+              <button type="submit" class="button primary">Subscribe</button>
+            </div>
+            
+  
+            <div class="loading_container">
+              <div class="loading_pip pip_1"></div>
+              <div class="loading_pip pip_2"></div>
+              <div class="loading_pip pip_3"></div>
+              <div class="loading_pip pip_4"></div>
+            </div>
+  
+            <div class="success-message">
+              <p>Success! You're now subscribed. Good Job.</p>
+            </div>
           </div>
 
-          <div class="success-message">
-            <p>Success! You're now subscribed. Good Job.</p>
-          </div>
 
           <p data-members-error class="subscribe-error"><!-- error message will appear here --></p>
       </div>
