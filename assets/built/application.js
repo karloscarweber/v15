@@ -1128,7 +1128,7 @@
   return wr._ = wr;
 });
 let app = function () {
-
+  // Monitor open or close the menu.
   (function () {
     let menubutton = document.querySelector(".scene");
     let menu = document.querySelector(".header_menu");
@@ -1146,26 +1146,6 @@ let app = function () {
       }
     };
   })();
-
-  // the book menubutton
-  (function () {
-    let burgerbutton = document.querySelector(".burger");
-    let bookmenu = document.querySelector(".gl_lesson__sidebar");
-    let body = document.querySelector("body");
-
-    burgerbutton.onclick = function () {
-      if (_.contains(burgerbutton.classList, "opened")) {
-        burgerbutton.classList.remove("opened");
-        bookmenu.classList.remove("opened");
-        body.classList.remove("rigid");
-      } else {
-        burgerbutton.classList.add("opened");
-        bookmenu.classList.add("opened");
-        body.classList.add("rigid");
-      }
-    };
-  })();
-
 };
 
 window.onload = app;

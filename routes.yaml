@@ -23,7 +23,6 @@ collections:
     permalink: /newsletter/{slug}/
     template: newsletter/index
     filter: primary_tag:newsletter
-    data: tag.newsletter
   /blog/:
     permalink: /blog/{slug}/
     template:
