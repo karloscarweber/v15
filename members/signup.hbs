@@ -31,39 +31,6 @@
             <li>Professional support through twist</li><br />
           </ul>
 
-          <div class="pricing-matrix">
-            <input id="matrixchecker" type="checkbox" name="matrixchecker" value="">
-            <div class="matrix-banner">
-
-              <p>Monthly Pricing</p>
-                <label for="matrixchecker"></label>
-              <p>Annual Pricing</p>
-
-            </div>
-
-            <div class="card-holder">
-              <div class="pricing-card red">
-                <h3>{{@price.currency_symbol}}{{@price.monthly}}<span>/month</span></h3>
-                <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
-                <p>Pro support, and a twist community.</p>
-                <a class="button primary fit white" href="javascript:" data-members-plan="Monthly">Subscribe</a>
-              </div>
-
-              <div class="pricing-card purple">
-                <h3>{{@price.currency_symbol}}{{@price.yearly}}<span>/year</span></h3>
-                <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
-                <p>Pro support, and a twist community.</p>
-                <a class="button primary fit white" href="javascript:" data-members-plan="Yearly">Subscribe</a>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="reparations-pricing-box">
-            <p>If you are Black, or from an under-represented group in Tech, premium courses are free, forever. Just send me an email after you signup and I’ll set it up.</p>
-          </div>
-
         </section>
 
     {{else}}
@@ -76,7 +43,7 @@
 
           <p>To get started learning Swift, read <a class="red" href="/swift_foundations/">Swift Foundations</a>, a free book meant to teach you the fundamentals of Swift, SwiftUI, and building apps across Apple platforms.</p>
 
-          <p>Subscription Includes:</p>
+          
 
           <ul class="feature-list">
             <li>Step by step video lessons</li><br />
@@ -85,57 +52,6 @@
             <li>Design assets and files</li><br />
             <li>Professional support through twist</li><br />
           </ul>
-
-          <div class="pricing-matrix">
-            <input id="matrixchecker" type="checkbox" name="matrixchecker" value="">
-            <div class="matrix-banner">
-
-              <p>Monthly Pricing</p>
-                <label for="matrixchecker"></label>
-              <p>Annual Pricing</p>
-
-            </div>
-
-            <div class="card-holder">
-              <div class="pricing-card red">
-                <h3>{{@price.currency_symbol}}{{@price.monthly}}<span>/month</span></h3>
-                <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
-                <p>Pro support, and a twist community.</p>
-                <a href="/subscribe" class="button primary white fit">Subscribe</a>
-              </div>
-
-              <div class="pricing-card purple">
-                <h3>{{@price.currency_symbol}}{{@price.yearly}}<span>/year</span></h3>
-                <p>Access to Courses like: Making Milkjar, Cheddar v1.5, Dubbble: A Dribbble App, and Blaster.</p>
-                <p>Pro support, and a twist community.</p>
-                <a href="/subscribe" class="button primary white fit">Subscribe</a>
-              </div>
-
-            </div>
-
-          </div>
-
-          <aside class="aside bigger-box bg-purple">
-            <p>If you are Black, or from an under-represented group in Tech, premium courses are free, forever. Just send me an email after you sign up and I’ll set it up.</p>
-          </aside>
-
-          <h2 class="signup-title" style="padding-top: 5rem; padding-bottom: 0em;">But first, you'll need to sign up for a free account.</h2>
-
-          <section class="subscribe-form purple">
-              <form data-members-form="signup" class="narrow">
-
-                <h3 class="section-header-h3-text">Sign Up</h3>
-
-                <label for="email">Email Address</label>
-                <input name="email" data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false"/>
-                <button tabindex="1" type="submit" class="button primary">Subscribe</button>
-                <p><small>Already have an account? <a href="{{@site.url}}/signin/">Sign in</a></small></p>
-                <p data-members-error class="subscribe-error account-styles"><!-- error message will appear here --></p>
-                <p class="message-success account-styles"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription.</p>
-                <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
-              </form>
-
-          </section>
 
         </section>
 

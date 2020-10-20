@@ -44,13 +44,16 @@ body.blog-template {
     text-decoration: none;
     background-color: $brand-color-blog;
     background-color: $brand-color-blog-p3;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  .article__text-box h1 {
-    color: #111;
-    background-color: $brand-color-blog;
-    background-color: $brand-color-blog-p3;
-    mix-blend-mode: normal;
-  }
+  // .article__text-box h1 {
+  //   color: #111;
+  //   background-color: $brand-color-blog;
+  //   background-color: $brand-color-blog-p3;
+  //   mix-blend-mode: normal;
+  // }
 }
 
 /*Book variables */
@@ -119,7 +122,7 @@ body.apps-template {
   }
 }
 
-/*apps variables */
+/*tags variables */
 $brand-color-tags: #FFD039;
 $brand-color-tags-p3: color(display-p3 1 0.815 0.223 / 1);
 
@@ -138,6 +141,29 @@ body.tag-template {
     color: #111;
     background-color: $brand-color-tags;
     background-color: $brand-color-tags-p3;
+    mix-blend-mode: normal;
+  }
+}
+
+
+/*accounts variables */
+$brand-color-accounts: #fff;
+
+body.accounts-template {
+  background: #D2D2D2;
+  .page-template .content a,
+  .post-template .content a,
+  ul.index-list a,
+  article.post a {
+    color:#111;
+    text-decoration: none;
+    background-color: $brand-color-accounts;
+    
+  }
+  .article__text-box h1 {
+    color: #111;
+    background-color: $brand-color-accounts;
+    
     mix-blend-mode: normal;
   }
 }

@@ -5,35 +5,32 @@
   {{> site-header}}
 
   <div class="content">
-    <section class="signup-page">
-
       {{#if @member}}
 
           {{!-- Logged in: Redirect home --}}
           <script>window.location = '{{@site.url}}';</script>
 
       {{else}}
-
-          <!-- <h2 class="signup-title">Hi Friend,<br /> Sign in to gain full access.</h2> -->
-
-          <section class="subscribe-form purple">
-              <form data-members-form="signin" class="narrow">
-
-                <h3 class="section-header-h3-text">Log In</h3>
-
-                <label for="email">Email Address</label>
-                <input name="email" data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false"/>
-                <button type="submit" class="button primary">Log in</button>
-                <p><small>Don't have an account yet? <a href="{{@site.url}}/signup/">Sign up</a></small></p>
-                <p data-members-error class="subscribe-error account-styles"><!-- error message will appear here --></p>
-                <p class="message-success account-styles"><strong>Great!</strong> Check your inbox and click the link to complete signin.</p>
-                <p class="subscript" >We will never share your email with anybody else ever. You can unsubscribe at any time. Please check out our <a href="#">privacy policy</a> for more details.</p>
-              </form>
-          </section>
+      
+      <section class="bucket content">
+        <form data-members-form="signin">
+          <div class="content">
+            <h1>Log In</h1>
+            
+            <label for="email">Email Address</label>
+            <input class="label" name="email" data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false"/>
+            <button type="submit" class="button primary white">Log in</button>
+            
+            <hr />
+            
+            <p class="type-excerpt">Don't have an account yet? You can <a href="/signup">sign up here</a></p>
+            
+          </div>
+        </form>
+      </section>
 
       {{/if}}
-    </section>
   </div>
 </section>
 
-{{#contentFor "template_class"}} courses-template page-template {{/contentFor}}
+{{#contentFor "template_class"}} accounts-template page-template {{/contentFor}}
