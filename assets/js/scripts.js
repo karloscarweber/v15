@@ -1,3 +1,15 @@
+// stimulus initializtion
+import { Application } from "stimulus"
+
+import HelloController from "./controllers/hello_controller"
+// import ClipboardController from "./controllers/clipboard_controller"
+
+const application = Application.start()
+application.register("hello", HelloController)
+// application.register("clipboard", ClipboardController)
+
+
+
 let app = function(){
 
   // Monitor open or close the menu.
@@ -11,7 +23,7 @@ let app = function(){
         menubutton.classList.remove("opened");
         menu.classList.remove("opened");
         body.classList.remove("rigid");
-    
+
       } else {
         menubutton.classList.add("opened");
         menu.classList.add("opened");

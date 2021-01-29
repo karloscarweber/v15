@@ -1115,6 +1115,81 @@ pre[class*="language-"] {
     .gl_lesson__sidebar.opened .burger {
       background-image: url("/assets/images/MenuBurgerX.svg"); } }
 
+/* lesson-cards */
+body.book-template .page-template .content .lesson-card {
+  position: relative;
+  display: block;
+  max-width: 510px;
+  font-family: -apple-system, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #111;
+  color: #111111;
+  margin-top: 37px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #E2E2E2; }
+  body.book-template .page-template .content .lesson-card a {
+    color: #111111; }
+  body.book-template .page-template .content .lesson-card h3 {
+    font-size: var(--step-1);
+    line-height: 1.2em;
+    font-weight: 600; }
+  body.book-template .page-template .content .lesson-card h2 {
+    font-size: var(--step-2);
+    line-height: 1.2em;
+    font-weight: 700; }
+  body.book-template .page-template .content .lesson-card .minutes {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 77px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+    background-color: #FF0054;
+    background-color: color(display-p3 1 0 0.329/1); }
+
+.aside-box {
+  display: block;
+  float: right;
+  margin-right: -2rem;
+  border-radius: 14px;
+  background: #DFDFDF;
+  padding: 16px;
+  width: 100%;
+  max-width: 416px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem; }
+  .aside-box h2 {
+    color: #3D3D3D;
+    font-size: var(--step-1); }
+  .aside-box p {
+    color: #565656;
+    font-size: var(--step-0); }
+
+@media (max-width: 649px) {
+  .aside-box {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    float: none; } }
+
+.gl_lesson__content_wrapper * {
+  font-family: -apple-system, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #111; }
+
+.gl_lesson__content_wrapper h1 {
+  color: #FF0058;
+  font-weight: 600;
+  font-size: var(--step-4); }
+
+.gl_lesson__content_wrapper .content hr {
+  background-color: #A6A6A6;
+  height: 2px;
+  margin-top: 16px; }
+
 /* Buckets.scss */
 /**
  * Buckets are just like buckets.
@@ -1156,7 +1231,8 @@ code[class*="language-"], pre[class*="language-"] {
   font-size: var(--step--1) !important; }
 
 pre[class*="language-"] {
-  margin-bottom: 1em !important; }
+  margin-bottom: 3em !important;
+  margin-top: 3em !important; }
 
 .course-card-container {
   display: flex;

@@ -11,14 +11,23 @@ into the {body} of the default.hbs template --}}
         {{> "swift-foundations-sidebar"}}
 
         <div class="gl_lesson__content_wrapper">
-          <h1 class="fancy">{{title}}</h1>
-
 
           {{#if feature_image}}
             <img class="feature_image" src="{{feature_image}}" alt="">
           {{/if}}
 
           <div class="content">
+            <h1 class="fancy">{{title}}</h1>
+            {{#if excerpt}}
+              <p class="excerpt">{{excerpt}}</p>
+            {{/if}}
+
+            <div data-controller="hello">
+              <input type="text">
+              <button>Greet</button>
+            </div>
+
+            <hr>
             {{content}}
           </div>
         </div>

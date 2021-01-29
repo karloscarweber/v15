@@ -11,6 +11,8 @@ var gulp_sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
+const webpack = require('webpack-stream');
+
 
 // postcss & plugins
 var postcss = require('gulp-postcss');
@@ -55,10 +57,14 @@ gulp.task('css', function () {
 
 gulp.task('javamascript', function() {
   return gulp.src(['./assets/js/vendor/*.js', './assets/js/lib/*.js', './assets/js/scripts.js'])
+    // .pipe(sourcemaps.init())
     .pipe(babel({
-
+      "plugins": ["@babel/plugin-proposal-class-properties"],
+      "presets": ["@babel/preset-env"]
     }))
+    .pipe(webpack())
     .pipe(concat('all.js'))
+    // .pipe(sourcemaps.write("./assets/built/"))
     .pipe(rename('application.js'))
     .pipe(gulp.dest('./assets/built/'));
 });
