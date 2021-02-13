@@ -341,6 +341,10 @@ gutters on outside
   .layout__book_sidebar, .layout__book_content {
     float: none; } }
 
+.breakout {
+  margin-left: calc(-1 * var(--size-plus-huge));
+  margin-right: calc(-1 * var(--size-plus-huge)); }
+
 :root {
   --fluid-min-width: 320;
   --fluid-max-width: 1152;
@@ -573,13 +577,11 @@ two screen widths. */
 
 .typeface-system-ui {
   font-family: -apple-system, Helvetica, sans-serif;
-  font-weight: 700;
   color: #111; }
 
 /*  */
 .type-megatext {
   font-family: -apple-system, Helvetica, sans-serif;
-  font-weight: 700;
   color: #111;
   font-size: var(--step-5);
   line-height: 1em;
@@ -670,7 +672,6 @@ two screen widths. */
 /* content typeface defaults */
 .content > h1 {
   font-family: -apple-system, Helvetica, sans-serif;
-  font-weight: 700;
   color: #111;
   font-size: var(--step-5);
   line-height: 1em;
@@ -1044,10 +1045,31 @@ pre[class*="language-"] {
         color: white; }
 
 .gl_lesson__sidebar {
-  margin-top: 1em;
+  margin-top: 10em !important;
   background: white;
   border-radius: 19px;
   padding: 16px; }
+  .gl_lesson__sidebar .chapter-accessory {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: #FF0058;
+    border-radius: 100px;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -65%;
+    z-index: -1000;
+    position: relative; }
+    .gl_lesson__sidebar .chapter-accessory h4 {
+      padding: 0px 20px;
+      padding-top: 57px; }
+    .gl_lesson__sidebar .chapter-accessory h3 {
+      padding: 0px 20px;
+      text-align: center;
+      font-size: 6rem;
+      margin-top: -5rem; }
+  .gl_lesson__sidebar .chapter-accessory.hidden + h2 {
+    margin-top: -50px; }
   .gl_lesson__sidebar h2 {
     font-size: 18px;
     line-height: 24px;
@@ -1121,12 +1143,19 @@ body.book-template .page-template .content .lesson-card {
   display: block;
   max-width: 510px;
   font-family: -apple-system, Helvetica, sans-serif;
-  font-weight: 700;
   color: #111;
   color: #111111;
   margin-top: 37px;
   padding-bottom: 14px;
-  border-bottom: 2px solid #E2E2E2; }
+  border-bottom: 2px solid #E2E2E2;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 10px;
+  padding-bottom: 24px;
+  box-sizing: content-box;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+  margin-top: 37px; }
   body.book-template .page-template .content .lesson-card a {
     color: #111111; }
   body.book-template .page-template .content .lesson-card h3 {
@@ -1137,18 +1166,41 @@ body.book-template .page-template .content .lesson-card {
     font-size: var(--step-2);
     line-height: 1.2em;
     font-weight: 700; }
+  body.book-template .page-template .content .lesson-card .expando {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
   body.book-template .page-template .content .lesson-card .minutes {
     display: block;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 0px;
+    top: 0px;
     width: 77px;
     height: 32px;
     line-height: 32px;
     text-align: center;
     color: white;
     background-color: #FF0054;
-    background-color: color(display-p3 1 0 0.329/1); }
+    background-color: color(display-p3 1 0 0.329/1);
+    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
+    body.book-template .page-template .content .lesson-card .minutes:hover {
+      transform: scale(1.2); }
+  body.book-template .page-template .content .lesson-card:hover .expando {
+    background: #E2E2E2;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%; }
+  body.book-template .page-template .content .lesson-card:hover:first-child {
+    margin-bottom: -20px;
+    transform: translateY(-10px); }
 
 .aside-box {
   display: block;
@@ -1177,13 +1229,21 @@ body.book-template .page-template .content .lesson-card {
 
 .gl_lesson__content_wrapper * {
   font-family: -apple-system, Helvetica, sans-serif;
-  font-weight: 700;
   color: #111; }
+
+.gl_lesson__content_wrapper .content {
+  max-width: 736px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
 
 .gl_lesson__content_wrapper h1 {
   color: #FF0058;
   font-weight: 600;
   font-size: var(--step-4); }
+
+.gl_lesson__content_wrapper .content .excerpt {
+  margin-top: 1rem !important; }
 
 .gl_lesson__content_wrapper .content hr {
   background-color: #A6A6A6;
@@ -1824,7 +1884,6 @@ ul.index-list {
     height: 80%; }
   .article__image h1 {
     font-family: -apple-system, Helvetica, sans-serif;
-    font-weight: 700;
     color: #111;
     font-size: var(--step-5);
     line-height: 1em;
@@ -1848,7 +1907,6 @@ ul.index-list {
   justify-content: center; }
   .article__text-box h1 {
     font-family: -apple-system, Helvetica, sans-serif;
-    font-weight: 700;
     color: #111;
     font-size: var(--step-5);
     line-height: 1em;

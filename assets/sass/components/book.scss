@@ -2,10 +2,37 @@
 
 // sidebar specific styles
 .gl_lesson__sidebar {
-  margin-top: 1em;
+  margin-top: 10em !important;
   background: white;
   border-radius: 19px;
   padding: 16px;
+
+  .chapter-accessory {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: #FF0058;
+    border-radius: 100px;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -65%;
+    z-index: -1000;
+    position: relative;
+    h4 {
+      padding: 0px 20px;
+      padding-top: 57px;
+    }
+    h3 {
+      padding: 0px 20px;
+      text-align: center;
+      font-size: 6rem;
+      margin-top: -5rem;
+    }
+  }
+
+  .chapter-accessory.hidden + h2 {
+    margin-top: -50px;
+  }
 
   h2 {
     font-size: 18px;
@@ -130,11 +157,24 @@ body.book-template .page-template .content {
       font-weight: 700;
     }
 
+    .expando {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      right: 50%;
+      bottom: 50%;
+      width: auto;
+      height: auto;
+      z-index: -1000;
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
     .minutes {
       display: block;
       position: absolute;
-      right: 0;
-      top: 0;
+      right: 0px;
+      top: 0px;
       width: 77px;
       height: 32px;
       line-height: 32px;
@@ -142,10 +182,41 @@ body.book-template .page-template .content {
       color: white;
       background-color: $swift-color;
       background-color: $swift-color-p3;
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+
+      &:hover {
+          transform: scale(1.2);
+      }
     }
 
     padding-bottom: 14px;
     border-bottom: 2px solid #E2E2E2;
+
+    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+
+    padding: 10px;
+    padding-bottom:24px;
+    box-sizing: content-box;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+    margin-top: 37px;
+
+    &:hover {
+      .expando {
+        background: #E2E2E2;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+      }
+
+      &:first-child {
+        margin-bottom: -20px;
+        transform: translateY(-10px);
+      }
+
+    }
 
   }
 }
@@ -188,12 +259,21 @@ body.book-template .page-template .content {
     @include typeface-system-ui;
   }
 
+  .content {
+    max-width: 736px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   h1 {
     color: #FF0058;
     font-weight: 600;
     font-size: var(--step-4)
   }
-
+  .content .excerpt {
+    margin-top: 1rem !important;
+  }
   .content hr {
     background-color: #A6A6A6;
     height: 2px;

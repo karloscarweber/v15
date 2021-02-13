@@ -168,7 +168,7 @@
 
 @mixin typeface-system-ui {
   font-family: -apple-system, Helvetica, sans-serif;
-  font-weight: 700; // always bold
+  // font-weight: 700; // always bold 
   color: #111;
 }
 .typeface-system-ui { @include typeface-system-ui; }

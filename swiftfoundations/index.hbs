@@ -13,45 +13,53 @@
     <p class="type-excerpt">I'm writing a book, Swift for complete beginners.</p>
 
     <hr>
-
+    <!--
     {{#get "posts" limit="all" filter="tag:swift_foundations" order="title asc"}}
       {{#foreach posts}}
         {{> "lesson-card"}}
       {{/foreach}}
     {{/get}}
+    -->
 
-    <article class="lesson-card">
-      <a href="/swift_foundations/introduction">
-        <h3>Chapter 1</h3>
-        <h2>Introduction</h2>
-        <span class="minutes">15 mins</span>
-      </a>
-    </article>
+    <div class="lesson-card-container breakout">
 
-    <article class="lesson-card">
-      <a href="/swift_foundations/introduction">
-        <h3>Chapter 2</h3>
-        <h2>Building Your First App</h2>
-        <span class="minutes">15 mins</span>
-      </a>
-    </article>
+      <div class="lesson-card" style="border:none;pointer-events:none;"></div>
+      <article class="lesson-card">
+        <a href="/swift_foundations/introduction">
+          <div class="expando"></div>
+          <h3>Chapter 1</h3>
+          <h2>Introduction</h2>
+          <span class="minutes">15 mins</span>
+        </a>
+      </article>
 
-    <article class="lesson-card">
-      <a href="/swift_foundations/introduction">
-        <h3>Chapter 3</h3>
-        <h2>Variables</h2>
-        <span class="minutes">15 mins</span>
-      </a>
-    </article>
+      <article class="lesson-card">
+        <a href="/swift_foundations/introduction">
+          <div class="expando"></div>
+          <h3>Chapter 2</h3>
+          <h2>Building Your First App</h2>
+          <span class="minutes">15 mins</span>
+        </a>
+      </article>
 
-    <article class="lesson-card">
-      <a href="/swift_foundations/introduction">
-        <h3>Chapter 4</h3>
-        <h2>Value Types vs  Reference Types</h2>
-        <span class="minutes">15 mins</span>
-      </a>
-    </article>
+      <article class="lesson-card">
+        <a href="/swift_foundations/introduction">
+          <div class="expando"></div>
+          <h3>Chapter 3</h3>
+          <h2>Variables</h2>
+          <span class="minutes">15 mins</span>
+        </a>
+      </article>
 
+      <article class="lesson-card">
+        <a href="/swift_foundations/introduction">
+          <div class="expando"></div>
+          <h3>Chapter 4</h3>
+          <h2>Value Types vs  Reference Types</h2>
+          <span class="minutes">15 mins</span>
+        </a>
+      </article>
+    </div>
 
 
   </div>

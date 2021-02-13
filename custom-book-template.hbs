@@ -22,11 +22,6 @@ into the {body} of the default.hbs template --}}
               <p class="excerpt">{{excerpt}}</p>
             {{/if}}
 
-            <div data-controller="hello">
-              <input type="text">
-              <button>Greet</button>
-            </div>
-
             <hr>
             {{content}}
           </div>
@@ -39,25 +34,28 @@ into the {body} of the default.hbs template --}}
 
 
 <script type="text/javascript">
+  function remove_prefixes(string) {
+    var newstring = string.replace("http://localhost:2368", "");
+    newstring = newstring.replace("https://kow.fm", "");
+    return newstring
+  }
+
+  function remove_urlness(string) {
+    // var newstring = string.replace("/", "");
+    var newstring = string.replace("/swift_foundations/", "");
+    newstring = newstring.replace("#", "");
+    newstring = newstring.replace("/", "");
+    return newstring
+  }
 
   var get_strings = function() {
 
-    function remove_prefixes(string) {
-      var newstring = string.replace("http://localhost:2368", "");
-      newstring = newstring.replace("https://kow.fm", "");
-      return newstring
-    }
-
     var list_elements = document.querySelectorAll(".gl_lesson__sidebar ul li a");
     var url = remove_prefixes(window.location.href);
-    console.log("url")
-    console.log(url)
-
 
     function mark_current(item, index) {
       stripped_string = remove_prefixes(item.href)
       if(stripped_string === url) {
-        console.log("match")
         item.classList.add("current-page");
       }
     }
@@ -66,6 +64,45 @@ into the {body} of the default.hbs template --}}
 
   }
 
-  window.addEventListener('onload', get_strings());
+  var get_chapter = function() {
+    // the key is the page slug
+    var chapters = {
+      "": "?",
+      "introduction": " ",
+      "Ethical Programming": "01",
+      "How it Fits together": "02",
+      "Xcode": "03",
+      "Variables and Constants": "04",
+    }
 
+    function set_text(stripped = "") {
+      var chapter_title = document.querySelector(".gl_lesson__sidebar .chapter-accessory h3")
+      chapter_title.textContent = chapters[stripped]
+      if (chapters[stripped].length > 50) {
+        var thing = ""
+      }
+      if (chapters[stripped] == " ") {
+        // document.querySelector(".gl_lesson__sidebar .chapter-accessory h4").textContent = " "
+        document.querySelector(".gl_lesson__sidebar .chapter-accessory").classList.add("hidden");
+      }
+    }
+
+    var list_elements = document.querySelectorAll(".gl_lesson__sidebar ul li a");
+    var url = remove_urlness(remove_prefixes(window.location.href));
+
+    function mark_chapter(item, index) {
+      stripped_string = remove_prefixes(item.href)
+      stripped_string = remove_urlness(stripped_string)
+      console.log("stripped_string", stripped_string)
+      console.log("url", url)
+      if (stripped_string == url) {
+        set_text(stripped_string)
+      }
+    }
+
+    list_elements.forEach(mark_chapter)
+  }
+
+  window.addEventListener('onload', get_strings());
+  window.addEventListener('onload', get_chapter());
 </script>
