@@ -85,6 +85,7 @@
   },
   "dependencies": {
     "bulma": "^0.8.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "underscore": "^1.12.0"
   }
 }

@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   height: 60px;
-  background: white;
+  background: rgba(255,255,255,0.4);
   z-index: 2000;
 
   ul {
@@ -146,6 +146,7 @@ right: 0;
 
     &.opened {
       height: 100vh;
+      background: rgba(255,255,255,0.8);
       ul {
         overflow: scroll;
         height: calc(100vh - 60px);

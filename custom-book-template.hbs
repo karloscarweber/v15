@@ -45,6 +45,7 @@ into the {body} of the default.hbs template --}}
     var newstring = string.replace("/swift_foundations/", "");
     newstring = newstring.replace("#", "");
     newstring = newstring.replace("/", "");
+    // newstring = newstring.replace("-", " ");
     return newstring
   }
 
@@ -68,14 +69,17 @@ into the {body} of the default.hbs template --}}
     // the key is the page slug
     var chapters = {
       "": "?",
-      "introduction": " ",
-      "Ethical Programming": "01",
-      "How it Fits together": "02",
+      "introduction": "00",
+      "this-is-swift": "01",
+      "how-to-run-swift": "02",
       "Xcode": "03",
       "Variables and Constants": "04",
     }
 
     function set_text(stripped = "") {
+
+      console.log("stripped:", stripped)
+
       var chapter_title = document.querySelector(".gl_lesson__sidebar .chapter-accessory h3")
       chapter_title.textContent = chapters[stripped]
       if (chapters[stripped].length > 50) {
@@ -91,8 +95,7 @@ into the {body} of the default.hbs template --}}
     var url = remove_urlness(remove_prefixes(window.location.href));
 
     function mark_chapter(item, index) {
-      stripped_string = remove_prefixes(item.href)
-      stripped_string = remove_urlness(stripped_string)
+      stripped_string = remove_urlness(remove_prefixes(item.href))
       console.log("stripped_string", stripped_string)
       console.log("url", url)
       if (stripped_string == url) {

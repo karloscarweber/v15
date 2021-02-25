@@ -14,11 +14,14 @@
 
       <hr>
 
+      <div class="lesson-card-container breakout">
+        <div class="lesson-card" style="border:none;pointer-events:none;"></div>
       {{#foreach posts}}
 
         {{> "post-item"}}
 
       {{/foreach}}
+      </div>
 
       {{pagination}}
     </div>

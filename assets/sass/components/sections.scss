@@ -37,8 +37,8 @@ $brand-color-blog-p3: color(display-p3 0 0.781 0.394 / 1);
 
 body.blog-template {
   background: #D2D2D2;
-  .page-template .content a,
-  .post-template .content a,
+  .page-template .content a:not(.post-card),
+  .post-template .content a:not(.post-card),
   ul.index-list a  {
     color: #111;
     text-decoration: none;
@@ -62,8 +62,8 @@ $brand-color-book-p3: color(display-p3 1 0 0.345 / 1);
 
 body.book-template.post-template, body.book-template.page-template, body.book-template {
   background: #D2D2D2;
-  .page-template .content a,
-  .post-template .content a,
+  .page-template .content a:not(.lesson-card),
+  .post-template .content a:not(.lesson-card),
   ul.index-list a,{
     color:white;
     text-decoration: none;
@@ -158,12 +158,12 @@ body.accounts-template {
     color:#111;
     text-decoration: none;
     background-color: $brand-color-accounts;
-    
+
   }
   .article__text-box h1 {
     color: #111;
     background-color: $brand-color-accounts;
-    
+
     mix-blend-mode: normal;
   }
 }
