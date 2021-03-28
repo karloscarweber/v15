@@ -3,11 +3,11 @@ import { Application } from "stimulus"
 import underscore, { map } from "underscore"
 
 // import HelloController from "./controllers/hello_controller"
-// import ClipboardController from "./controllers/clipboard_controller"
+import TagFilterController from "./controllers/tag_filter_controller"
 
 const application = Application.start()
 // application.register("hello", HelloController)
-// application.register("clipboard", ClipboardController)
+application.register("tag-filter", TagFilterController)
 
 let _ = underscore;
 

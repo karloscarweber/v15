@@ -1,95 +1,67 @@
-var gulp = require('gulp');
+"use strict";
 
+// Plugins
+const autoprefixer = require("autoprefixer");
+const browsersync = require("browser-sync").create();
+const gulp = require('gulp');
 // gulp plugins and utils
-var gutil = require('gulp-util');
-var livereload = require('gulp-livereload');
-var nodemon = require('gulp-nodemon');
-var sourcemaps = require('gulp-sourcemaps');
-var zip = require('gulp-zip');
-var gulp_concat = require('gulp-concat');
-var gulp_sass = require('gulp-sass');
-var rename = require('gulp-rename');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-const webpack = require('webpack-stream');
+const livereload = require('gulp-livereload');
+// var sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const rename = require('gulp-rename');
+const plumber = require("gulp-plumber");
+const concat = require('gulp-concat');
+const webpack = require("webpack");
+const webpackconfig = require("./webpack.config.js");
+const webpackstream = require("webpack-stream");
+const postcss = require('gulp-postcss');
+const custom_media = require('postcss-custom-media');
 
+function css() {
+  return gulp
+    .src('assets/sass/*.scss')
+    .pipe(plumber())
+    .pipe(sass({ outputStyle: "expanded" }))
+    // .pipe(sass().on('error', sass.logError))
+    .pipe(concat('styles.css'))
+    .pipe(postcss([custom_media(),autoprefixer()]))
+    .pipe(gulp.dest('assets/built/'))
+    // .pipe(browsersync.stream())
+}
 
-// postcss & plugins
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var custom_media = require('postcss-custom-media');
+function scripts() {
+  return (
+    gulp
+    .src(['./assets/js/vendor/*.js', './assets/js/lib/*.js', './assets/js/scripts.js'])
+      // .pipe(sourcemaps.init())
+      .pipe(plumber())
+      // .pipe(babel({
+      //   "plugins": ["@babel/plugin-proposal-class-properties"],
+      //   "presets": ["@babel/preset-env"]
+      // }))
+      .pipe(webpackstream(webpackconfig, webpack))
+      .pipe(concat('all.js'))
+      // .pipe(sourcemaps.write("./assets/built/"))
+      .pipe(rename('application.js'))
+      .pipe(gulp.dest('./assets/built/'))
+      // .pipe(browsersync.stream())
+  )
 
-var swallowError = function swallowError(error) {
-    gutil.log(error.toString());
-    gutil.beep();
-    this.emit('end');
-};
+}
 
-var nodemonServerInit = function () {
-    livereload.listen(1234);
-};
+// Watch files
+function watchFiles() {
+  gulp.watch("./assets/sass/**/*", css);
+  gulp.watch("./assets/js/**/*", scripts);
+}
 
-gulp.task('build', ['sass', 'css'], function (/* cb */) {
-    return nodemonServerInit();
-});
+const js = gulp.series(scripts);
+const build = gulp.series(gulp.parallel(css, js));
+// const watch = gulp.parallel(watchFiles, browserSync);
+const watch = gulp.parallel(watchFiles);
 
-gulp.task('sass', function () {
-    var processors = [
-      custom_media(),
-      autoprefixer()
-    ];
-    // return gulp.src('assets/sass/**/*.scss')
-    return gulp.src('assets/sass/*.scss')
-      .pipe(postcss(processors))
-      .pipe(gulp_sass().on('error', gulp_sass.logError))
-      .pipe(gulp_concat('styles.css'))
-      .pipe(gulp.dest('assets/css/'));
-});
-
-gulp.task('css', function () {
-    return gulp.src('assets/css/*.css')
-        // .on('error', swallowError) // We really don't need this right now.
-        .pipe(gulp.dest('assets/built/'))
-        // .pipe(gulp_concat('everything.css'))
-        // .pipe(gulp.dest('assets/built/'))
-        .pipe(livereload());
-});
-
-gulp.task('javamascript', function() {
-  return gulp.src(['./assets/js/vendor/*.js', './assets/js/lib/*.js', './assets/js/scripts.js'])
-    // .pipe(sourcemaps.init())
-    .pipe(babel({
-      "plugins": ["@babel/plugin-proposal-class-properties"],
-      "presets": ["@babel/preset-env"]
-    }))
-    .pipe(webpack())
-    .pipe(concat('all.js'))
-    // .pipe(sourcemaps.write("./assets/built/"))
-    .pipe(rename('application.js'))
-    .pipe(gulp.dest('./assets/built/'));
-});
-
-gulp.task('watch', function () {
-    gulp.watch('assets/css/**', ['css']);
-    gulp.watch('assets/sass/**', ['sass']);
-    gulp.watch('assets/js/**', ['javamascript']);
-});
-
-// Grabs everything but the node_modules and dist directory and zips it up
-gulp.task('zip', ['sass', 'css', 'javamascript'], function() {
-    var targetDir = 'dist/';
-    var themeName = require('./package.json').name;
-    var filename = themeName + '.zip';
-
-    return gulp.src([
-        '**',
-        '!node_modules', '!node_modules/**',
-        '!dist', '!dist/**'
-    ])
-        .pipe(zip(filename))
-        .pipe(gulp.dest(targetDir));
-});
-
-gulp.task('default', ['build'], function () {
-    gulp.start('watch');
-});
+exports.css = css;
+exports.js = js;
+exports.build = build;
+exports.watch = watch;
+exports.default = watch;

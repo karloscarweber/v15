@@ -1,0 +1,52 @@
+.tag-field {
+  display:block;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 32px;
+  position: absolute;
+  cursor:pointer;
+
+  &.relatived {
+    position: relative;
+    height: auto;
+    .tag {
+      float: left;
+    }
+  }
+
+  .tag {
+    display: inline-block;
+    float: right;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+    background-color: $swift-color;
+    background-color: $swift-color-p3;
+    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    font-weight: 600;
+
+    // colors for different named tags:
+    &.tag-tutorials { background-color: #FFD039; color: #111; }
+    &.tag-getting-started { background-color: #FFD039; color: #111; }
+    &.tag-swift { background-color: #FF0058; background-color: color(display-p3 1 0 0.343 / 1); }
+    &.tag-blog { background-color: #FFD039; color: #111; }
+    &.tag-apps { background-color: #FFD039; color: #111; }
+    &.tag-courses { background-color: #FFD039; color: #111; }
+    &.tag-cheddar { background-color: #FFD039; color: #111; }
+    &.tag-javascript { background-color: #FFD039; color: #111; }
+    &.tag-newsletter { background-color: #FFD039; color: #111; }
+    &.tag-design { background-color: #00C764; background-color: color(display-p3 0 0.781 0.392 / 1); }
+    &.tag-newsletter { background-color: #FFD039; color: #111; }
+    &.tag-newsletter { background-color: #FFD039; color: #111; }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

@@ -346,7 +346,7 @@ gutters on outside
   margin-right: calc(-1 * var(--size-plus-huge)); }
 
 :root {
-  --fluid-min-width: 320;
+  --fluid-min-width: 375;
   --fluid-max-width: 1152;
   --fluid-min-size: 16;
   --fluid-max-size: 20;
@@ -361,6 +361,10 @@ gutters on outside
 @media screen and (min-width: 1152PX) {
   :root {
     --fluid-screen: calc(var(--fluid-max-width) * 1px); } }
+
+@media screen and (max-width: 375PX) {
+  :root {
+    --fluid-screen: calc(var(--fluid-min-width) * 1px); } }
 
 /* This basically interpolates the size of stuff between 2 sizes, and between
 two screen widths. */
@@ -1139,7 +1143,9 @@ pre[class*="language-"] {
       background-image: url("/assets/images/MenuBurgerX.svg"); } }
 
 /* lesson-cards */
-body.book-template .page-template .content .lesson-card, body.book-template .page-template .content .post-card, body.blog-template .page-template .content .lesson-card, body.blog-template .page-template .content .post-card {
+body.book-template .page-template .content .lesson-card, body.book-template .page-template .content .post-card,
+body.blog-template .page-template .content .lesson-card,
+body.blog-template .page-template .content .post-card {
   position: relative;
   display: block;
   max-width: 510px;
@@ -1155,17 +1161,25 @@ body.book-template .page-template .content .lesson-card, body.book-template .pag
   padding-bottom: 24px;
   padding-top: 24px;
   box-sizing: content-box; }
-  body.book-template .page-template .content .lesson-card:not(.lesson-card), body.book-template .page-template .content .post-card:not(.lesson-card), body.blog-template .page-template .content .lesson-card:not(.lesson-card), body.blog-template .page-template .content .post-card:not(.lesson-card) {
+  body.book-template .page-template .content .lesson-card:not(.lesson-card), body.book-template .page-template .content .post-card:not(.lesson-card),
+  body.blog-template .page-template .content .lesson-card:not(.lesson-card),
+  body.blog-template .page-template .content .post-card:not(.lesson-card) {
     margin-top: 30px; }
-  body.book-template .page-template .content .lesson-card h3, body.book-template .page-template .content .post-card h3, body.blog-template .page-template .content .lesson-card h3, body.blog-template .page-template .content .post-card h3 {
+  body.book-template .page-template .content .lesson-card h3, body.book-template .page-template .content .post-card h3,
+  body.blog-template .page-template .content .lesson-card h3,
+  body.blog-template .page-template .content .post-card h3 {
     font-size: var(--step-1);
     line-height: 1.2em;
     font-weight: 600; }
-  body.book-template .page-template .content .lesson-card h2, body.book-template .page-template .content .post-card h2, body.blog-template .page-template .content .lesson-card h2, body.blog-template .page-template .content .post-card h2 {
+  body.book-template .page-template .content .lesson-card h2, body.book-template .page-template .content .post-card h2,
+  body.blog-template .page-template .content .lesson-card h2,
+  body.blog-template .page-template .content .post-card h2 {
     font-size: var(--step-2);
     line-height: 1.2em;
     font-weight: 700; }
-  body.book-template .page-template .content .lesson-card .expando, body.book-template .page-template .content .post-card .expando, body.blog-template .page-template .content .lesson-card .expando, body.blog-template .page-template .content .post-card .expando {
+  body.book-template .page-template .content .lesson-card .expando, body.book-template .page-template .content .post-card .expando,
+  body.blog-template .page-template .content .lesson-card .expando,
+  body.blog-template .page-template .content .post-card .expando {
     display: block;
     position: absolute;
     left: 50%;
@@ -1176,7 +1190,9 @@ body.book-template .page-template .content .lesson-card, body.book-template .pag
     height: auto;
     z-index: -1000;
     transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
-  body.book-template .page-template .content .lesson-card .minutes, body.book-template .page-template .content .post-card .minutes, body.blog-template .page-template .content .lesson-card .minutes, body.blog-template .page-template .content .post-card .minutes {
+  body.book-template .page-template .content .lesson-card .minutes, body.book-template .page-template .content .post-card .minutes,
+  body.blog-template .page-template .content .lesson-card .minutes,
+  body.blog-template .page-template .content .post-card .minutes {
     display: block;
     position: absolute;
     right: 0px;
@@ -1189,77 +1205,25 @@ body.book-template .page-template .content .lesson-card, body.book-template .pag
     background-color: #FF0054;
     background-color: color(display-p3 1 0 0.329/1);
     transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
-    body.book-template .page-template .content .lesson-card .minutes:hover, body.book-template .page-template .content .post-card .minutes:hover, body.blog-template .page-template .content .lesson-card .minutes:hover, body.blog-template .page-template .content .post-card .minutes:hover {
+    body.book-template .page-template .content .lesson-card .minutes:hover, body.book-template .page-template .content .post-card .minutes:hover,
+    body.blog-template .page-template .content .lesson-card .minutes:hover,
+    body.blog-template .page-template .content .post-card .minutes:hover {
       transform: scale(1.2); }
-  body.book-template .page-template .content .lesson-card .tag-field, body.book-template .page-template .content .post-card .tag-field, body.blog-template .page-template .content .lesson-card .tag-field, body.blog-template .page-template .content .post-card .tag-field {
-    display: block;
-    top: 0px;
-    right: 0px;
-    width: 100%;
-    height: 32px;
-    position: absolute; }
-    body.book-template .page-template .content .lesson-card .tag-field .tag, body.book-template .page-template .content .post-card .tag-field .tag, body.blog-template .page-template .content .lesson-card .tag-field .tag, body.blog-template .page-template .content .post-card .tag-field .tag {
-      display: inline-block;
-      float: right;
-      margin: 0;
-      padding-left: 10px;
-      padding-right: 10px;
-      width: auto;
-      height: 32px;
-      line-height: 32px;
-      text-align: center;
-      color: white;
-      background-color: #FF0054;
-      background-color: color(display-p3 1 0 0.329/1);
-      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-      font-weight: 600; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-tutorials, body.book-template .page-template .content .post-card .tag-field .tag.tag-tutorials, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-tutorials, body.blog-template .page-template .content .post-card .tag-field .tag.tag-tutorials {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-getting-started, body.book-template .page-template .content .post-card .tag-field .tag.tag-getting-started, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-getting-started, body.blog-template .page-template .content .post-card .tag-field .tag.tag-getting-started {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-swift, body.book-template .page-template .content .post-card .tag-field .tag.tag-swift, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-swift, body.blog-template .page-template .content .post-card .tag-field .tag.tag-swift {
-        background-color: #FF0058;
-        background-color: color(display-p3 1 0 0.343/1); }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-blog, body.book-template .page-template .content .post-card .tag-field .tag.tag-blog, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-blog, body.blog-template .page-template .content .post-card .tag-field .tag.tag-blog {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-apps, body.book-template .page-template .content .post-card .tag-field .tag.tag-apps, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-apps, body.blog-template .page-template .content .post-card .tag-field .tag.tag-apps {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-courses, body.book-template .page-template .content .post-card .tag-field .tag.tag-courses, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-courses, body.blog-template .page-template .content .post-card .tag-field .tag.tag-courses {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-cheddar, body.book-template .page-template .content .post-card .tag-field .tag.tag-cheddar, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-cheddar, body.blog-template .page-template .content .post-card .tag-field .tag.tag-cheddar {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-javascript, body.book-template .page-template .content .post-card .tag-field .tag.tag-javascript, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-javascript, body.blog-template .page-template .content .post-card .tag-field .tag.tag-javascript {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-newsletter, body.book-template .page-template .content .post-card .tag-field .tag.tag-newsletter, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-newsletter, body.blog-template .page-template .content .post-card .tag-field .tag.tag-newsletter {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-design, body.book-template .page-template .content .post-card .tag-field .tag.tag-design, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-design, body.blog-template .page-template .content .post-card .tag-field .tag.tag-design {
-        background-color: #00C764;
-        background-color: color(display-p3 0 0.781 0.392/1); }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-newsletter, body.book-template .page-template .content .post-card .tag-field .tag.tag-newsletter, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-newsletter, body.blog-template .page-template .content .post-card .tag-field .tag.tag-newsletter {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag.tag-newsletter, body.book-template .page-template .content .post-card .tag-field .tag.tag-newsletter, body.blog-template .page-template .content .lesson-card .tag-field .tag.tag-newsletter, body.blog-template .page-template .content .post-card .tag-field .tag.tag-newsletter {
-        background-color: #FFD039;
-        color: #111; }
-      body.book-template .page-template .content .lesson-card .tag-field .tag:hover, body.book-template .page-template .content .post-card .tag-field .tag:hover, body.blog-template .page-template .content .lesson-card .tag-field .tag:hover, body.blog-template .page-template .content .post-card .tag-field .tag:hover {
-        transform: scale(1.2); }
-  body.book-template .page-template .content .lesson-card:hover, body.book-template .page-template .content .post-card:hover, body.blog-template .page-template .content .lesson-card:hover, body.blog-template .page-template .content .post-card:hover {
+  body.book-template .page-template .content .lesson-card:hover, body.book-template .page-template .content .post-card:hover,
+  body.blog-template .page-template .content .lesson-card:hover,
+  body.blog-template .page-template .content .post-card:hover {
     text-decoration: none !important; }
-    body.book-template .page-template .content .lesson-card:hover .expando, body.book-template .page-template .content .post-card:hover .expando, body.blog-template .page-template .content .lesson-card:hover .expando, body.blog-template .page-template .content .post-card:hover .expando {
+    body.book-template .page-template .content .lesson-card:hover .expando, body.book-template .page-template .content .post-card:hover .expando,
+    body.blog-template .page-template .content .lesson-card:hover .expando,
+    body.blog-template .page-template .content .post-card:hover .expando {
       background: #E2E2E2;
       left: 0%;
       right: 0%;
       top: 0%;
       bottom: 0%; }
-    body.book-template .page-template .content .lesson-card:hover:first-child, body.book-template .page-template .content .post-card:hover:first-child, body.blog-template .page-template .content .lesson-card:hover:first-child, body.blog-template .page-template .content .post-card:hover:first-child {
+    body.book-template .page-template .content .lesson-card:hover:first-child, body.book-template .page-template .content .post-card:hover:first-child,
+    body.blog-template .page-template .content .lesson-card:hover:first-child,
+    body.blog-template .page-template .content .post-card:hover:first-child {
       margin-bottom: -20px;
       transform: translateY(-10px); }
 
@@ -2020,10 +1984,9 @@ ul.index-list {
 .title-preamble + .type-excerpt + .subtext + hr {
   margin-bottom: 3em; }
 
-@media (max-width: 1152px) {
-  .content {
-    padding-left: 20px;
-    padding-right: 20px; } }
+.content {
+  padding-left: 10px;
+  padding-right: 10px; }
 
 /*
   Sections.
@@ -2734,7 +2697,10 @@ ul.feature-list {
   bottom: 0;
   top: 0;
   display: block;
-  padding: var(--step-5); }
+  padding: var(--step-2);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .supertext {
   font-size: var(--step-5);
@@ -2743,10 +2709,9 @@ ul.feature-list {
   font-family: -apple-system, sans-serif;
   font-weight: 800;
   position: relative;
-  max-width: 1080px;
+  max-width: 960px;
   margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20rem; }
+  margin-right: auto; }
   .supertext .background {
     display: block;
     position: fixed;
@@ -2882,6 +2847,73 @@ ul.feature-list {
     .supertext .app-link::before, .supertext .blog-link::before, .supertext .book-link::before, .supertext .courses-link::before, .supertext .newsletter-link::before {
       height: var(--step-4);
       margin-bottom: calc(-1 * var(--step-4)); } }
+
+.tag-field {
+  display: block;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 32px;
+  position: absolute;
+  cursor: pointer; }
+  .tag-field.relatived {
+    position: relative;
+    height: auto; }
+    .tag-field.relatived .tag {
+      float: left; }
+  .tag-field .tag {
+    display: inline-block;
+    float: right;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+    background-color: #FF0054;
+    background-color: color(display-p3 1 0 0.329/1);
+    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    font-weight: 600; }
+    .tag-field .tag.tag-tutorials {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-getting-started {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-swift {
+      background-color: #FF0058;
+      background-color: color(display-p3 1 0 0.343/1); }
+    .tag-field .tag.tag-blog {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-apps {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-courses {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-cheddar {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-javascript {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-newsletter {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-design {
+      background-color: #00C764;
+      background-color: color(display-p3 0 0.781 0.392/1); }
+    .tag-field .tag.tag-newsletter {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag.tag-newsletter {
+      background-color: #FFD039;
+      color: #111; }
+    .tag-field .tag:hover {
+      transform: scale(1.2); }
 
 /* complete rewrite
 // - [x] _layouts

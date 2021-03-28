@@ -98,11 +98,11 @@
 
         <div class="pay-matrix">
           <a class="button primary button-centered subscribe-button" href="javascript:" data-members-plan="Monthly">
-            {{@price.currency_symbol}}{{@price.monthly}} / month
+            {{price currency=currency}}{{@price.monthly}} / month
           </a>
 
           <a class="button primary button-centered subscribe-button" href="javascript:" data-members-plan="Yearly">
-            {{@price.currency_symbol}}{{@price.yearly}} / year
+            {{price currency=currency}}{{@price.yearly}} / year
           </a>
         </div>
 

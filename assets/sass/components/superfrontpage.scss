@@ -10,7 +10,10 @@
   bottom: 0;
   top: 0;
   display: block;
-  padding: var(--step-5);
+  padding: var(--step-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .supertext {
@@ -20,10 +23,9 @@
   font-family: -apple-system, sans-serif;
   font-weight: 800;
   position: relative;
-  max-width: 1080px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 20rem;
 
   .background {
     display: block;

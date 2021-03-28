@@ -5,12 +5,12 @@
       {{navigation}}
   {{/if}}
 
-  {{#each posts visibility="all"}}
+  {{#foreach posts visibility="all"}}
 
       {{!-- The tag below includes the markup for each post - partials/lesson-card.hbs --}}
       {{> "lesson-card"}}
 
-  {{/each}}
+  {{/foreach}}
 
   {{#contentFor "scripts"}}
 
