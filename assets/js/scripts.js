@@ -4,10 +4,14 @@ import underscore, { map } from "underscore"
 
 // import HelloController from "./controllers/hello_controller"
 import TagFilterController from "./controllers/tag_filter_controller"
+import AttributionController from "./controllers/attribution_controller"
 
 const application = Application.start()
 // application.register("hello", HelloController)
 application.register("tag-filter", TagFilterController)
+application.register("attribution", AttributionController)
+
+let ghostKey = "5c34d61ced340994af2a019ae5";
 
 let _ = underscore;
 
@@ -32,6 +36,19 @@ let app = function(){
 
       }
     }
+
+  })();
+
+
+  // hunt for all image caption captions and add data-controller="atribution"
+  (function(){
+    let captions =
+
+    _.each(document.querySelectorAll(".kg-image-card.kg-card-hascaption"), function(element, index, list){
+      element.setAttribute('data-controller', 'attribution');
+      element.setAttribute('data-attribution-key-value', ghostKey);
+      element.setAttribute('data-attribution-author-value', "whatever")
+    })
 
   })();
 
