@@ -7,8 +7,7 @@ export default class extends Controller {
   // static values = { tags: Array }
 
   static values = {
-    key: String,
-    author: String
+    key: String
   }
 
   connect() {

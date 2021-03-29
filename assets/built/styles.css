@@ -778,7 +778,7 @@ two screen widths. */
   font-weight: 400;
   color: #111111;
   font-size: var(--step-0);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5em;
   margin-top: 1em;
 }
@@ -845,7 +845,7 @@ two screen widths. */
   font-weight: 400;
   color: #111111;
   font-size: var(--step-0);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5em;
   margin-top: 1em;
 }
@@ -899,7 +899,7 @@ two screen widths. */
   font-weight: 400;
   color: #111111;
   font-size: var(--step-0);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5em;
   margin-top: 1em;
   font-weight: 500;
@@ -935,7 +935,7 @@ two screen widths. */
   font-weight: 400;
   color: #111111;
   font-size: var(--step-0);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5em;
   margin-top: 1em;
   color: grey;
@@ -2447,12 +2447,12 @@ ul.index-list li a:hover {
 
 .content .title-preamble + p.type-excerpt,
 .content + p.type-excerpt + p.subtext {
-  margin-top: 4em !important;
-  margin-bottom: 4em !important;
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
 }
 
 .content > p.subtext {
-  margin-top: 6em !important;
+  margin-top: 2em !important;
 }
 
 .title-preamble + hr,

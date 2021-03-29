@@ -42,12 +42,14 @@ let app = function(){
 
   // hunt for all image caption captions and add data-controller="atribution"
   (function(){
-    let captions =
 
     _.each(document.querySelectorAll(".kg-image-card.kg-card-hascaption"), function(element, index, list){
       element.setAttribute('data-controller', 'attribution');
       element.setAttribute('data-attribution-key-value', ghostKey);
-      element.setAttribute('data-attribution-author-value', "whatever")
+    })
+
+    _.each(document.querySelectorAll(".cover-image-attribution"), function(element, index, list) {
+      console.log("Attribution!!", list[0].innerHTML)
     })
 
   })();

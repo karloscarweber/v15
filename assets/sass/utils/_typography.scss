@@ -83,7 +83,7 @@
 @mixin type-paragraph {
   @include typeface-greycliffcf;
   font-size: var(--step-0);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5em;
   margin-top: 1em;
 }
