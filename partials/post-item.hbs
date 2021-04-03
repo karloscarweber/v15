@@ -1,7 +1,10 @@
-<a class="post-card {{post_class}}{{#unless feature_image}} no-image{{/unless}} post-item " href="{{url}}"
+<a class="post-card {{post_class}}{{#unless feature_image}} no-image{{/unless}} post-item {{#if feature_image}} feature_image{{/if}}" href="{{url}}"
 data-tags="
 {{#foreach tags as |tag|}} tag-{{slug}} {{/foreach}}
 ">
+{{#if feature_image}}
+<img src="{{feature_image}}" alt="">
+{{/if}}
     <div class="expando"></div>
     <h2>{{title}}</h2>
     <span class="tag-field">

@@ -4,6 +4,28 @@
   Differences in independent sections of the site. Modifications of layout etc...
  */
 
+ /*tags variables */
+ $brand-color-tags: #FFD039;
+ $brand-color-tags-p3: color(display-p3 1 0.815 0.223 / 1);
+
+ body.tag-template:not(.newsletter-template) {
+   background: #D2D2D2;
+   .page-template .content a,
+   .post-template .content a,
+   ul.index-list a,
+   article.post a {
+     color:#111;
+     text-decoration: none;
+     background-color: $brand-color-tags;
+     background-color: $brand-color-tags-p3;
+   }
+   .article__text-box h1 {
+     color: #111;
+     background-color: $brand-color-tags;
+     background-color: $brand-color-tags-p3;
+     mix-blend-mode: normal;
+   }
+ }
 
 /* Newsletter sections. Or children of Newsletter pages. */
 
@@ -12,16 +34,17 @@ $brand-color-newsletter: #006FFF;
 $brand-color-newsletter-p3: color(display-p3 0 0.433 1 / 1);
 
 body.newsletter-template {
-  background: #D2D2D2;
+  background-color: $brand-color-newsletter;
+  background-color: $brand-color-newsletter-p3;
   .page-template .content a,
   .post-template .content a,
   ul.index-list a  {
-    background-color: $brand-color-newsletter;
-    background-color: $brand-color-newsletter-p3;
+    // background-color: $brand-color-newsletter;
+    // background-color: $brand-color-newsletter-p3;
+    background-color: rgba(0,0,0,0.2);
   }
   .article__text-box h1 {
-    color: $brand-color-newsletter;
-    color: $brand-color-newsletter-p3;
+    color: white;
     mix-blend-mode: normal;
   }
 }
@@ -118,29 +141,6 @@ body.apps-template {
   .article__text-box h1 {
     color: $brand-color-apps;
     color: $brand-color-apps-p3;
-    mix-blend-mode: normal;
-  }
-}
-
-/*tags variables */
-$brand-color-tags: #FFD039;
-$brand-color-tags-p3: color(display-p3 1 0.815 0.223 / 1);
-
-body.tag-template {
-  background: #D2D2D2;
-  .page-template .content a,
-  .post-template .content a,
-  ul.index-list a,
-  article.post a {
-    color:#111;
-    text-decoration: none;
-    background-color: $brand-color-tags;
-    background-color: $brand-color-tags-p3;
-  }
-  .article__text-box h1 {
-    color: #111;
-    background-color: $brand-color-tags;
-    background-color: $brand-color-tags-p3;
     mix-blend-mode: normal;
   }
 }

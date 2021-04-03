@@ -1397,6 +1397,32 @@ body.blog-template .page-template .content .post-card {
   box-sizing: content-box;
 }
 
+body.book-template .page-template .content .lesson-card.feature_image .expando, body.book-template .page-template .content .post-card.feature_image .expando,
+body.blog-template .page-template .content .lesson-card.feature_image .expando,
+body.blog-template .page-template .content .post-card.feature_image .expando {
+  display: none;
+}
+
+body.book-template .page-template .content .lesson-card.feature_image img, body.book-template .page-template .content .post-card.feature_image img,
+body.blog-template .page-template .content .lesson-card.feature_image img,
+body.blog-template .page-template .content .post-card.feature_image img {
+  margin-top: -24px;
+  margin-right: -10px;
+  margin-left: -10px;
+  max-width: calc(100% + 20px);
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.book-template .page-template .content .lesson-card.feature_image h2, body.book-template .page-template .content .post-card.feature_image h2,
+body.blog-template .page-template .content .lesson-card.feature_image h2,
+body.blog-template .page-template .content .post-card.feature_image h2 {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  bottom: 40px;
+  color: white;
+}
+
 body.book-template .page-template .content .lesson-card:not(.lesson-card), body.book-template .page-template .content .post-card:not(.lesson-card),
 body.blog-template .page-template .content .lesson-card:not(.lesson-card),
 body.blog-template .page-template .content .post-card:not(.lesson-card) {
@@ -1461,6 +1487,19 @@ body.book-template .page-template .content .lesson-card:hover, body.book-templat
 body.blog-template .page-template .content .lesson-card:hover,
 body.blog-template .page-template .content .post-card:hover {
   text-decoration: none !important;
+}
+
+body.book-template .page-template .content .lesson-card:hover.feature_image img, body.book-template .page-template .content .post-card:hover.feature_image img,
+body.blog-template .page-template .content .lesson-card:hover.feature_image img,
+body.blog-template .page-template .content .post-card:hover.feature_image img {
+  transform: scale(1.1);
+}
+
+body.book-template .page-template .content .lesson-card:hover.feature_image h2, body.book-template .page-template .content .post-card:hover.feature_image h2,
+body.blog-template .page-template .content .lesson-card:hover.feature_image h2,
+body.blog-template .page-template .content .post-card:hover.feature_image h2 {
+  left: 16px;
+  right: 16px;
 }
 
 body.book-template .page-template .content .lesson-card:hover .expando, body.book-template .page-template .content .post-card:hover .expando,
@@ -2493,22 +2532,43 @@ ul.index-list li a:hover {
 
   Differences in independent sections of the site. Modifications of layout etc...
  */
+/*tags variables */
+body.tag-template:not(.newsletter-template) {
+  background: #D2D2D2;
+}
+
+body.tag-template:not(.newsletter-template) .page-template .content a,
+body.tag-template:not(.newsletter-template) .post-template .content a,
+body.tag-template:not(.newsletter-template) ul.index-list a,
+body.tag-template:not(.newsletter-template) article.post a {
+  color: #111;
+  text-decoration: none;
+  background-color: #FFD039;
+  background-color: color(display-p3 1 0.815 0.223/1);
+}
+
+body.tag-template:not(.newsletter-template) .article__text-box h1 {
+  color: #111;
+  background-color: #FFD039;
+  background-color: color(display-p3 1 0.815 0.223/1);
+  mix-blend-mode: normal;
+}
+
 /* Newsletter sections. Or children of Newsletter pages. */
 /*newsletter variables */
 body.newsletter-template {
-  background: #D2D2D2;
+  background-color: #006FFF;
+  background-color: color(display-p3 0 0.433 1/1);
 }
 
 body.newsletter-template .page-template .content a,
 body.newsletter-template .post-template .content a,
 body.newsletter-template ul.index-list a {
-  background-color: #006FFF;
-  background-color: color(display-p3 0 0.433 1/1);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 body.newsletter-template .article__text-box h1 {
-  color: #006FFF;
-  color: color(display-p3 0 0.433 1/1);
+  color: white;
   mix-blend-mode: normal;
 }
 
@@ -2600,28 +2660,6 @@ body.apps-template article.post a {
 body.apps-template .article__text-box h1 {
   color: #FF008D;
   color: color(display-p3 1 0 0.553/1);
-  mix-blend-mode: normal;
-}
-
-/*tags variables */
-body.tag-template {
-  background: #D2D2D2;
-}
-
-body.tag-template .page-template .content a,
-body.tag-template .post-template .content a,
-body.tag-template ul.index-list a,
-body.tag-template article.post a {
-  color: #111;
-  text-decoration: none;
-  background-color: #FFD039;
-  background-color: color(display-p3 1 0.815 0.223/1);
-}
-
-body.tag-template .article__text-box h1 {
-  color: #111;
-  background-color: #FFD039;
-  background-color: color(display-p3 1 0.815 0.223/1);
   mix-blend-mode: normal;
 }
 

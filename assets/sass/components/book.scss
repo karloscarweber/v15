@@ -145,6 +145,28 @@ body.blog-template .page-template .content {
 
     transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 2);
 
+
+    &.feature_image {
+      .expando {
+        display: none;
+      }
+      img {
+        margin-top:-24px;
+        margin-right: -10px;
+        margin-left: -10px;
+        max-width: calc(100% + 20px);
+        transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      h2 {
+        position: absolute;
+        left: 26px;
+        right: 26px;
+        bottom: 40px;
+        color:white;
+      }
+    }
+
+
     &:not(.lesson-card) {
       margin-top: 30px;
     }
@@ -164,6 +186,7 @@ body.blog-template .page-template .content {
       font-size: var(--step-2);
       line-height: 1.2em;
       font-weight: 700;
+      // transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .expando {
@@ -254,6 +277,20 @@ body.blog-template .page-template .content {
 
     &:hover {
       text-decoration: none !important;
+      &.feature_image {
+        img {
+          transform: scale(1.1);
+          // margin-top:-24px;
+          // margin-right: -10px;
+          // margin-left: -10px;
+          // max-width: calc(100% + 20px);
+        }
+        h2 {
+          left: 16px;
+          right: 16px;
+        }
+      }
+
       .expando {
         background: #E2E2E2;
         left: 0%;

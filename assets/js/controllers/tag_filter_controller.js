@@ -17,11 +17,18 @@ export default class extends Controller {
 
   // filtering callbacks
   toggleFilter(event) {
-    var element = event.element
-    element.dataset.tag
-    console.log(event)
-    // console.log( "tags value: ", this.tagsValue)
-    applyFilter()
+    var tag = event.target.dataset.tag
+    console.log( "tags value: ", this.tagsValue)
+
+    var filters = this.filtersValue
+    if (filters.includes(tag)) {
+      // tag is included, which means remove it
+      filters.r
+    } else {
+      // tag is not included, which means add it.
+    }
+
+    this.applyFilter()
   }
 
   // traverse tags
@@ -30,8 +37,10 @@ export default class extends Controller {
     var tags = []
     _.each(this.element.getElementsByClassName('tag'), function(element, index, list){
       console.log("tag: ", list[index].dataset.tag)
-      this.push(list[index].dataset.tag)
+      tags.push(list[index].dataset.tag)
     }, tags)
+
+    console.log("tags: ", tags)
 
     this.tagsValue = tags
   }
