@@ -350,8 +350,8 @@ gutters on outside
   margin: 0 auto;
   width: 100%;
   max-width: 1152px;
-  padding-left: var(--size-plus-huge);
-  padding-right: var(--size-plus-huge);
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 128px;
   font-size: inherit;
   box-sizing: border-box;
@@ -1844,8 +1844,8 @@ pre[class*="language-"] {
 .site-footer hr {
   background: none;
   border: none;
-  background-color: #A5A5A5;
-  height: 1px;
+  background-color: black;
+  height: 4px;
   margin-bottom: 16px;
 }
 
