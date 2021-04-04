@@ -1401,16 +1401,12 @@ pre[class*="language-"] {
 }
 
 /* lesson-cards */
-body.book-template .page-template .content .lesson-card, body.book-template .page-template .content .post-card,
-body.blog-template .page-template .content .lesson-card,
-body.blog-template .page-template .content .post-card {
+.lesson-card, .post-card {
   position: relative;
   display: block;
   max-width: 510px;
   font-family: -apple-system, Helvetica, sans-serif;
   color: #111;
-  color: #111111;
-  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 2);
   color: #111111;
   text-decoration: none !important;
   border-bottom: 2px solid #E2E2E2;
@@ -1421,15 +1417,11 @@ body.blog-template .page-template .content .post-card {
   box-sizing: content-box;
 }
 
-body.book-template .page-template .content .lesson-card.feature_image .expando, body.book-template .page-template .content .post-card.feature_image .expando,
-body.blog-template .page-template .content .lesson-card.feature_image .expando,
-body.blog-template .page-template .content .post-card.feature_image .expando {
+.lesson-card.feature_image .expando, .post-card.feature_image .expando {
   display: none;
 }
 
-body.book-template .page-template .content .lesson-card.feature_image img, body.book-template .page-template .content .post-card.feature_image img,
-body.blog-template .page-template .content .lesson-card.feature_image img,
-body.blog-template .page-template .content .post-card.feature_image img {
+.lesson-card.feature_image img, .post-card.feature_image img {
   margin-top: -24px;
   margin-right: -10px;
   margin-left: -10px;
@@ -1437,9 +1429,7 @@ body.blog-template .page-template .content .post-card.feature_image img {
   transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body.book-template .page-template .content .lesson-card.feature_image h2, body.book-template .page-template .content .post-card.feature_image h2,
-body.blog-template .page-template .content .lesson-card.feature_image h2,
-body.blog-template .page-template .content .post-card.feature_image h2 {
+.lesson-card.feature_image h2, .post-card.feature_image h2 {
   position: absolute;
   left: 26px;
   right: 26px;
@@ -1447,31 +1437,41 @@ body.blog-template .page-template .content .post-card.feature_image h2 {
   color: white;
 }
 
-body.book-template .page-template .content .lesson-card:not(.lesson-card), body.book-template .page-template .content .post-card:not(.lesson-card),
-body.blog-template .page-template .content .lesson-card:not(.lesson-card),
-body.blog-template .page-template .content .post-card:not(.lesson-card) {
+.lesson-card:not(.lesson-card), .post-card:not(.lesson-card) {
   margin-top: 30px;
 }
 
-body.book-template .page-template .content .lesson-card h3, body.book-template .page-template .content .post-card h3,
-body.blog-template .page-template .content .lesson-card h3,
-body.blog-template .page-template .content .post-card h3 {
+.lesson-card.tag-newsletter, .post-card.tag-newsletter {
+  color: white;
+  background-color: transparent !important;
+  border-bottom: 0px solid transparent;
+}
+
+.lesson-card.tag-newsletter:hover, .post-card.tag-newsletter:hover {
+  color: black;
+}
+
+.lesson-card.tag-newsletter .expando, .post-card.tag-newsletter .expando {
+  background: white !important;
+}
+
+.lesson-card.tag-newsletter .tag-field, .post-card.tag-newsletter .tag-field {
+  display: none;
+}
+
+.lesson-card h3, .post-card h3 {
   font-size: var(--step-1);
   line-height: 1.2em;
   font-weight: 600;
 }
 
-body.book-template .page-template .content .lesson-card h2, body.book-template .page-template .content .post-card h2,
-body.blog-template .page-template .content .lesson-card h2,
-body.blog-template .page-template .content .post-card h2 {
+.lesson-card h2, .post-card h2 {
   font-size: var(--step-2);
   line-height: 1.2em;
   font-weight: 700;
 }
 
-body.book-template .page-template .content .lesson-card .expando, body.book-template .page-template .content .post-card .expando,
-body.blog-template .page-template .content .lesson-card .expando,
-body.blog-template .page-template .content .post-card .expando {
+.lesson-card .expando, .post-card .expando {
   display: block;
   position: absolute;
   left: 50%;
@@ -1484,9 +1484,7 @@ body.blog-template .page-template .content .post-card .expando {
   transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body.book-template .page-template .content .lesson-card .minutes, body.book-template .page-template .content .post-card .minutes,
-body.blog-template .page-template .content .lesson-card .minutes,
-body.blog-template .page-template .content .post-card .minutes {
+.lesson-card .minutes, .post-card .minutes {
   display: block;
   position: absolute;
   right: 0px;
@@ -1501,27 +1499,19 @@ body.blog-template .page-template .content .post-card .minutes {
   transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body.book-template .page-template .content .lesson-card .minutes:hover, body.book-template .page-template .content .post-card .minutes:hover,
-body.blog-template .page-template .content .lesson-card .minutes:hover,
-body.blog-template .page-template .content .post-card .minutes:hover {
+.lesson-card .minutes:hover, .post-card .minutes:hover {
   transform: scale(1.2);
 }
 
-body.book-template .page-template .content .lesson-card:hover, body.book-template .page-template .content .post-card:hover,
-body.blog-template .page-template .content .lesson-card:hover,
-body.blog-template .page-template .content .post-card:hover {
+.lesson-card:hover, .post-card:hover {
   text-decoration: none !important;
 }
 
-body.book-template .page-template .content .lesson-card:hover.feature_image, body.book-template .page-template .content .post-card:hover.feature_image,
-body.blog-template .page-template .content .lesson-card:hover.feature_image,
-body.blog-template .page-template .content .post-card:hover.feature_image {
+.lesson-card:hover.feature_image, .post-card:hover.feature_image {
   transform: scale(1.1);
 }
 
-body.book-template .page-template .content .lesson-card:hover .expando, body.book-template .page-template .content .post-card:hover .expando,
-body.blog-template .page-template .content .lesson-card:hover .expando,
-body.blog-template .page-template .content .post-card:hover .expando {
+.lesson-card:hover .expando, .post-card:hover .expando {
   background: #E2E2E2;
   left: 0%;
   right: 0%;
