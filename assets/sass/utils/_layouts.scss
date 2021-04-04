@@ -306,3 +306,27 @@ gutters on outside
   margin-left: calc(-1 * var(--size-plus-huge));
   margin-right: calc(-1 * var(--size-plus-huge));
 }
+
+
+// layout columns using flexbox
+// index columns container expands to fill it's container.
+.index-columns-container {
+  display: flex;
+  flex-flow: row wrap;
+  & > * {
+    max-width: 50%;
+  }
+}
+
+
+// small on mobile
+@include break(mobile) {
+  .index-columns-container {
+    flex-flow: column wrap;
+    max-width: 510px;
+    margin: 0 auto;
+    & > * {
+      max-width: 100%;
+    }
+  }
+}

@@ -425,6 +425,30 @@ gutters on outside
   margin-right: calc(-1 * var(--size-plus-huge));
 }
 
+.index-columns-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+}
+
+.index-columns-container > * {
+  max-width: 50%;
+}
+
+@media screen and (max-width: 48rem) {
+  /* -ns */
+  .index-columns-container {
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
+    max-width: 510px;
+    margin: 0 auto;
+  }
+  .index-columns-container > * {
+    max-width: 100%;
+  }
+}
+
 :root {
   --fluid-min-width: 375;
   --fluid-max-width: 1152;
@@ -1489,17 +1513,10 @@ body.blog-template .page-template .content .post-card:hover {
   text-decoration: none !important;
 }
 
-body.book-template .page-template .content .lesson-card:hover.feature_image img, body.book-template .page-template .content .post-card:hover.feature_image img,
-body.blog-template .page-template .content .lesson-card:hover.feature_image img,
-body.blog-template .page-template .content .post-card:hover.feature_image img {
+body.book-template .page-template .content .lesson-card:hover.feature_image, body.book-template .page-template .content .post-card:hover.feature_image,
+body.blog-template .page-template .content .lesson-card:hover.feature_image,
+body.blog-template .page-template .content .post-card:hover.feature_image {
   transform: scale(1.1);
-}
-
-body.book-template .page-template .content .lesson-card:hover.feature_image h2, body.book-template .page-template .content .post-card:hover.feature_image h2,
-body.blog-template .page-template .content .lesson-card:hover.feature_image h2,
-body.blog-template .page-template .content .post-card:hover.feature_image h2 {
-  left: 16px;
-  right: 16px;
 }
 
 body.book-template .page-template .content .lesson-card:hover .expando, body.book-template .page-template .content .post-card:hover .expando,
@@ -1510,13 +1527,6 @@ body.blog-template .page-template .content .post-card:hover .expando {
   right: 0%;
   top: 0%;
   bottom: 0%;
-}
-
-body.book-template .page-template .content .lesson-card:hover:first-child, body.book-template .page-template .content .post-card:hover:first-child,
-body.blog-template .page-template .content .lesson-card:hover:first-child,
-body.blog-template .page-template .content .post-card:hover:first-child {
-  margin-bottom: -20px;
-  transform: translateY(-10px);
 }
 
 .post-card.hidden {

@@ -278,16 +278,17 @@ body.blog-template .page-template .content {
     &:hover {
       text-decoration: none !important;
       &.feature_image {
+        transform: scale(1.1);
         img {
-          transform: scale(1.1);
+          // transform: scale(1.1);
           // margin-top:-24px;
           // margin-right: -10px;
           // margin-left: -10px;
           // max-width: calc(100% + 20px);
         }
         h2 {
-          left: 16px;
-          right: 16px;
+          // left: 16px;
+          // right: 16px;
         }
       }
 
@@ -299,10 +300,10 @@ body.blog-template .page-template .content {
         bottom: 0%;
       }
 
-      &:first-child {
-        margin-bottom: -20px;
-        transform: translateY(-10px);
-      }
+      // &:first-child {
+      //   margin-bottom: -20px;
+      //   transform: translateY(-10px);
+      // }
 
     }
 
